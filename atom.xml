@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Matrix</title>
+  <icon>http://carlyleliu.github.io/images/favicon_200x200.png</icon>
+  <subtitle>CarlyleLiu‘s Blog</subtitle>
+  <link href="http://carlyleliu.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://carlyleliu.github.io/"/>
+  <updated>2024-08-16T23:55:16.140Z</updated>
+  <id>http://carlyleliu.github.io/</id>
+  
+  <author>
+    <name>CarlyleLiu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Blog 搭建</title>
+    <link href="http://carlyleliu.github.io/2024/Tools/HexoNextUsage/"/>
+    <id>http://carlyleliu.github.io/2024/Tools/HexoNextUsage/</id>
+    <published>2024-07-14T03:59:43.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;安装-hexo&quot;&gt;安装 hexo&lt;/h1&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo init blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;安装依赖&quot;&gt;安装依赖&lt;/h1&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 使用 pandoc 渲染器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm un hexo-renderer-marked&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm i hexo-renderer-pandoc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm un hexo-renderer-pandoc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm i hexo-renderer-markdown-it-plus&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-deployer-git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install pandoc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install prism&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# rss&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-feed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;卸载 hexo 默认 markdown 渲染器，安装 pandoc markdown 渲染器。hexo 默认的 markdown 渲染器不支持 Mathjax，不支持插件扩展，不支持 emoji 表情。pandoc markdown 渲染器支持 Mathjax 语法，不仅可以渲染 markdown，还支持 textile，reStructedText 和许多其他格式，仍然不支持 emoji 表情。&lt;/p&gt;
+&lt;p&gt;此外还有其他 markdown 渲染器，hexo-renderer-markdown-it 支持 Mathjax 语法（支持不太好），支持 Markdown 以及 CommonMark 语法，渲染速度比 hexo-renderer-marked 快，支持插件配置，支持标题带安全的 id 信息，支持脚注（上标，下标，下划线）。 hexo-renderer-markdown-it-plus 支持 Katex 插件并默认启用，默认启用插件列表：markdown-it-emoji，markdown-it-sub，markdown-it-sup，markdown-it-deflist，markdown-it-abbr，markdown-it-footnote，markdown-it-ins，markdown-it-mark，&lt;span class=&quot;citation&quot; data-cites=&quot;iktakahiro/markdown-it-katex&quot;&gt;@iktakahiro/markdown-it-katex&lt;/span&gt;，markdown-it-toc-and-anchor。&lt;/p&gt;
+&lt;p&gt;这里要吐槽一下各版本的 markdown 渲染器，对 latex 语法的支持真是一言难尽，pandoc 用了一段时间发现某些特性不支持打算换一个，然后 latex 公式各种崩，😔毁灭吧。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Share" scheme="http://carlyleliu.github.io/categories/Share/"/>
+    
+    <category term="Tools" scheme="http://carlyleliu.github.io/categories/Share/Tools/"/>
+    
+    
+    <category term="Tools" scheme="http://carlyleliu.github.io/tags/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NAS 有趣的 Docker 推荐</title>
+    <link href="http://carlyleliu.github.io/2024/Tools/NasDockerUsage/"/>
+    <id>http://carlyleliu.github.io/2024/Tools/NasDockerUsage/</id>
+    <published>2024-07-01T03:59:43.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;dx4600-安装docker-compose&quot;&gt;DX4600 安装docker compose&lt;/h1&gt;
+&lt;p&gt;参考：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vY29tcG9zZS9pbnN0YWxsL2xpbnV4LyNpbnN0YWxsLXVzaW5nLXRoZS1yZXBvc2l0b3J5&quot;&gt;https://docs.docker.com/compose/install/linux/#install-using-the-repository&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;To download and install the Compose CLI plugin, run:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DOCKER_CONFIG=&lt;span class=&quot;variable&quot;&gt;${DOCKER_CONFIG:-&lt;span class=&quot;variable&quot;&gt;$HOME&lt;/span&gt;/.docker}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;mkdir&lt;/span&gt; -p &lt;span class=&quot;variable&quot;&gt;$DOCKER_CONFIG&lt;/span&gt;/cli-plugins&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -SL https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64 -o &lt;span class=&quot;variable&quot;&gt;$DOCKER_CONFIG&lt;/span&gt;/cli-plugins/docker-compose&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;This command downloads the latest release of Docker Compose (from the Compose releases repository) and installs Compose for the active user under $HOME directory.&lt;/p&gt;
+&lt;p&gt;To install:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker Compose for all users on your system, replace ~/.docker/cli-plugins with /usr/local/lib/docker/cli-plugins.&lt;/li&gt;
+&lt;li&gt;A different version of Compose, substitute v2.29.1 with the version of Compose you want to use.&lt;/li&gt;
+&lt;li&gt;For a different architecture, substitute x86_64 with the architecture you want.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;2&quot; type=&quot;1&quot;&gt;
+&lt;li&gt;Apply executable permissions to the binary:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;chmod&lt;/span&gt; +x &lt;span class=&quot;variable&quot;&gt;$DOCKER_CONFIG&lt;/span&gt;/cli-plugins/docker-compose&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;or, if you chose to install Compose for all users:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo &lt;span class=&quot;built_in&quot;&gt;chmod&lt;/span&gt; +x /usr/local/lib/docker/cli-plugins/docker-compose&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Test the installation.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker compose version&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;通过docker-compose安装ttrss&quot;&gt;通过docker compose安装ttrss&lt;/h1&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;version: &lt;span class=&quot;string&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;services:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  service.rss:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    image: wangqiru/ttrss:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    container_name: ttrss&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ports:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - 11381:80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    environment:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - SELF_URL_PATH=http://carlyleliu.com:11381 &lt;span class=&quot;comment&quot;&gt;# please change to your own domain&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - DB_PASS=136140@Techliu &lt;span class=&quot;comment&quot;&gt;# use the same password defined in `database.postgres`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - PUID=1000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - PGID=1000&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - ALLOW_PORTS=80,443,11381&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    volumes:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - feed-icons:/var/www/feed-icons/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - public_access&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - service_only&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - database_only&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    stdin_open: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;tty&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  service.mercury: &lt;span class=&quot;comment&quot;&gt;# set Mercury Parser API endpoint to `service.mercury:3000` on TTRSS plugin setting page&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    image: wangqiru/mercury-parser-api:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    container_name: mercury&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - public_access&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - service_only&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  service.opencc: &lt;span class=&quot;comment&quot;&gt;# set OpenCC API endpoint to `service.opencc:3000` on TTRSS plugin setting page&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    image: wangqiru/opencc-api-server:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    container_name: opencc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    environment:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - NODE_ENV=production&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - service_only&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  database.postgres:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    image: postgres:16-alpine&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    container_name: postgres&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    environment:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - POSTGRES_PASSWORD=136140@Techliu &lt;span class=&quot;comment&quot;&gt;# feel free to change the password&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    volumes:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - ~/postgres/data/:/var/lib/postgresql/data &lt;span class=&quot;comment&quot;&gt;# persist postgres data to ~/postgres/data/ on the host&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - database_only&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    restart: always&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;# utility.watchtower:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#   container_name: watchtower&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#   image: containrrr/watchtower:latest&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#   volumes:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#     - /var/run/docker.sock:/var/run/docker.sock&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#   environment:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#     - WATCHTOWER_CLEANUP=true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#     - WATCHTOWER_POLL_INTERVAL=86400&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#   restart: always&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;volumes:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  feed-icons:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;networks:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  public_access: &lt;span class=&quot;comment&quot;&gt;# Provide the access for ttrss UI&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  service_only: &lt;span class=&quot;comment&quot;&gt;# Provide the communication network between services only&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    internal: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  database_only: &lt;span class=&quot;comment&quot;&gt;# Provide the communication between ttrss and database only&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    internal: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;将以上文件放入/mnt/dm-2/.ugreen_nas/396113/Docker目录，然后执行：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker compose up -d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;等待部署完成，用户名：admin，密码是password。&lt;/p&gt;
+&lt;h1 id=&quot;mysql&quot;&gt;MySql&lt;/h1&gt;
+&lt;p&gt;拉取镜像：mysql:latest 端口设置： &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Share/nas2.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;环境：MYSQL_ROOT_PASSWORD = passwd&lt;/p&gt;
+&lt;h2 id=&quot;创建用户和-database&quot;&gt;创建用户和 database&lt;/h2&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DROP USER &lt;span class=&quot;string&quot;&gt;&#39;wordpressuser&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;localhost&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 为 wordpress 创建数据库&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;use mysql;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; user,host from user;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;CREATE USER &lt;span class=&quot;string&quot;&gt;&#39;wordpressuser&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;%&#39;&lt;/span&gt; IDENTIFIED BY &lt;span class=&quot;string&quot;&gt;&#39;passwd&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;grant all on wordpress.* to &lt;span class=&quot;string&quot;&gt;&#39;wordpressuser&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;%&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 生效&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;FLUSH PRIVILEGES;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Share" scheme="http://carlyleliu.github.io/categories/Share/"/>
+    
+    <category term="Tools" scheme="http://carlyleliu.github.io/categories/Share/Tools/"/>
+    
+    
+    <category term="Tools" scheme="http://carlyleliu.github.io/tags/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（九）UAC 常见问题</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACCommonIssue/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACCommonIssue/</id>
+    <published>2024-06-30T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;修改uac配置参数后无法正常通信&quot;&gt;修改UAC配置参数后无法正常通信&lt;/h1&gt;
+&lt;p&gt;如果修改了UAC的配置后出现UAC无法正常通信的问题，可以通过修改设备的idVendor和idProduct来解决，只有设备的idVendor和idProduct发生改变Windows才会重新读取设备的配置描述符。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（八）PPM 评估</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCPPM/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCPPM/</id>
+    <published>2024-06-28T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;usb-sof统计方法&quot;&gt;USB sof统计方法&lt;/h1&gt;
+&lt;h2 id=&quot;打时间戳方式&quot;&gt;打时间戳方式&lt;/h2&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;strong&gt;ktime_get_raw_ns()&lt;/strong&gt; Linux标准接口。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;meson_timestamp()&lt;/strong&gt; Amlogic实现的硬件定时器接口。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;sof打时间戳的时机&quot;&gt;sof打时间戳的时机&lt;/h2&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;直接在SOF中断handle里打时间戳，然后将其保存到一个fifo里。&lt;/li&gt;
+&lt;li&gt;通过一个hrtimer，主动查询SOF中断寄存器查看是否有SOF包，如果有SOF包则打上时间戳保存到fifo里。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;sof时间戳导出到应用层&quot;&gt;sof时间戳导出到应用层&lt;/h2&gt;
+&lt;p&gt;通过seq file创建一个proc（/proc/sof_ts）文件，应用通过读取该文件来获取sof时间戳。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（七）Async Feedback</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</id>
+    <published>2024-06-19T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;buffer-统计&quot;&gt;buffer 统计&lt;/h1&gt;
+&lt;p&gt;采样间隔 1ms、采样 buffer 里的数据长度 &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/AudioBufferUsage.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 驱动之基础（二）DMA-API</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDMA-API/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDMA-API/</id>
+    <published>2024-05-02T15:20:16.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;there-are-two-types-of-dma-mappings&quot;&gt;😊 There are two types of DMA mappings&lt;/h1&gt;
+&lt;p&gt;Consistent DM（硬件保证 cache 一致性） mappings which are usually mapped at driver initialization, unmapped at the end and for which the hardware should guarantee that the device and the CPU can access the data in parallel and will see updates made by each other without any explicit software flushing.&lt;/p&gt;
+&lt;p&gt;Streaming DMA（需要软件来维护 cache 一致性） mappings which are usually mapped for one DMA transfer, unmapped right after it (unless you use dma_sync_* below) and for which hardware can optimize for sequential accesses.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="Linux" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/Driver/"/>
+    
+    
+    <category term="Linux" scheme="http://carlyleliu.github.io/tags/Linux/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 驱动之基础（一）Device-I/O</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDeviceIO/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDeviceIO/</id>
+    <published>2024-04-22T13:23:06.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;memory-mapped-io&quot;&gt;Memory Mapped IO&lt;/h1&gt;
+&lt;h2 id=&quot;getting-access-to-the-device&quot;&gt;Getting Access to the Device&lt;/h2&gt;
+&lt;p&gt;This address should not be used directly. Instead, to get an address suitable for passing to the accessor functions described below, you should call ioremap(). An address suitable for accessing the device will be returned to you.&lt;/p&gt;
+&lt;p&gt;After you&#39;ve finished using the device (say, in your module&#39;s exit routine), call iounmap() in order to return the address space to the kernel. Most architectures allocate new address space each time you call ioremap(), and they can run out unless you call iounmap().&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="Linux" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/Driver/"/>
+    
+    
+    <category term="Linux" scheme="http://carlyleliu.github.io/tags/Linux/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（六）UAC 同步方式</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
+    <published>2024-04-19T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;同步问题原因&quot;&gt;同步问题原因&lt;/h1&gt;
+&lt;h2 id=&quot;usb-isochronous-传输协议无问题&quot;&gt;USB Isochronous 传输（协议无问题）&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/USB_Transfer.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;isochronous-transfer-同步问题&quot;&gt;Isochronous Transfer 同步问题&lt;/h2&gt;
+&lt;p&gt;电脑播放器播放音乐时：是按一个固定的速率，比如 44.1KHZ，电脑内有一个晶振，可分频出一个 44.1KHZ，进行音乐播放，发给 USB 的数据流速率固定。USB 声卡自己得有一个晶振才能工作，它也可分频出一个 44.1KHZ，供给 I2S 信号或 DAC。&lt;/p&gt;
+&lt;p&gt;问题来了，晶振是有误差的，这两个 44.1KHZ 不可能完全一模一样，电脑可能是 44.100KHZ，USB 声卡可能是 44.098KHZ，误差约 50ppm，很正常的情况。虽然声卡晶振分频出来是 44.098KHZ，但声卡认为它就是工作在 44.100KHZ 下。好吧，如果二者时钟独立运行，那么 1 个小时会误差 0.2 秒，会出现不同步！ 即电脑播了 1 个小时的数据，USB 声卡实际是无法播完的，要多 0.2 秒才能播完。 如果声卡也要 1 小时播完，那这 1 小时就需要丢掉 0.2 秒的数据。&lt;/p&gt;
+&lt;p&gt;所以二者的时钟必须要同步一致才行，这就是 UAC 同步问题的原因，因此 USB 音频规定了一是采用“等时传输模式”，二是设备需要指定为 3 种同步方式之一：同步（synchronous），适应（adaptive），异步（asynchronous）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（五）Feature Unit</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACFU/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACFU/</id>
+    <published>2024-04-17T13:13:11.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;音量基本概念&quot;&gt;音量基本概念&lt;/h1&gt;
+&lt;h3 id=&quot;声学中的分贝&quot;&gt;&lt;strong&gt;声学中的分贝&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;因为人耳的特性，我们对声音的大小感知呈对数关系。所以我们通常用分贝描述声音大小，分贝（decibel）是量度两个相同单位之数量比例的单位，主要用于度量声音强度，常用 dB 表示。声学中，声音的强度定义为声压。计算分贝值时采用 20 微帕斯卡为参考值（通常被认为是人类的最少听觉响应值，大约是 3 米以外飞行的蚊子声音）。这一参考值是人类对声音能够感知的 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9zby5jc2RuLm5ldC9zby9zZWFyY2g/cT0lRTklOTglODglRTUlODAlQkMmc3BtPTEwMDEuMjEwMS4zMDAxLjcwMjA=&quot;&gt;阈值&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 下限。声压是场量，因此使用声压计算分贝时使用下述版本的公式：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+L_p = 20log_{10}(&#92;frac{p_{rms}}{p_{ref}})dB
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中的 pref 是标准参考声压值 20 微帕。&lt;/p&gt;
+&lt;h3 id=&quot;分贝声音变化范围&quot;&gt;&lt;strong&gt;分贝声音变化范围&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在编程中，我们可以用以下公式计算两个声音之间的动态范围，单位为分贝：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+dB = 20 * log(A1 / A2)
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中 A1 和 A2 是两个声音的振幅，在程序中表示每个声音样本的大小。声音采样大小（也就是量化深度）为 1bit 时，动态范围为 0，因为只可能有一个振幅。采样大小为 8bit 也就是一个字节时，最大振幅是最小振幅的 256 倍。因此，动态范围是 48 分贝，计算公式如下：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+dB = 20 * log(256)
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;48 分贝的动态范围大约是一个安静房间和一台运行着电动割草机之间的区别。如果将声音采样大小增加一倍到 16bit，产生的动态范围则为 96 分贝，计算公式如下：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+dB = 20 * log(65536)
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;这非常接近听力最低阈值和产生痛感之间的区别，这个范围被认为非常适合还原音乐。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;音量滑块与声音增幅大小线性变化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/fu1.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（四）HID</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACHID/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACHID/</id>
+    <published>2024-04-09T12:13:21.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;hid-相关概念&quot;&gt;HID 相关概念&lt;/h1&gt;
+&lt;p&gt;报表描述符由描述 HID 设备的数据项目（Item）组成，Item 的第一个字节（项目前缀）由三部分构成，&lt;strong&gt;即项目类型（item type）、项目标签（item tag）和项目长度（item size）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HID 的项目有短项目和长项目两种，其中短项目的格式如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/hid1.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（三）Spec-Interrupt</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
+    <published>2024-04-03T02:15:21.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;interrupts&quot;&gt;&lt;strong&gt;Interrupts&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;中断用于通知 host 音频功能的当前状态发生了变化。本规范目前定义了两种不同类型的中断：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Memory Change: 某些内部实体的内存位置已更新。可以通知主机软件，以便采取适当的行动。&lt;/li&gt;
+&lt;li&gt;Control Change: 音频函数内部的某些可寻址控件更改了其一个或多个属性值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;时钟实体、单元或终端内部的音频控件可以是中断的源。同样，AudioControl 接口中的任何可寻址 Control 或任何 AudioStreaming 接口都可以生成中断。最后所有与音频端点相关的可寻址控件都可能是中断的源。&lt;/p&gt;
+&lt;p&gt;音频功能的状态变化通常是由发生的特定事件引起的。事件可以是用户发起的，也可以是设备发起的。用户发起的插孔插入或移除是用户发起事件的典型示例。主机可以切换选择器或混音器，以便从刚刚插入的设备 （例如耳机）播放音频，并停止从当前设备（例如扬声器） 播放音频。设备启动事件的示例如下：一个外部设备 （例如 A/V 接收器可以在其光学数字输出上从 PCM 转换为 AC-3 编码数据，这取决于当前正在播放的材料如果此设备连接到具有自动检测功能的音频功能的光学数字输入，则该音频功能上的接口可能需要重新配置（例如，启动 AC-3 解码过程），这可能会导致所有其他接口的格式发生某些变化，甚至变得不可用。设备可以发出中断，让主机知道音频功能需要重新配置。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（二）Spec-Requests</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
+    <published>2024-03-23T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;standard-requests&quot;&gt;&lt;strong&gt;Standard Requests&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;音频设备类支持 USB 规范的第 9 节“USB 设备框架”中描述的标准请求。音频设备类对标准请求的值没有提出特定的要求。&lt;/p&gt;
+&lt;h1 id=&quot;class-specific-requests&quot;&gt;&lt;strong&gt;Class-Specific Requests&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;特定于类的请求用于设置和获取与音频相关的控件。这些控制器主要分为两组：那些操纵音频功能的控制器，如音量，音调，选择器的位置等。以及那些影响等时终点上的数据传输的数据，比如当前的采样频率。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;AudioControl Requests&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对音频功能的控制是通过操作嵌入在音频功能的实体中的单个控件的属性来执行的。特定于类的音频控件接口描述符包含一组实体描述符，每个描述符指示实体中存在哪些控件。音频控制请求总是指向音频功能的单个音频控制接口。请求包含足够的信息（实体 ID、控制选择器和通道号），以便音频功能决定必须路由特定请求的位置。同样的请求布局也可用于特定于供应商的对扩展单元的请求。但是，本规范不包括它们&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;AudioStreaming Requests&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对音频流接口的类特定行为的控制是通过操作接口控制或端点控制来执行的。它们可以是特定于类的（如本规范中定义的）或特定于供应商的。对于任何一种情况，都可以使用相同的请求布局。音频流请求被定向到控件所在的收件人。这可以是接口或它关联的等时端点。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;音频设备类支持一个附加的特定于类的请求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Memory Requests&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;音频功能中的每个可寻址实体（时钟实体、终端、单元、接口和端点）都可以公开一个内存映射接口，从而提供通用地操作实体的方法。特定于供应商的控制实现可以基于这种类型的请求。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;原则上，所有的请求都是可选的。如果音频功能不支持某个请求，则必须通过在向该功能发出请求时停止控制管道来表明这一点。但是，如果支持某个集合请求，则也必须支持关联的 Get 请求。可以支持获取请求，而不支持关联的集合请求。如果支持中断，那么就必须实现所有必要的 Get 请求，这些请求需要从音频功能中检索适当的信息，以响应这些中断&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（一）Spec-Functional Characteristics</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
+    <published>2024-03-03T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;在许多情况下，音频功能不作为独立设备存在。它是一种能力，与其他功能一起构成了一个“复合”设备。一个很好的例子 DVD-ROM 播放器就是音频、数据存储和传输控制功能的集合。音频功能因此位于设备类层次结构中的接口级别。它由多个接口组成，共同实现音频功能的接口。&lt;/p&gt;
+&lt;p&gt;音频功能被认为是一个“closed box”，具有非常独特的和定义良好的接口到 outside world。音频功能通过它们的音频接口进行寻址。每个音频功能都必须有一个 AudioControl 接口可以有 0 个或多个 AudioStreaming 和 0 个或多个 MIDI Streaming 接口。AudioControl（AC）接口用于访问 function 的音频控件，而 AudioStreaming (AS) 接口用于将音频流传入和传出 function。 MIDI streaming (MS) 接口可用于将 midi 数据流传输到和输出音频功能。单个 AudioControl 接口以及属于同一音频功能的 AudioStreaming 和 MIDI Streaming 接口的集合称为 Audio Interface Collection（AIC）。一个设备可以同时激活多个音频接口集合（AIC）。这些集合用于控制位于同一 composite device 中的多个独立音频功能。通过标准 USB 接口关联机制来描述音频接口集合，通过接口关联描述符 (IAD) 来表示接口绑定。&lt;/p&gt;
+&lt;p&gt;注：所有与 MIDI 相关的信息被分组在一个单独的文档中，MIDI 设备的通用串行总线设备类定义被认为是本规范的一部分。因此，本文档的其余部分将不再提及 MIDI Streaming 接口及其细节。 下图说明了这个概念：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/uac1.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>USB OTG</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBOTG/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBOTG/</id>
+    <published>2024-03-01T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;otg接口与转换器&quot;&gt;OTG接口与转换器&lt;/h1&gt;
+&lt;p&gt;OTG是&quot;On The Go&quot;的英文缩写，字面上可以理解为“安上即可用”。USB传输是主从结构，一切USB传输都有Host发起。比如在开发板上可以插入U盘，这时开发板作为USB Host。但是开发板要跟PC通信，开发板就要作为USB Device。开发板要作为USB Host、USB Device两种角色，可以使用OTG插口：它可以根据硬件电路自动识别自己的角色，切换为USB Host或USB Deivce。&lt;/p&gt;
+&lt;p&gt;OTG插口有多种形态，常用的有Micro USB、Type C，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Note/OTG1.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UAC（零）UAC Topology</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACTopology/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACTopology/</id>
+    <published>2024-03-01T05:15:01.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;uac-拓扑结构&quot;&gt;UAC 拓扑结构&lt;/h1&gt;
+&lt;p&gt;UAC 规范描述了以下类型的标准单元和终端，这些单元和终端被认为足以代表当前和近期可用的大多数视频功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入终端 - Input Terminal (IT)&lt;/li&gt;
+&lt;li&gt;输出终端 - Output Terminal (OT)&lt;/li&gt;
+&lt;li&gt;混音器单元 - Mixer Unit (MU)&lt;/li&gt;
+&lt;li&gt;选择器单元 - Selector Unit (SU)&lt;/li&gt;
+&lt;li&gt;特性单元 - Feature Unit (FU)&lt;/li&gt;
+&lt;li&gt;采样速率转换单元 - Sampling Rate Converter Unit (RU)&lt;/li&gt;
+&lt;li&gt;特效单元 - Effect Unit (EU)&lt;/li&gt;
+&lt;li&gt;处理单元 (PU) - Processing Unit (PU)&lt;/li&gt;
+&lt;li&gt;扩展单元 (XU) - Extension Unit (XU)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;除了单元和终端外，还引入了时钟实体的概念。定义了三种类型的时钟实体&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;时钟源 - Clock Source (CS)&lt;/li&gt;
+&lt;li&gt;时钟选择器 - Clock Selector (CX)&lt;/li&gt;
+&lt;li&gt;时钟倍频器 - Clock Multiplier (CM)&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    
+    
+    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    
+    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 驱动之 ALSA（九）虚拟声卡 Latency</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAVCardLatency/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAVCardLatency/</id>
+    <published>2024-02-28T14:42:52.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;测试方法&quot;&gt;测试方法&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;两块板子之间通过 I2S 通信，其中一块板子配置为 Slave 另一块板子为 Master&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Master 板端执行 arecord | aplay 或者 gstream 命令 &lt;/p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;arecord -Dhw:2,0 -r 44100 -c 8 -f S32_LE | aplay -Dhw:2,0 -c 8 -r 44100 -f S32_LE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gst-launch-1.0 alsasrc device=device_input_split ! alsasink device=device_output &lt;span class=&quot;built_in&quot;&gt;sync&lt;/span&gt;=&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Slave 通过 aplay 播放一段 wav 文件&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过示波器抓取 Master 板的 I2S 输入和输出端的波形间隔来测量虚拟声卡的 Latency&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
+    
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
+    
+    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 内核调试（三）VM 参数调试</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxKernel/LinuxKernelDebugVM/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxKernel/LinuxKernelDebugVM/</id>
+    <published>2024-02-27T14:38:04.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;vm-参数说明&quot;&gt;vm 参数说明&lt;/h1&gt;
+&lt;p&gt;Currently, these files are in /proc/sys/vm: &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/vm.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="Linux" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/"/>
+    
+    <category term="Kernel" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/Kernel/"/>
+    
+    
+    <category term="Debug" scheme="http://carlyleliu.github.io/tags/Debug/"/>
+    
+    <category term="Linux" scheme="http://carlyleliu.github.io/tags/Linux/"/>
+    
+    <category term="Kernel" scheme="http://carlyleliu.github.io/tags/Kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 驱动之 ALSA（八）Alsa Plugin</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAPlugin/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAPlugin/</id>
+    <published>2024-02-26T14:42:52.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;pcm-digital-audio-plugins&quot;&gt;PCM (digital audio) plugins&lt;/h1&gt;
+&lt;p&gt;PCM plugins extends functionality and features of PCM devices. The plugins take care about various sample conversions, sample copying among channels and so on.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
+    
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
+    
+    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 驱动之 ALSA（六）声卡创建流程</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSACreateSoundCard/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSACreateSoundCard/</id>
+    <published>2024-02-17T04:42:52.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;数据结构&quot;&gt;数据结构&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE2YzA2ZjYwZTNlNzQwNmUyMDNmMzkz&quot;&gt;原图&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Audio/ALSA_Struct1.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
+    
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
+    
+    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 驱动之 ALSA（七）XRUN</title>
+    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAXRUN/"/>
+    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAXRUN/</id>
+    <published>2024-02-17T04:42:52.000Z</published>
+    <updated>2024-08-16T23:55:16.140Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;XRUN 是缓冲区不足或溢出，X 代表不足或溢出。在这两种情况下，都表明系统速度不够快，未能及时处理来自 ALSA 音频缓冲区的数据，因此丢失了一些数据。当我们以非常小的缓冲区大小运行时，声卡应该非常快地处理传入缓冲区的数据，否则就溢出 overrun 了。有些芯片无法适应较小的缓冲区大小，因此我们必须增加缓冲区长度以减轻声音芯片的工作量。通常，xruns 可以听到爆裂声或爆裂声。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
+    
+    
+    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
+    
+    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    
+  </entry>
+  
+</feed>
