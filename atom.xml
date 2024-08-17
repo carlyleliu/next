@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.github.io/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.github.io/"/>
-  <updated>2024-08-17T00:23:50.348Z</updated>
+  <updated>2024-08-17T16:40:49.387Z</updated>
   <id>http://carlyleliu.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RPMB 简介</title>
+    <link href="http://carlyleliu.github.io/2024/Embedded/RPMB/"/>
+    <id>http://carlyleliu.github.io/2024/Embedded/RPMB/</id>
+    <published>2024-08-15T02:22:04.000Z</published>
+    <updated>2024-08-17T16:40:49.387Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;信息安全&quot;&gt;信息安全&lt;/h1&gt;
+&lt;p&gt;信息安全的三个基本目标是机密性，完整性和可用性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;机密性意味着只有授权实体才能阅读和理解保密的信息。没有访问权限的其他人无法阅读或理解机密信息；&lt;/li&gt;
+&lt;li&gt;完整性意味着能够确保信息受到保护，以防止未经授权的更改，修改或删除。信息的完整性包括使用识别和认证等方法的起源，完整性和正确性；&lt;/li&gt;
+&lt;li&gt;可用性意味着信息始终可供授权用户使用。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    
+  </entry>
   
   <entry>
     <title>TEE 实现原理</title>
@@ -562,32 +589,6 @@ dB = 20 * log(65536)
     
     <summary type="html">&lt;h1 id=&quot;pcm-digital-audio-plugins&quot;&gt;PCM (digital audio) plugins&lt;/h1&gt;
 &lt;p&gt;PCM plugins extends functionality and features of PCM devices. The plugins take care about various sample conversions, sample copying among channels and so on.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
-    
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
-    
-    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
-    
-    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 驱动之 ALSA（六）声卡创建流程</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSACreateSoundCard/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSACreateSoundCard/</id>
-    <published>2024-02-17T04:42:52.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;数据结构&quot;&gt;数据结构&lt;/h1&gt;
-&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE2YzA2ZjYwZTNlNzQwNmUyMDNmMzkz&quot;&gt;原图&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Audio/ALSA_Struct1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
