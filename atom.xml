@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.github.io/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.github.io/"/>
-  <updated>2024-08-16T23:55:16.140Z</updated>
+  <updated>2024-08-17T00:23:50.348Z</updated>
   <id>http://carlyleliu.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TEE 实现原理</title>
+    <link href="http://carlyleliu.github.io/2024/Embedded/TEEImplementationPrinciple/"/>
+    <id>http://carlyleliu.github.io/2024/Embedded/TEEImplementationPrinciple/</id>
+    <published>2024-08-14T02:22:04.000Z</published>
+    <updated>2024-08-17T00:23:50.348Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;trustzone&quot;&gt;TrustZone&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/tee1.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;如何区分当前访问状态是安全状态下的访问还是非安全状态下的访问&quot;&gt;如何区分当前访问状态是安全状态下的访问还是非安全状态下的访问？&lt;/h2&gt;
+&lt;p&gt;CPU发出的地址都是虚拟地址，需要经过页表转换才能得到物理地址，其中在pte页表中低12bit（针对4k大小的页表）为控制位，用来控制页表的访问属性，也就是说在页表建立的时候就确定了访问状态是安全状态还是非安全状态，其pte低12bit如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/tee2.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    
+  </entry>
   
   <entry>
     <title>Blog 搭建</title>
@@ -563,31 +588,6 @@ dB = 20 * log(65536)
     
     <summary type="html">&lt;h1 id=&quot;数据结构&quot;&gt;数据结构&lt;/h1&gt;
 &lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE2YzA2ZjYwZTNlNzQwNmUyMDNmMzkz&quot;&gt;原图&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Audio/ALSA_Struct1.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
-    
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
-    
-    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
-    
-    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 驱动之 ALSA（七）XRUN</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAXRUN/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAXRUN/</id>
-    <published>2024-02-17T04:42:52.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;XRUN 是缓冲区不足或溢出，X 代表不足或溢出。在这两种情况下，都表明系统速度不够快，未能及时处理来自 ALSA 音频缓冲区的数据，因此丢失了一些数据。当我们以非常小的缓冲区大小运行时，声卡应该非常快地处理传入缓冲区的数据，否则就溢出 overrun 了。有些芯片无法适应较小的缓冲区大小，因此我们必须增加缓冲区长度以减轻声音芯片的工作量。通常，xruns 可以听到爆裂声或爆裂声。&lt;/p&gt;</summary>
     
     
     
