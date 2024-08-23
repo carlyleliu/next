@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.github.io/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.github.io/"/>
-  <updated>2024-08-17T16:40:49.387Z</updated>
+  <updated>2024-08-23T11:45:49.846Z</updated>
   <id>http://carlyleliu.github.io/</id>
   
   <author>
@@ -17,11 +17,94 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Encryption Algorithm</title>
+    <link href="http://carlyleliu.github.io/2024/Embedded/EncryptionAlgorithm/"/>
+    <id>http://carlyleliu.github.io/2024/Embedded/EncryptionAlgorithm/</id>
+    <published>2024-08-23T12:22:04.000Z</published>
+    <updated>2024-08-23T11:45:49.846Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;aes&quot;&gt;AES&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU5JUFCJTk4JUU3JUJBJUE3JUU1JThBJUEwJUU1JUFGJTg2JUU2JUEwJTg3JUU1JTg3JTg2&quot;&gt;AES（Advanced Encryption Standard）&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/aes1.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Secure Boot</title>
+    <link href="http://carlyleliu.github.io/2024/Embedded/SecureBoot/"/>
+    <id>http://carlyleliu.github.io/2024/Embedded/SecureBoot/</id>
+    <published>2024-08-19T02:22:04.000Z</published>
+    <updated>2024-08-23T11:41:44.316Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;目的&quot;&gt;目的&lt;/h1&gt;
+&lt;p&gt;安全启动的根本目的是为了防止消费者从软硬件层面对产品的部分关键系统进行读写、调试等高权限的操作。以限制消费者的能力，来达到保护产品的商业机密、知识产权等厂家权益的目的。当然，厂家是不会这样宣传 Secure Boot 的。他们的文案通常都是通过这项技术保护用户的隐私，防止恶意软件修改系统软硬件等等。&lt;/p&gt;
+&lt;p&gt;可以说，&lt;strong&gt;Secure Boot&lt;/strong&gt;&amp;nbsp;的安全模型建立在消费者是攻击者这一假设上。消费者在物理上拥有产品硬件，可以对产品进行物理连接、拆机、改装等等物理上的操作，比较专业的消费者甚至可以使用数字示波器监听 CPU 和 RAM 、eMMC 之间的数据传输来读取非常底层的数据传输。可以说跟传统的安全模型中的攻击者相比根本不在一个层面上。&lt;/p&gt;
+&lt;p&gt;消费者作为攻击者的目的，一般常见的有刷机安装自定义的操作系统（Mod）、绕过厂家封闭的支付平台（IAP）和应用商城安装自定义的应用程序、绕过版权保护系统（DRM）达到复制厂家保护的数字产品内容等等。这些操作往往都会直接影响厂家的利益，因此需要一种能抵抗消费者攻击的安全机制。&lt;/p&gt;
+&lt;p&gt;而且像 eMMC 这种芯片通常都是业界标准化的，攻击者甚至可以把芯片拆下来，然后用市面上现成的通用 eMMC 编程工具来读写上面的内容。&lt;/p&gt;
+&lt;p&gt;Secure Boot 安全机制的原理，就是将最为核心的安全机制整合到最关键的主 CPU 中。因此就算攻击者可以监听电路板上的线路，甚至拆装个别芯片单独调试，也无法破坏 Secure Boot 的安全机制。&lt;/p&gt;
+&lt;h1 id=&quot;ta的安全性&quot;&gt;TA的安全性&lt;/h1&gt;
+&lt;p&gt;保证TA的安全需要做到三点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;唯一性：由设备厂商发布，确保是由设备厂商自己发布的，而不是经过客户自己替换的&lt;/li&gt;
+&lt;li&gt;完整性：除了要保证TA是由设备厂商发布外还需要确保其内容没有经过改动，被用户修改了TA里面的内容&lt;/li&gt;
+&lt;li&gt;保密性：内容经过加密，别人从系统中导出TA固件也无法获取真实的信息，无法解密&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TEE 软件交互流程</title>
+    <link href="http://carlyleliu.github.io/2024/Embedded/TEESoftPipeLine/"/>
+    <id>http://carlyleliu.github.io/2024/Embedded/TEESoftPipeLine/</id>
+    <published>2024-08-17T02:22:04.000Z</published>
+    <updated>2024-08-23T11:37:52.206Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;tee软件框架&quot;&gt;TEE软件框架&lt;/h1&gt;
+&lt;p&gt;TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/tee_soft1.png&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 GlobalPlatform（GP） 全球组织定义的通用 API，其目的是制定一套标准的编程接口，方便开发者在不同软硬件平台下使用同一套代码实现其功能。&lt;/li&gt;
+&lt;li&gt;TEE Client API 通过 ioctl 系统调用对 TEE Driver 进行操作，TEE Driver 是沟通 REE 和 TEE 的桥梁，其通过 SMC 指令，实现将上层的 OpenSession，InvokeCommand，CloseSession 等标准调用的请求转发到 TEE 环境，同时其也会处理来自 TEE 的请求，将请求转发到 TEE Helper Daemon 让其处理。&lt;/li&gt;
+&lt;li&gt;TEE Helper Daemon 是一个辅助进程，用于 TEE 请求 REE 的资源。 一般来说，TEE 需要获得存储在 EMMC 的数据文件（例如安全加密文件，TA 可执行镜像文件等），而读写 EMMC 操作需要复杂的内核驱动的支持，显然如果把读写 EMMC 的驱动放到 TEE 侧运行会使软件复杂度会变得很高，因此 REE 需要一个可以访问这些资源的辅助进程支持，这就是 TEE Helper Daemon 的基本功能。TEE Helper Daemon 在软件逻辑实现上比较简单，以 OP-TEE 的 tee-supplicant 辅助进程为例，整体上是一个循环流程: 其首先通过 ioctl 接口查询是否有来自 TEE 的请求，如果没有，则进入睡眠等待状态，等待 TEE Driver 的唤醒信号，当 TEE Driver 收到来自 TEE 的请求后，会唤醒 tee-supplicant 辅助进程，然后根据请求号进行相应处理（读写数据文件，读写 EMMC 设备分区等），最后返回结果到 TEE Driver，完成一次循环，具体实现可参照《OP-TEE 中 tee-supplicant 执行流程》&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    
+    
+    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>RPMB 简介</title>
     <link href="http://carlyleliu.github.io/2024/Embedded/RPMB/"/>
     <id>http://carlyleliu.github.io/2024/Embedded/RPMB/</id>
     <published>2024-08-15T02:22:04.000Z</published>
-    <updated>2024-08-17T16:40:49.387Z</updated>
+    <updated>2024-08-17T16:40:49.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;信息安全&quot;&gt;信息安全&lt;/h1&gt;
@@ -48,7 +131,7 @@
     <link href="http://carlyleliu.github.io/2024/Embedded/TEEImplementationPrinciple/"/>
     <id>http://carlyleliu.github.io/2024/Embedded/TEEImplementationPrinciple/</id>
     <published>2024-08-14T02:22:04.000Z</published>
-    <updated>2024-08-17T00:23:50.348Z</updated>
+    <updated>2024-08-17T00:23:50.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;trustzone&quot;&gt;TrustZone&lt;/h1&gt;
@@ -73,7 +156,7 @@
     <link href="http://carlyleliu.github.io/2024/Tools/HexoNextUsage/"/>
     <id>http://carlyleliu.github.io/2024/Tools/HexoNextUsage/</id>
     <published>2024-07-14T03:59:43.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;安装-hexo&quot;&gt;安装 hexo&lt;/h1&gt;
@@ -100,7 +183,7 @@
     <link href="http://carlyleliu.github.io/2024/Tools/NasDockerUsage/"/>
     <id>http://carlyleliu.github.io/2024/Tools/NasDockerUsage/</id>
     <published>2024-07-01T03:59:43.000Z</published>
-    <updated>2024-08-17T00:02:45.370Z</updated>
+    <updated>2024-08-17T00:02:45.000Z</updated>
     
     
       
@@ -127,7 +210,7 @@
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACCommonIssue/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACCommonIssue/</id>
     <published>2024-06-30T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;修改uac配置参数后无法正常通信&quot;&gt;修改UAC配置参数后无法正常通信&lt;/h1&gt;
@@ -151,7 +234,7 @@
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCPPM/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCPPM/</id>
     <published>2024-06-28T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;usb-sof统计方法&quot;&gt;USB sof统计方法&lt;/h1&gt;
@@ -186,7 +269,7 @@
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</id>
     <published>2024-06-19T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;buffer-统计&quot;&gt;buffer 统计&lt;/h1&gt;
@@ -210,7 +293,7 @@
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDMA-API/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDMA-API/</id>
     <published>2024-05-02T15:20:16.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;there-are-two-types-of-dma-mappings&quot;&gt;😊 There are two types of DMA mappings&lt;/h1&gt;
@@ -237,7 +320,7 @@
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDeviceIO/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDeviceIO/</id>
     <published>2024-04-22T13:23:06.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;memory-mapped-io&quot;&gt;Memory Mapped IO&lt;/h1&gt;
@@ -265,7 +348,7 @@
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
     <published>2024-04-19T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;同步问题原因&quot;&gt;同步问题原因&lt;/h1&gt;
@@ -294,7 +377,7 @@
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACFU/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACFU/</id>
     <published>2024-04-17T13:13:11.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;音量基本概念&quot;&gt;音量基本概念&lt;/h1&gt;
@@ -339,7 +422,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACHID/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACHID/</id>
     <published>2024-04-09T12:13:21.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;hid-相关概念&quot;&gt;HID 相关概念&lt;/h1&gt;
@@ -365,7 +448,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
     <published>2024-04-03T02:15:21.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;interrupts&quot;&gt;&lt;strong&gt;Interrupts&lt;/strong&gt;&lt;/h1&gt;
@@ -395,7 +478,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
     <published>2024-03-23T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;standard-requests&quot;&gt;&lt;strong&gt;Standard Requests&lt;/strong&gt;&lt;/h1&gt;
@@ -433,7 +516,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
     <published>2024-03-03T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
@@ -460,7 +543,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBOTG/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBOTG/</id>
     <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;otg接口与转换器&quot;&gt;OTG接口与转换器&lt;/h1&gt;
@@ -484,7 +567,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACTopology/"/>
     <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACTopology/</id>
     <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
+    <updated>2024-08-16T23:55:16.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;uac-拓扑结构&quot;&gt;UAC 拓扑结构&lt;/h1&gt;
@@ -517,91 +600,6 @@ dB = 20 * log(65536)
     <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
     
     <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 驱动之 ALSA（九）虚拟声卡 Latency</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAVCardLatency/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAVCardLatency/</id>
-    <published>2024-02-28T14:42:52.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;测试方法&quot;&gt;测试方法&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;两块板子之间通过 I2S 通信，其中一块板子配置为 Slave 另一块板子为 Master&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Master 板端执行 arecord | aplay 或者 gstream 命令 &lt;/p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;arecord -Dhw:2,0 -r 44100 -c 8 -f S32_LE | aplay -Dhw:2,0 -c 8 -r 44100 -f S32_LE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gst-launch-1.0 alsasrc device=device_input_split ! alsasink device=device_output &lt;span class=&quot;built_in&quot;&gt;sync&lt;/span&gt;=&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;Slave 通过 aplay 播放一段 wav 文件&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;通过示波器抓取 Master 板的 I2S 输入和输出端的波形间隔来测量虚拟声卡的 Latency&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
-    
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
-    
-    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
-    
-    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 内核调试（三）VM 参数调试</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxKernel/LinuxKernelDebugVM/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxKernel/LinuxKernelDebugVM/</id>
-    <published>2024-02-27T14:38:04.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;vm-参数说明&quot;&gt;vm 参数说明&lt;/h1&gt;
-&lt;p&gt;Currently, these files are in /proc/sys/vm: &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/vm.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
-    
-    <category term="Linux" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/"/>
-    
-    <category term="Kernel" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/Kernel/"/>
-    
-    
-    <category term="Debug" scheme="http://carlyleliu.github.io/tags/Debug/"/>
-    
-    <category term="Linux" scheme="http://carlyleliu.github.io/tags/Linux/"/>
-    
-    <category term="Kernel" scheme="http://carlyleliu.github.io/tags/Kernel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 驱动之 ALSA（八）Alsa Plugin</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAPlugin/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxAudioALSAPlugin/</id>
-    <published>2024-02-26T14:42:52.000Z</published>
-    <updated>2024-08-16T23:55:16.140Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;pcm-digital-audio-plugins&quot;&gt;PCM (digital audio) plugins&lt;/h1&gt;
-&lt;p&gt;PCM plugins extends functionality and features of PCM devices. The plugins take care about various sample conversions, sample copying among channels and so on.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Audio/"/>
-    
-    
-    <category term="Audio" scheme="http://carlyleliu.github.io/tags/Audio/"/>
-    
-    <category term="ALSA" scheme="http://carlyleliu.github.io/tags/ALSA/"/>
-    
-    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
     
   </entry>
   
