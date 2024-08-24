@@ -687,7 +687,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Image/EIS/dvs1.png"></p>
+          <p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Image/EIS/dvs1.png"></p>
 <h1 id="abstract">Abstract</h1>
 <p>在本文中，我们提出了一种基于商用陀螺仪的强大实时视频稳定和滚动快门校正技术。首先来对相机运动和卷帘快门扭曲进行建模，然后从单个视频捕获自动校准陀螺仪和相机输出。 这种校准使我们能够仅使用陀螺仪数据来有效校正卷帘快门扭曲并稳定视频。</p>
           <!--noindex-->
@@ -936,8 +936,8 @@ K_{内参}^{-1} = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac
 <p>具体可以参考 <span class="exturl" data-url="aHR0cHM6Ly9jYXJseWxlbGl1LmdpdGh1Yi5pby8yMDIwL0FsZ29yaXRobS9pbXVBdHRpdHVkZUNhbGN1bGF0aW9uLw==">imu 姿态解算<i class="fa fa-external-link-alt"></i></span> 一文，我们需要对 IMU 数据做三件事情：</p>
 <ul>
 <li>IMU 坐标系对齐相机坐标系，这一步目的为了将 IMU 的正交三轴数据与 Camera 坐标系对齐。</li>
-<li><p>卡尔曼滤波：为了消除 IMU 的系统误差以及如果要做重力矫正需要做姿态解算（重力对齐）。这里常用的就是卡尔曼滤波和 mahony 滤波，这一层滤波的目的就是为了得到更为准确的相机姿态和相机抖动状态，如下图所示： <img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Image/ISP/lpf.png"></p></li>
-<li><p>平滑滤波：在我们得到相机的抖动状态就可以对相机的姿态做一个平滑滤波（可以采用四元数求平均，或者高斯滤波等算法），这个平滑滤波的目的是为了得到相机防抖后想要得到的状态。 <img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Image/ISP/anl5.png"></p></li>
+<li><p>卡尔曼滤波：为了消除 IMU 的系统误差以及如果要做重力矫正需要做姿态解算（重力对齐）。这里常用的就是卡尔曼滤波和 mahony 滤波，这一层滤波的目的就是为了得到更为准确的相机姿态和相机抖动状态，如下图所示： [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Image/ISP/lpf.png"></p></li>
+<li><p>平滑滤波：在我们得到相机的抖动状态就可以对相机的姿态做一个平滑滤波（可以采用四元数求平均，或者高斯滤波等算法），这个平滑滤波的目的是为了得到相机防抖后想要得到的状态。 [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Image/ISP/anl5.png"></p></li>
 </ul>
 <p>我们将从 Large inner region 曲线或者 Small inner region 曲线到 Input 曲线的变换矩阵记为 <span class="math inline">\(M(\alpha, \beta, \gamma)\)</span> 为了简化模型这里面的数据是已经将 IMU 坐标系变化到相机坐标系下的变换矩阵。</p>
 <p>到这里我们就得到了两条曲线和一个变换矩阵。</p>
@@ -1103,7 +1103,7 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="小孔成像模型">小孔成像模型</h1>
-<p><img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Image/CoordinateSystem1.png"></p>
+<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Image/CoordinateSystem1.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/Camera/CameraCalibrationModel/#more" rel="contents">
@@ -1220,7 +1220,7 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
           <h1 id="概述">概述</h1>
 <p>V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。</p>
 <h1 id="框架">框架</h1>
-<p><img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/Driver/V4L2_Framework.jpeg"></p>
+<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Framework.jpeg"></p>
 <p>该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片模块对应 Soc 的各个子模块，video_device 结构体主要用来控制 Soc 的 video 模块，v4l2_device 会包含多个 v4l2_subdev ，每个 v4l2_subdev 用来控制各自的子模块，某些驱动不需要 v4l2_subdev ，依靠 video 模块就能实现功能。</p>
 <ul>
 <li>video_device：一个字符设备，为用户空间提供设备节点（/dev/videoX），提供系统调用的相关操作，是采集设备的抽象接口。</li>

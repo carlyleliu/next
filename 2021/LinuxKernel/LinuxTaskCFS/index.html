@@ -23,25 +23,25 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.vip","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="原图">
+    <meta name="description" content="[]( 原图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 进程管理（三）CFS 调度器">
 <meta property="og:url" content="http://carlyleliu.vip/2021/LinuxKernel/LinuxTaskCFS/index.html">
 <meta property="og:site_name" content="Matrix">
-<meta property="og:description" content="原图">
+<meta property="og:description" content="[]( 原图">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/TaskCFS.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/scheduler_layer.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/vruntime.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/context.png">
+<meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/TaskCFS.png">
+<meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/scheduler_layer.png">
+<meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/vruntime.png">
+<meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/context.png">
 <meta property="article:published_time" content="2021-10-31T01:49:26.000Z">
-<meta property="article:modified_time" content="2024-08-16T23:55:16.000Z">
+<meta property="article:modified_time" content="2024-08-24T07:33:59.517Z">
 <meta property="article:author" content="CarlyleLiu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Kernel">
 <meta property="article:tag" content="Task">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/TaskCFS.png">
+<meta name="twitter:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/TaskCFS.png">
 
 
 <link rel="canonical" href="http://carlyleliu.vip/2021/LinuxKernel/LinuxTaskCFS/">
@@ -361,7 +361,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/TaskCFS.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2OTgxMzBlM2U3NDA3NGNmMGU2NGU=">原图<i class="fa fa-external-link-alt"></i></span></p>
+    <div class="post-body" itemprop="articleBody"><p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/TaskCFS.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2OTgxMzBlM2U3NDA3NGNmMGU2NGU=">原图<i class="fa fa-external-link-alt"></i></span></p>
 <span id="more"></span>
 <h1 id="公平调度思想的引入">公平调度思想的引入</h1>
 <h2 id="传统调度器时间片悖论">传统调度器时间片悖论</h2>
@@ -374,7 +374,7 @@
 <h1 id="cfs-调度器">CFS 调度器</h1>
 <p>Con Kolivas 的 RSDL 调度器始终没有能够进入 kernel mainline，取而代之的是同样基于公平调度思想的 CFS 调度器，在 CFS 调度器并入主线的同时，仍然提供了模块化的设计，为 RSDL 或者其他的调度器可以进入内核提供了方便。本章我们唯一需要描述的是 Ingo Molnar 如何把完全公平调度的理想照进现实。</p>
 <h2 id="模块化思想的引入">模块化思想的引入</h2>
-<p>从 2.6.23 内核开始，调度器采用了模块化设计的思想，从而把进程调度的软件分成了两个层次，一个是 core scheduler layer，另外一个是 specific scheduler layer： <img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/scheduler_layer.png"></p>
+<p>从 2.6.23 内核开始，调度器采用了模块化设计的思想，从而把进程调度的软件分成了两个层次，一个是 core scheduler layer，另外一个是 specific scheduler layer： [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/scheduler_layer.png"></p>
 <p>从功能层面上看，进程调度仍然分成两个部分，第一个部分是通过负载均衡模块将各个 runnable task 根据负载情况平均分配到各个 CPU runqueue 上去。第二部分的功能是在各个 CPU 的 Main scheduler 和 Tick scheduler 的驱动下进行单个 CPU 上的调度。</p>
 <h2 id="时间粒度">时间粒度</h2>
 <p>Linux 内核的 CFS 调度器已经摒弃了传统的固定时间片的概念了，O（1）调度器会为每一个进程分配一个缺省的时间片。CFS 调度器没有传统的静态时间片的概念，她的时间片是动态的，和当前 CPU 的可运行状态的进程以及它们的优先级相关，因此 CFS 调度器中，时间片是动态变化的。</p>
@@ -396,7 +396,7 @@ Virtual runtime ＝ （physical runtime） * （nice value 0 的权重）/ 当�
 <p>为了计算方便，Linux 内核约定 nice 值 0 对应的权值为 1024，其他 nice 值对应的权重值可以通过查表的方式来获取。内核预先计算好了 sched_prio_to_weight[40]，表的下标对应 nice 值。CFS 调度器规定 nice 值为 0 的进程具有基准权重，并且其值每增加 1 则减少 10%的 CPU 权重，每减少 1 则增加 10%的 CPU 权重（1024-1024*20% = 820）。其中线程的权重定义如下：</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> sched_prio_to_weight[<span class="number">40</span>] = {</span><br><span class="line">    <span class="comment">/* -20 */</span>     <span class="number">88761</span>,     <span class="number">71755</span>,     <span class="number">56483</span>,     <span class="number">46273</span>,     <span class="number">36291</span>,</span><br><span class="line">    <span class="comment">/* -15 */</span>     <span class="number">29154</span>,     <span class="number">23254</span>,     <span class="number">18705</span>,     <span class="number">14949</span>,     <span class="number">11916</span>,</span><br><span class="line">    <span class="comment">/* -10 */</span>      <span class="number">9548</span>,      <span class="number">7620</span>,      <span class="number">6100</span>,      <span class="number">4904</span>,      <span class="number">3906</span>,</span><br><span class="line">    <span class="comment">/*  -5 */</span>      <span class="number">3121</span>,      <span class="number">2501</span>,      <span class="number">1991</span>,      <span class="number">1586</span>,      <span class="number">1277</span>,</span><br><span class="line">    <span class="comment">/*   0 */</span>      <span class="number">1024</span>,       <span class="number">820</span>,       <span class="number">655</span>,       <span class="number">526</span>,       <span class="number">423</span>,</span><br><span class="line">    <span class="comment">/*   5 */</span>       <span class="number">335</span>,       <span class="number">272</span>,       <span class="number">215</span>,       <span class="number">172</span>,       <span class="number">137</span>,</span><br><span class="line">    <span class="comment">/*  10 */</span>       <span class="number">110</span>,        <span class="number">87</span>,        <span class="number">70</span>,        <span class="number">56</span>,        <span class="number">45</span>,</span><br><span class="line">    <span class="comment">/*  15 */</span>        <span class="number">36</span>,        <span class="number">29</span>,        <span class="number">23</span>,        <span class="number">18</span>,        <span class="number">15</span>,</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
 <p>通过上面的公式，我们构造了一个虚拟的世界。二维的（load weight，physical runtime）物理世界变成了一维的 virtual runtime 的虚拟世界。在这个虚拟的世界中，各个进程的 vruntime 可以比较大小，以便确定其在红黑树中的位置，而 CFS 调度器的公平也就是维护虚拟世界 vruntime 的公平，即各个进程的 vruntime 是相等的。</p>
-<p>根据上面的公式，我们可以看出：实际上对于静态优先级是 120（即 nice value 等于 0）的进程，其物理时间轴等于虚拟时间轴，而其他的静态优先级的虚拟时间都是根据其权重和 nice 0 的权重进行尺度缩放。对于更高优先级的进程，其虚拟时间轴过的比较慢，而对于优先级比较低的进程，其虚拟时间轴过的比较快。 <img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/vruntime.png"></p>
+<p>根据上面的公式，我们可以看出：实际上对于静态优先级是 120（即 nice value 等于 0）的进程，其物理时间轴等于虚拟时间轴，而其他的静态优先级的虚拟时间都是根据其权重和 nice 0 的权重进行尺度缩放。对于更高优先级的进程，其虚拟时间轴过的比较慢，而对于优先级比较低的进程，其虚拟时间轴过的比较快。 [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/vruntime.png"></p>
 <p>在进行进程调度时候，调度器需要选择下一个占用 CPU 资源的那个 next thread。对于 CFS 而言，其算法就是从红黑树中找到 left most 的那个 task 并调度其运行。这时候，失去 CPU 执行权的那个 task 会被重新插入红黑树，其在红黑树中的位置是由 task 的 vruntime 值决定的。</p>
 <h1 id="进程切换">进程切换</h1>
 <h2 id="调度时机">调度时机</h2>
@@ -464,7 +464,7 @@ Virtual runtime ＝ （physical runtime） * （nice value 0 的权重）/ 当�
 </ul>
 <p>cpu_context 是一种非常重要的数据结构，它勾画了在切换进程时，CPU 需要保存哪些寄存器，我们称为进程硬件上下文。对于 ARM64 处理器来说，在切换进程时，我们需要把 prev 进程的 x19~x28 寄存器以及 fp、sp 和 pc 寄存器保存到 cpu_context 数据结构中，然后把 next 进程中上一次保存的 cpu_context 数据结构的值恢复到实际硬件的寄存器中，这样就完成了进程的上下文切换。 cpu_context 数据结构的定义如下。</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;arch/arm64/include/<span class="keyword">asm</span>/processor.h&gt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cpu_context</span> {</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x19;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x20;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x21;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x22;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x23;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x24;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x25;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x26;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x27;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> x28;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> fp;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> sp;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> pc;</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
-<p>进程的上下文切换的流程如图所示。在进程切换过程中，进程硬件上下文中重要的寄存器已保存到 prev 进程的 cpu_context 数据结构中，进程硬件上下文包括 x19~x28 寄存器、fp 寄存器、sp 寄存器以及 pc 寄存器，如图（a）所示。然后，把 next 进程存储的上下文恢复到 CPU 中，如图（b）所示。 <img src="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Kernel/context.png"></p>
+<p>进程的上下文切换的流程如图所示。在进程切换过程中，进程硬件上下文中重要的寄存器已保存到 prev 进程的 cpu_context 数据结构中，进程硬件上下文包括 x19~x28 寄存器、fp 寄存器、sp 寄存器以及 pc 寄存器，如图（a）所示。然后，把 next 进程存储的上下文恢复到 CPU 中，如图（b）所示。 [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/context.png"></p>
 <h1 id="参考文献">参考文献</h1>
 <p>《奔跑吧 Linux 内核》<br>
 《Linux 内核设计与实现》</p>

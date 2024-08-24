@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.vip/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.vip/"/>
-  <updated>2024-08-24T02:13:59.951Z</updated>
+  <updated>2024-08-24T07:33:59.517Z</updated>
   <id>http://carlyleliu.vip/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/"/>
     <id>http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/</id>
     <published>2024-08-23T12:22:04.000Z</published>
-    <updated>2024-08-24T02:13:59.951Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;aes&quot;&gt;AES&lt;/h1&gt;
 &lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU5JUFCJTk4JUU3JUJBJUE3JUU1JThBJUEwJUU1JUFGJTg2JUU2JUEwJTg3JUU1JTg3JTg2&quot;&gt;AES（Advanced Encryption Standard）&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/aes1.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/aes1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -44,7 +44,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/SecureBoot/"/>
     <id>http://carlyleliu.vip/2024/Embedded/SecureBoot/</id>
     <published>2024-08-19T02:22:04.000Z</published>
-    <updated>2024-08-23T11:41:44.316Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;目的&quot;&gt;目的&lt;/h1&gt;
@@ -77,11 +77,11 @@
     <link href="http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/"/>
     <id>http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/</id>
     <published>2024-08-17T02:22:04.000Z</published>
-    <updated>2024-08-23T11:37:52.206Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;tee软件框架&quot;&gt;TEE软件框架&lt;/h1&gt;
-&lt;p&gt;TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/tee_soft1.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 [](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft1.png&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 GlobalPlatform（GP） 全球组织定义的通用 API，其目的是制定一套标准的编程接口，方便开发者在不同软硬件平台下使用同一套代码实现其功能。&lt;/li&gt;
 &lt;li&gt;TEE Client API 通过 ioctl 系统调用对 TEE Driver 进行操作，TEE Driver 是沟通 REE 和 TEE 的桥梁，其通过 SMC 指令，实现将上层的 OpenSession，InvokeCommand，CloseSession 等标准调用的请求转发到 TEE 环境，同时其也会处理来自 TEE 的请求，将请求转发到 TEE Helper Daemon 让其处理。&lt;/li&gt;
@@ -104,7 +104,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/RPMB/"/>
     <id>http://carlyleliu.vip/2024/Embedded/RPMB/</id>
     <published>2024-08-15T02:22:04.000Z</published>
-    <updated>2024-08-17T16:40:49.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;信息安全&quot;&gt;信息安全&lt;/h1&gt;
@@ -131,14 +131,14 @@
     <link href="http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/"/>
     <id>http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/</id>
     <published>2024-08-14T02:22:04.000Z</published>
-    <updated>2024-08-17T00:23:50.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;trustzone&quot;&gt;TrustZone&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/tee1.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee1.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;如何区分当前访问状态是安全状态下的访问还是非安全状态下的访问&quot;&gt;如何区分当前访问状态是安全状态下的访问还是非安全状态下的访问？&lt;/h2&gt;
 &lt;p&gt;CPU发出的地址都是虚拟地址，需要经过页表转换才能得到物理地址，其中在pte页表中低12bit（针对4k大小的页表）为控制位，用来控制页表的访问属性，也就是说在页表建立的时候就确定了访问状态是安全状态还是非安全状态，其pte低12bit如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/TEE/tee2.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee2.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -156,7 +156,7 @@
     <link href="http://carlyleliu.vip/2024/Tools/HexoNextUsage/"/>
     <id>http://carlyleliu.vip/2024/Tools/HexoNextUsage/</id>
     <published>2024-07-14T03:59:43.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;安装-hexo&quot;&gt;安装 hexo&lt;/h1&gt;
@@ -210,7 +210,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/</id>
     <published>2024-06-30T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;修改uac配置参数后无法正常通信&quot;&gt;修改UAC配置参数后无法正常通信&lt;/h1&gt;
@@ -234,7 +234,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/</id>
     <published>2024-06-28T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;usb-sof统计方法&quot;&gt;USB sof统计方法&lt;/h1&gt;
@@ -269,11 +269,11 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</id>
     <published>2024-06-19T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;buffer-统计&quot;&gt;buffer 统计&lt;/h1&gt;
-&lt;p&gt;采样间隔 1ms、采样 buffer 里的数据长度 &lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/AudioBufferUsage.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;采样间隔 1ms、采样 buffer 里的数据长度 [](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/AudioBufferUsage.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -293,7 +293,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/</id>
     <published>2024-05-02T15:20:16.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;there-are-two-types-of-dma-mappings&quot;&gt;😊 There are two types of DMA mappings&lt;/h1&gt;
@@ -348,12 +348,12 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
     <published>2024-04-19T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;同步问题原因&quot;&gt;同步问题原因&lt;/h1&gt;
 &lt;h2 id=&quot;usb-isochronous-传输协议无问题&quot;&gt;USB Isochronous 传输（协议无问题）&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/USB_Transfer.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/USB_Transfer.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;isochronous-transfer-同步问题&quot;&gt;Isochronous Transfer 同步问题&lt;/h2&gt;
 &lt;p&gt;电脑播放器播放音乐时：是按一个固定的速率，比如 44.1KHZ，电脑内有一个晶振，可分频出一个 44.1KHZ，进行音乐播放，发给 USB 的数据流速率固定。USB 声卡自己得有一个晶振才能工作，它也可分频出一个 44.1KHZ，供给 I2S 信号或 DAC。&lt;/p&gt;
 &lt;p&gt;问题来了，晶振是有误差的，这两个 44.1KHZ 不可能完全一模一样，电脑可能是 44.100KHZ，USB 声卡可能是 44.098KHZ，误差约 50ppm，很正常的情况。虽然声卡晶振分频出来是 44.098KHZ，但声卡认为它就是工作在 44.100KHZ 下。好吧，如果二者时钟独立运行，那么 1 个小时会误差 0.2 秒，会出现不同步！ 即电脑播了 1 个小时的数据，USB 声卡实际是无法播完的，要多 0.2 秒才能播完。 如果声卡也要 1 小时播完，那这 1 小时就需要丢掉 0.2 秒的数据。&lt;/p&gt;
@@ -377,7 +377,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/</id>
     <published>2024-04-17T13:13:11.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;音量基本概念&quot;&gt;音量基本概念&lt;/h1&gt;
@@ -402,7 +402,7 @@ dB = 20 * log(65536)
 &#92;]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;这非常接近听力最低阈值和产生痛感之间的区别，这个范围被认为非常适合还原音乐。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;音量滑块与声音增幅大小线性变化&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/fu1.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/fu1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -422,13 +422,13 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/</id>
     <published>2024-04-09T12:13:21.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;hid-相关概念&quot;&gt;HID 相关概念&lt;/h1&gt;
 &lt;p&gt;报表描述符由描述 HID 设备的数据项目（Item）组成，Item 的第一个字节（项目前缀）由三部分构成，&lt;strong&gt;即项目类型（item type）、项目标签（item tag）和项目长度（item size）。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;HID 的项目有短项目和长项目两种，其中短项目的格式如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/hid1.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/hid1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -448,7 +448,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
     <published>2024-04-03T02:15:21.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;interrupts&quot;&gt;&lt;strong&gt;Interrupts&lt;/strong&gt;&lt;/h1&gt;
@@ -478,7 +478,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
     <published>2024-03-23T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;standard-requests&quot;&gt;&lt;strong&gt;Standard Requests&lt;/strong&gt;&lt;/h1&gt;
@@ -516,14 +516,14 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
     <published>2024-03-03T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;在许多情况下，音频功能不作为独立设备存在。它是一种能力，与其他功能一起构成了一个“复合”设备。一个很好的例子 DVD-ROM 播放器就是音频、数据存储和传输控制功能的集合。音频功能因此位于设备类层次结构中的接口级别。它由多个接口组成，共同实现音频功能的接口。&lt;/p&gt;
 &lt;p&gt;音频功能被认为是一个“closed box”，具有非常独特的和定义良好的接口到 outside world。音频功能通过它们的音频接口进行寻址。每个音频功能都必须有一个 AudioControl 接口可以有 0 个或多个 AudioStreaming 和 0 个或多个 MIDI Streaming 接口。AudioControl（AC）接口用于访问 function 的音频控件，而 AudioStreaming (AS) 接口用于将音频流传入和传出 function。 MIDI streaming (MS) 接口可用于将 midi 数据流传输到和输出音频功能。单个 AudioControl 接口以及属于同一音频功能的 AudioStreaming 和 MIDI Streaming 接口的集合称为 Audio Interface Collection（AIC）。一个设备可以同时激活多个音频接口集合（AIC）。这些集合用于控制位于同一 composite device 中的多个独立音频功能。通过标准 USB 接口关联机制来描述音频接口集合，通过接口关联描述符 (IAD) 来表示接口绑定。&lt;/p&gt;
 &lt;p&gt;注：所有与 MIDI 相关的信息被分组在一个单独的文档中，MIDI 设备的通用串行总线设备类定义被认为是本规范的一部分。因此，本文档的其余部分将不再提及 MIDI Streaming 接口及其细节。 下图说明了这个概念：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/USB/uac1.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/uac1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -543,13 +543,13 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/</id>
     <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;otg接口与转换器&quot;&gt;OTG接口与转换器&lt;/h1&gt;
 &lt;p&gt;OTG是&quot;On The Go&quot;的英文缩写，字面上可以理解为“安上即可用”。USB传输是主从结构，一切USB传输都有Host发起。比如在开发板上可以插入U盘，这时开发板作为USB Host。但是开发板要跟PC通信，开发板就要作为USB Device。开发板要作为USB Host、USB Device两种角色，可以使用OTG插口：它可以根据硬件电路自动识别自己的角色，切换为USB Host或USB Deivce。&lt;/p&gt;
 &lt;p&gt;OTG插口有多种形态，常用的有Micro USB、Type C，如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Note/OTG1.png&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;[](&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Note/OTG1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -567,7 +567,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/</id>
     <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-24T07:33:59.517Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;uac-拓扑结构&quot;&gt;UAC 拓扑结构&lt;/h1&gt;
