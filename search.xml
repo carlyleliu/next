@@ -4871,9 +4871,9 @@
       
         <tags>
             
-            <tag> ucos </tag>
-            
             <tag> RTOS </tag>
+            
+            <tag> ucos </tag>
             
         </tags>
       
