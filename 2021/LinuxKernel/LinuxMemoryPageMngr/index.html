@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.vip","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="页表寻址过程  这里就是 cpu 将一个虚拟地址转换为物理地址的过程，整个过程是比较繁琐耗时的，因此这个过程一般在一个专门的硬件中完成就是 MMU、MMU 中为了可以加快速度引入了 TLB cache 快速查找 pte。我们需要注意到一点就是到了 PTE 这一级需要提供的是物理地址的页起始地址，这个地址是以 page size 为单位的，对于 4k 的 page，那么 pte 的低 12bit 就">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 内存管理（四）虚拟内存管理">
-<meta property="og:url" content="http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageMngr/index.html">
+<meta property="og:url" content="https://carlyleliu.github.io/2021/LinuxKernel/LinuxMemoryPageMngr/index.html">
 <meta property="og:site_name" content="Matrix">
 <meta property="og:description" content="页表寻址过程  这里就是 cpu 将一个虚拟地址转换为物理地址的过程，整个过程是比较繁琐耗时的，因此这个过程一般在一个专门的硬件中完成就是 MMU、MMU 中为了可以加快速度引入了 TLB cache 快速查找 pte。我们需要注意到一点就是到了 PTE 这一级需要提供的是物理地址的页起始地址，这个地址是以 page size 为单位的，对于 4k 的 page，那么 pte 的低 12bit 就">
 <meta property="og:locale" content="zh_CN">
@@ -53,11 +53,11 @@
 <meta name="twitter:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/pagefindAddress.png">
 
 
-<link rel="canonical" href="http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageMngr/">
+<link rel="canonical" href="https://carlyleliu.github.io/2021/LinuxKernel/LinuxMemoryPageMngr/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageMngr/","path":"2021/LinuxKernel/LinuxMemoryPageMngr/","title":"Linux 内存管理（四）虚拟内存管理"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://carlyleliu.github.io/2021/LinuxKernel/LinuxMemoryPageMngr/","path":"2021/LinuxKernel/LinuxMemoryPageMngr/","title":"Linux 内存管理（四）虚拟内存管理"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Linux 内存管理（四）虚拟内存管理 | Matrix</title>
@@ -284,7 +284,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageMngr/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/2021/LinuxKernel/LinuxMemoryPageMngr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

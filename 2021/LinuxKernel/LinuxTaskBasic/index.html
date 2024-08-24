@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.vip","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="原图 进程的概念 进程是处于执行期的程序以及相关的资源的总称。进程并不仅仅局限于一段可执行程序代码，通常进程还要包含其他资源，像数据段、打开的文件、挂起的信号、处理器状态、一个或多个具有内存映射的内存地址空间及一个或多个执行线程（thread of execution）等。 线程（thread），是在进程中活动的对象。每个线程都拥有一个独立的程序计数器、线程栈和一组进程寄存器，内核调度的对象是线">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 进程管理（一）基本概念">
-<meta property="og:url" content="http://carlyleliu.vip/2021/LinuxKernel/LinuxTaskBasic/index.html">
+<meta property="og:url" content="https://carlyleliu.github.io/2021/LinuxKernel/LinuxTaskBasic/index.html">
 <meta property="og:site_name" content="Matrix">
 <meta property="og:description" content="原图 进程的概念 进程是处于执行期的程序以及相关的资源的总称。进程并不仅仅局限于一段可执行程序代码，通常进程还要包含其他资源，像数据段、打开的文件、挂起的信号、处理器状态、一个或多个具有内存映射的内存地址空间及一个或多个执行线程（thread of execution）等。 线程（thread），是在进程中活动的对象。每个线程都拥有一个独立的程序计数器、线程栈和一组进程寄存器，内核调度的对象是线">
 <meta property="og:locale" content="zh_CN">
@@ -44,11 +44,11 @@
 <meta name="twitter:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Kernel/ProcessBasic.png">
 
 
-<link rel="canonical" href="http://carlyleliu.vip/2021/LinuxKernel/LinuxTaskBasic/">
+<link rel="canonical" href="https://carlyleliu.github.io/2021/LinuxKernel/LinuxTaskBasic/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://carlyleliu.vip/2021/LinuxKernel/LinuxTaskBasic/","path":"2021/LinuxKernel/LinuxTaskBasic/","title":"Linux 进程管理（一）基本概念"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://carlyleliu.github.io/2021/LinuxKernel/LinuxTaskBasic/","path":"2021/LinuxKernel/LinuxTaskBasic/","title":"Linux 进程管理（一）基本概念"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Linux 进程管理（一）基本概念 | Matrix</title>
@@ -275,7 +275,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2021/LinuxKernel/LinuxTaskBasic/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/2021/LinuxKernel/LinuxTaskBasic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
