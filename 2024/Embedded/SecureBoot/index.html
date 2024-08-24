@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot2.png">
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot3.png">
 <meta property="article:published_time" content="2024-08-19T02:22:04.000Z">
-<meta property="article:modified_time" content="2024-08-24T07:33:59.517Z">
+<meta property="article:modified_time" content="2024-08-24T07:38:52.527Z">
 <meta property="article:author" content="CarlyleLiu">
 <meta property="article:tag" content="TEE">
 <meta name="twitter:card" content="summary">
@@ -391,7 +391,7 @@
 <li>BL33 - Non-Trusted Firmware，一般为uboot、linux kernel。</li>
 </ul>
 <p>ATF输出BL1、BL2、BL31，提供BL32和BL33接口。</p>
-<p>启动流程如下： [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot1.png"></p>
+<p>启动流程如下： <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot1.png"></p>
 <h2 id="bl1"><strong>BL1</strong></h2>
 <p>BL1位于ROM中，在EL3下从reset vector处开始运行。（bootrom就是芯片上电运行的（chip-rom的作用就是跳转到bootrom））</p>
 <p>BL1做的工作主要有：</p>
@@ -426,12 +426,12 @@
 <li>负责安全非安全世界切换</li>
 <li>进行安全服务请求的分发</li>
 </ul>
-<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot2.png"></p>
+<p><img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot2.png"></p>
 <p>每个镜像都经公钥验证，公钥存储在已签名的证书中，并可追溯到存储在 SoC 上的一次性可编程 (OTP) 存储器中或 ROM 中的根密钥。</p>
 <h1 id="armv8安全引导的过程"><strong>ARMv8安全引导的过程</strong></h1>
 <p>ARMv8架构之后ARM提供了ATF, BootLoader、TEE镜像文件、Linux内核镜像文件、recovery镜像文件都是由ATF来进行引导和加载而不是由ChipRom来完成的。</p>
 <p><strong>ChipRom只会去验证ATF中bl1的合法性</strong>，后续引导过程同样也是按照链式验签的方式进行，符合TBBR规范。读者可使用git命令从gitHub上获取ATF的所有源代在ARMv8架构中整个安全引导的流程如图下所示。</p>
-<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot3.png"></p>
+<p><img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/secureboot3.png"></p>
 <p>ARMv8架构中引入了ATF，<strong>同时在ATF中提供了安全引导的功能，BootLoader镜像、Linux内核、recovery镜像和TEE OS镜像文件的签名方式都由ATF决定</strong>。当然开发者也可以对ATF进行定制化，修改ATF中的验签过程，但是修改后的验签方案需要符合TBBR规范。</p>
 <p>通过Secure Boot来保证BL32的安全性，然后由BL32来保证TA的安全性，这样就实现了TEE的安全操作环境。</p>
 <h1 id="参考文献">参考文献</h1>

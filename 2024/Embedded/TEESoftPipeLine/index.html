@@ -23,12 +23,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.vip","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="TEE软件框架 TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 [](  REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 Glob">
+    <meta name="description" content="TEE软件框架 TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。   REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 GlobalP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TEE 软件交互流程">
 <meta property="og:url" content="http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/index.html">
 <meta property="og:site_name" content="Matrix">
-<meta property="og:description" content="TEE软件框架 TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 [](  REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 Glob">
+<meta property="og:description" content="TEE软件框架 TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。   REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 GlobalP">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft1.png">
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft2.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft7.png">
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft8.png">
 <meta property="article:published_time" content="2024-08-17T02:22:04.000Z">
-<meta property="article:modified_time" content="2024-08-24T07:33:59.517Z">
+<meta property="article:modified_time" content="2024-08-24T07:38:52.527Z">
 <meta property="article:author" content="CarlyleLiu">
 <meta property="article:tag" content="TEE">
 <meta name="twitter:card" content="summary">
@@ -360,14 +360,14 @@
     
     
     <div class="post-body" itemprop="articleBody"><h1 id="tee软件框架">TEE软件框架</h1>
-<p>TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft1.png"></p>
+<p>TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft1.png"></p>
 <ul>
 <li>REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 GlobalPlatform（GP） 全球组织定义的通用 API，其目的是制定一套标准的编程接口，方便开发者在不同软硬件平台下使用同一套代码实现其功能。</li>
 <li>TEE Client API 通过 ioctl 系统调用对 TEE Driver 进行操作，TEE Driver 是沟通 REE 和 TEE 的桥梁，其通过 SMC 指令，实现将上层的 OpenSession，InvokeCommand，CloseSession 等标准调用的请求转发到 TEE 环境，同时其也会处理来自 TEE 的请求，将请求转发到 TEE Helper Daemon 让其处理。</li>
 <li>TEE Helper Daemon 是一个辅助进程，用于 TEE 请求 REE 的资源。 一般来说，TEE 需要获得存储在 EMMC 的数据文件（例如安全加密文件，TA 可执行镜像文件等），而读写 EMMC 操作需要复杂的内核驱动的支持，显然如果把读写 EMMC 的驱动放到 TEE 侧运行会使软件复杂度会变得很高，因此 REE 需要一个可以访问这些资源的辅助进程支持，这就是 TEE Helper Daemon 的基本功能。TEE Helper Daemon 在软件逻辑实现上比较简单，以 OP-TEE 的 tee-supplicant 辅助进程为例，整体上是一个循环流程: 其首先通过 ioctl 接口查询是否有来自 TEE 的请求，如果没有，则进入睡眠等待状态，等待 TEE Driver 的唤醒信号，当 TEE Driver 收到来自 TEE 的请求后，会唤醒 tee-supplicant 辅助进程，然后根据请求号进行相应处理（读写数据文件，读写 EMMC 设备分区等），最后返回结果到 TEE Driver，完成一次循环，具体实现可参照《OP-TEE 中 tee-supplicant 执行流程》</li>
 </ul>
 <span id="more"></span>
-<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft2.png"></p>
+<p><img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft2.png"></p>
 <ul>
 <li>TEE 侧的 Secure Monitor 的主要作用是实现 REE 和 TEE 环境的切换，转发请求到 Trusted OS。当 Secure Monitor 收到 TEE Driver 的 SMC 请求后，会将 CPU 切换到 Secure 状态，然后转发请求到 Trusted OS 来处理，Trusted OS 会找到请求对应的 Trusted App（TA） 去处理请求，具体逻辑流程会在下一节中详细说明。 另外 Secure Monitor 还用于开机时候 Trusted OS 的引导工作，此内容不在本文的叙述范围，读者可以参看: 《Secure-EL1 Payloads and Dispatchers》</li>
 <li>Trusted OS 是运行在 TEE 侧的小型操作系统，简单来说，其作用是:
@@ -390,8 +390,8 @@
 <li>TA 在 TEE 环境下执行处理，得到的处理结果重新填充到共享内存中，CA 通过共享内存就可以获取到处理结果。</li>
 <li>获得处理结果后，如不需要进一步请求，则由 CA 发起关闭 Session 的请求（CloseSession），Trusted OS 回收 TA 相关资源，最后 CA 发起销毁 Context 的请求（FinalizeContext），完成一次完整交互。</li>
 </ol>
-<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft3.png"> 从以上流程可以看到，整个交互流程主要涉及 InitializeContext，OpenSession，InvokeCommand，CloseSession 和 FinalizeContext 5个操作。 InitializeContext 用于 Trusted OS 分配 TA 运行需要的安全内存，FinalizeContext 则是销毁相应内存，具体流程分别与 OpenSession 和 CloseSession 类似，本文将不对这两个操作赘述。 下面看看 OpenSession，InvokeCommand 和 CloseSession 这几个操作下，各个基础组件的交互时序。</p>
-<p>OpenSession 时序如图3所示，操作步骤如下: [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft4.png"></p>
+<p><img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft3.png"> 从以上流程可以看到，整个交互流程主要涉及 InitializeContext，OpenSession，InvokeCommand，CloseSession 和 FinalizeContext 5个操作。 InitializeContext 用于 Trusted OS 分配 TA 运行需要的安全内存，FinalizeContext 则是销毁相应内存，具体流程分别与 OpenSession 和 CloseSession 类似，本文将不对这两个操作赘述。 下面看看 OpenSession，InvokeCommand 和 CloseSession 这几个操作下，各个基础组件的交互时序。</p>
+<p>OpenSession 时序如图3所示，操作步骤如下: <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft4.png"></p>
 <ol type="1">
 <li>CA 经过 TEE Client API 向 TEE Driver 发送 OpenSession 请求。</li>
 <li>TEE Driver 发送 OpenSession SMC 请求到 Trusted OS，此请求中包含要请求 TA 的唯一标识号（UUID）。</li>
@@ -401,7 +401,7 @@
 <li>TA 加载成功后，Trusted OS 分配一个 Session 操作句柄，并定位到已加载镜像的 TA_OpenSessionEntryPoint 函数入口执行。</li>
 <li>最后，Trusted OS 将分配的 Session 句柄逐级返回，最终 CA 拿到 Session 句柄，以后的 InvokeCommand 将需要依赖此句柄进行调用。</li>
 </ol>
-<p>InvokeCommand 和 CloseSession 的流程与 OpenSession 流程相似，差别在于少了 load TA 的流程，时序图如图4和图5所示。 [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft5.png"> [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft6.png"></p>
+<p>InvokeCommand 和 CloseSession 的流程与 OpenSession 流程相似，差别在于少了 load TA 的流程，时序图如图4和图5所示。 <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft5.png"> <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft6.png"></p>
 <h1 id="tee-example">TEE Example</h1>
 <p>参考https://github.com/linaro-swg/optee_examples</p>
 <h1 id="tee应用举例">TEE应用举例</h1>
@@ -416,10 +416,10 @@
 <li>Fingerprint service:指纹framework，回调hal层相关函数，控制指纹录入解锁等流程</li>
 <li>App：指纹最上层的代码，主要是负责指纹录入解锁调用逻辑</li>
 </ul>
-<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft7.png"></p>
+<p><img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft7.png"></p>
 <h2 id="指纹录入流程">指纹录入流程</h2>
 <p>Hal中指纹的录入流程为：指纹sensor初始化（begin enroll）-&gt;采图(do capture)-&gt;录入（do enroll)-&gt;结束录入(do enroll)-&gt;指纹模板存储（store template）。对应TA的录入流程为：指纹sensor init（begin enroll）-&gt;采图（capture image）-&gt;将采集的指纹数据传输回TA-&gt;录入(do enroll)-&gt;结束录入(end enroll)-&gt;模板加密存储到secure memory（encrypt）。</p>
-<p>HAL中主要进行的是与TA交互，给TA发送指令，同时还会对指纹硬件进行操作，比如指纹sensor上下电等。TA收到CA的command，则需要处理敏感数据和一些安全性要求高的动作，如TA通过secure spi控制指纹sensor采图，图像传输，图像处理，图像比对，模板存储等。这些都是在TEE环境下进行操作的，所以指纹解锁是一种相对比较安全的解锁方式。 [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft8.png"></p>
+<p>HAL中主要进行的是与TA交互，给TA发送指令，同时还会对指纹硬件进行操作，比如指纹sensor上下电等。TA收到CA的command，则需要处理敏感数据和一些安全性要求高的动作，如TA通过secure spi控制指纹sensor采图，图像传输，图像处理，图像比对，模板存储等。这些都是在TEE环境下进行操作的，所以指纹解锁是一种相对比较安全的解锁方式。 <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/tee_soft8.png"></p>
 <h1 id="qa">QA</h1>
 <p><strong>optee是否是多线程的？</strong></p>
 <p>optee支持多核SMP，optee里的线程数是通过静态定义的（一个数组，数组大小决定了线程数量），但是如果cpu是单核那么就只支持单线程，optee的线程不支持时间片轮转，一个cpu核不能通过时间片轮转处理多个TA应用。但是如果是多核cpu，例如4核cpu那么optee最多可以4核同时处理4个TA应用。由于TA里涉及很多加解密操作可能会很耗时导致Linux端出现性能问题（optee在运行的时候，该cpu核无法运行Linux程序）。optee运行期间只有中断可以打断其运行。</p>

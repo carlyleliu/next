@@ -23,18 +23,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.vip","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="概述 V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。 框架 []( 该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片">
+    <meta name="description" content="概述 V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。 框架  该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片模块对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 驱动之 V4L2 子系统">
 <meta property="og:url" content="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverV4L2/index.html">
 <meta property="og:site_name" content="Matrix">
-<meta property="og:description" content="概述 V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。 框架 []( 该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片">
+<meta property="og:description" content="概述 V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。 框架  该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片模块对">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Framework.jpeg">
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Struct.png">
 <meta property="og:image" content="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/entity.png">
 <meta property="article:published_time" content="2020-10-22T05:55:53.000Z">
-<meta property="article:modified_time" content="2024-08-24T07:33:59.517Z">
+<meta property="article:modified_time" content="2024-08-24T07:38:52.707Z">
 <meta property="article:author" content="CarlyleLiu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Driver">
@@ -362,7 +362,7 @@
     <div class="post-body" itemprop="articleBody"><h1 id="概述">概述</h1>
 <p>V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。</p>
 <h1 id="框架">框架</h1>
-<p>[](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Framework.jpeg"></p>
+<p><img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Framework.jpeg"></p>
 <p>该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片模块对应 Soc 的各个子模块，video_device 结构体主要用来控制 Soc 的 video 模块，v4l2_device 会包含多个 v4l2_subdev ，每个 v4l2_subdev 用来控制各自的子模块，某些驱动不需要 v4l2_subdev ，依靠 video 模块就能实现功能。</p>
 <ul>
 <li>video_device：一个字符设备，为用户空间提供设备节点（/dev/videoX），提供系统调用的相关操作，是采集设备的抽象接口。</li>
@@ -373,7 +373,7 @@
 </ul>
 <span id="more"></span>
 <h1 id="数据结构">数据结构</h1>
-<p>整体数据结构如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE3NTE2MTU2Mzc2ODkxMmI1NjMzNGUw">原图<i class="fa fa-external-link-alt"></i></span> [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Struct.png"></p>
+<p>整体数据结构如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE3NTE2MTU2Mzc2ODkxMmI1NjMzNGUw">原图<i class="fa fa-external-link-alt"></i></span> <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Struct.png"></p>
 <ul>
 <li><p>v4l2_device：<br>
 这个是整个输入设备的总结构体，是所有子设备的根节点，负责管理所有子设备。由该结构体引申出来 v4l2_subdev。用于视频输入设备整体的管理，有多少输入设备就有多少个 v4l2_device 抽象（比如一个 USB 摄像头整体就可以看作是一个 V4L2 device）。再往下分是输入子设备，对应的是例如 ISP、CSI、MIPI 等设备，它们是从属于一个 V4L2 device 之下的</p></li>
@@ -388,7 +388,7 @@ control 的结构体抽象，一个 control 就用一个实例化的 v4l2_ctrl �
 <li><p>vb2_queue：<br>
 供内核与用户空间的 buffer 流转接口，输入设备产生了一坨图像数据，在内核里面应该放在哪里呢？能放几个呢？是整段连续的还是还是分段连续的又或者是物理不连续的？用户怎么去取用呢？都是它在管理</p></li>
 </ul>
-<p>entity、link 和 pad 该怎么理解呢，这里在网上找到一张图挺形象的，这里贴出来，如下： [](<img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/entity.png"></p>
+<p>entity、link 和 pad 该怎么理解呢，这里在网上找到一张图挺形象的，这里贴出来，如下： <img src="http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/Driver/entity.png"></p>
 <p>待续。..</p>
 <h1 id="参考文献">参考文献</h1>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZnJlZXNpb24uY29tL2FydGljbGUvMjEwOTk5NTk5Lw==">https://www.freesion.com/article/210999599/<i class="fa fa-external-link-alt"></i></span><br>
