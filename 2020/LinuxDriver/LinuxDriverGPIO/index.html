@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.vip","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="GPIO 概述 以前学习 stm32 的时候看到手册里有关于 gpio 的电路图，如下：   保护二极体： IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的电压输入。当引脚电压高于 VDD 时，上方的二极体导通；当引脚电压低于 VSS 时，下方的二极体导通，防止不正常电压引入晶片导致晶片烧毁 P-MOS 管和 N-MOS 管： 由 P-MOS 管和 N-MOS 管组成的单元电路使得 GPI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 驱动之 GPIO 子系统">
-<meta property="og:url" content="http://carlyleliu.github.io/2020/LinuxDriver/LinuxDriverGPIO/index.html">
+<meta property="og:url" content="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverGPIO/index.html">
 <meta property="og:site_name" content="Matrix">
 <meta property="og:description" content="GPIO 概述 以前学习 stm32 的时候看到手册里有关于 gpio 的电路图，如下：   保护二极体： IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的电压输入。当引脚电压高于 VDD 时，上方的二极体导通；当引脚电压低于 VSS 时，下方的二极体导通，防止不正常电压引入晶片导致晶片烧毁 P-MOS 管和 N-MOS 管： 由 P-MOS 管和 N-MOS 管组成的单元电路使得 GPI">
 <meta property="og:locale" content="zh_CN">
@@ -49,11 +49,11 @@
 <meta name="twitter:image" content="https://raw.githubusercontent.com/carlyleliu/ImageHosting/main/TechnologyBlog/Linux/Driver/gpio.png">
 
 
-<link rel="canonical" href="http://carlyleliu.github.io/2020/LinuxDriver/LinuxDriverGPIO/">
+<link rel="canonical" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverGPIO/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://carlyleliu.github.io/2020/LinuxDriver/LinuxDriverGPIO/","path":"2020/LinuxDriver/LinuxDriverGPIO/","title":"Linux 驱动之 GPIO 子系统"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverGPIO/","path":"2020/LinuxDriver/LinuxDriverGPIO/","title":"Linux 驱动之 GPIO 子系统"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Linux 驱动之 GPIO 子系统 | Matrix</title>
@@ -280,7 +280,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.github.io/2020/LinuxDriver/LinuxDriverGPIO/">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverGPIO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

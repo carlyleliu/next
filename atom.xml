@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Matrix</title>
-  <icon>http://carlyleliu.github.io/images/favicon_200x200.png</icon>
+  <icon>http://carlyleliu.vip/images/favicon_200x200.png</icon>
   <subtitle>CarlyleLiu‘s Blog</subtitle>
-  <link href="http://carlyleliu.github.io/atom.xml" rel="self"/>
+  <link href="http://carlyleliu.vip/atom.xml" rel="self"/>
   
-  <link href="http://carlyleliu.github.io/"/>
+  <link href="http://carlyleliu.vip/"/>
   <updated>2024-08-24T02:13:59.951Z</updated>
-  <id>http://carlyleliu.github.io/</id>
+  <id>http://carlyleliu.vip/</id>
   
   <author>
     <name>CarlyleLiu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Encryption Algorithm</title>
-    <link href="http://carlyleliu.github.io/2024/Embedded/EncryptionAlgorithm/"/>
-    <id>http://carlyleliu.github.io/2024/Embedded/EncryptionAlgorithm/</id>
+    <link href="http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/"/>
+    <id>http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/</id>
     <published>2024-08-23T12:22:04.000Z</published>
     <updated>2024-08-24T02:13:59.951Z</updated>
     
@@ -30,19 +30,19 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/categories/Technology-Blog/TEE/"/>
     
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/tags/TEE/"/>
     
   </entry>
   
   <entry>
     <title>Secure Boot</title>
-    <link href="http://carlyleliu.github.io/2024/Embedded/SecureBoot/"/>
-    <id>http://carlyleliu.github.io/2024/Embedded/SecureBoot/</id>
+    <link href="http://carlyleliu.vip/2024/Embedded/SecureBoot/"/>
+    <id>http://carlyleliu.vip/2024/Embedded/SecureBoot/</id>
     <published>2024-08-19T02:22:04.000Z</published>
     <updated>2024-08-23T11:41:44.316Z</updated>
     
@@ -63,19 +63,19 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/categories/Technology-Blog/TEE/"/>
     
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/tags/TEE/"/>
     
   </entry>
   
   <entry>
     <title>TEE 软件交互流程</title>
-    <link href="http://carlyleliu.github.io/2024/Embedded/TEESoftPipeLine/"/>
-    <id>http://carlyleliu.github.io/2024/Embedded/TEESoftPipeLine/</id>
+    <link href="http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/"/>
+    <id>http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/</id>
     <published>2024-08-17T02:22:04.000Z</published>
     <updated>2024-08-23T11:37:52.206Z</updated>
     
@@ -90,19 +90,19 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/categories/Technology-Blog/TEE/"/>
     
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/tags/TEE/"/>
     
   </entry>
   
   <entry>
     <title>RPMB 简介</title>
-    <link href="http://carlyleliu.github.io/2024/Embedded/RPMB/"/>
-    <id>http://carlyleliu.github.io/2024/Embedded/RPMB/</id>
+    <link href="http://carlyleliu.vip/2024/Embedded/RPMB/"/>
+    <id>http://carlyleliu.vip/2024/Embedded/RPMB/</id>
     <published>2024-08-15T02:22:04.000Z</published>
     <updated>2024-08-17T16:40:49.000Z</updated>
     
@@ -117,19 +117,19 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/categories/Technology-Blog/TEE/"/>
     
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/tags/TEE/"/>
     
   </entry>
   
   <entry>
     <title>TEE 实现原理</title>
-    <link href="http://carlyleliu.github.io/2024/Embedded/TEEImplementationPrinciple/"/>
-    <id>http://carlyleliu.github.io/2024/Embedded/TEEImplementationPrinciple/</id>
+    <link href="http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/"/>
+    <id>http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/</id>
     <published>2024-08-14T02:22:04.000Z</published>
     <updated>2024-08-17T00:23:50.000Z</updated>
     
@@ -142,19 +142,19 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/categories/Technology-Blog/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/categories/Technology-Blog/TEE/"/>
     
     
-    <category term="TEE" scheme="http://carlyleliu.github.io/tags/TEE/"/>
+    <category term="TEE" scheme="http://carlyleliu.vip/tags/TEE/"/>
     
   </entry>
   
   <entry>
     <title>Blog 搭建</title>
-    <link href="http://carlyleliu.github.io/2024/Tools/HexoNextUsage/"/>
-    <id>http://carlyleliu.github.io/2024/Tools/HexoNextUsage/</id>
+    <link href="http://carlyleliu.vip/2024/Tools/HexoNextUsage/"/>
+    <id>http://carlyleliu.vip/2024/Tools/HexoNextUsage/</id>
     <published>2024-07-14T03:59:43.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -169,19 +169,19 @@
     
     
     
-    <category term="Share" scheme="http://carlyleliu.github.io/categories/Share/"/>
+    <category term="Share" scheme="http://carlyleliu.vip/categories/Share/"/>
     
-    <category term="Tools" scheme="http://carlyleliu.github.io/categories/Share/Tools/"/>
+    <category term="Tools" scheme="http://carlyleliu.vip/categories/Share/Tools/"/>
     
     
-    <category term="Tools" scheme="http://carlyleliu.github.io/tags/Tools/"/>
+    <category term="Tools" scheme="http://carlyleliu.vip/tags/Tools/"/>
     
   </entry>
   
   <entry>
     <title>NAS 有趣的 Docker 推荐</title>
-    <link href="http://carlyleliu.github.io/2024/Tools/NasDockerUsage/"/>
-    <id>http://carlyleliu.github.io/2024/Tools/NasDockerUsage/</id>
+    <link href="http://carlyleliu.vip/2024/Tools/NasDockerUsage/"/>
+    <id>http://carlyleliu.vip/2024/Tools/NasDockerUsage/</id>
     <published>2024-07-01T03:59:43.000Z</published>
     <updated>2024-08-17T00:02:45.000Z</updated>
     
@@ -196,19 +196,19 @@
     
     
     
-    <category term="Share" scheme="http://carlyleliu.github.io/categories/Share/"/>
+    <category term="Share" scheme="http://carlyleliu.vip/categories/Share/"/>
     
-    <category term="Tools" scheme="http://carlyleliu.github.io/categories/Share/Tools/"/>
+    <category term="Tools" scheme="http://carlyleliu.vip/categories/Share/Tools/"/>
     
     
-    <category term="Tools" scheme="http://carlyleliu.github.io/tags/Tools/"/>
+    <category term="Tools" scheme="http://carlyleliu.vip/tags/Tools/"/>
     
   </entry>
   
   <entry>
     <title>UAC（九）UAC 常见问题</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACCommonIssue/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACCommonIssue/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/</id>
     <published>2024-06-30T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -218,21 +218,21 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>UAC（八）PPM 评估</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCPPM/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCPPM/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/</id>
     <published>2024-06-28T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -253,21 +253,21 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>UAC（七）Async Feedback</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</id>
     <published>2024-06-19T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -277,21 +277,21 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>Linux 驱动之基础（二）DMA-API</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDMA-API/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDMA-API/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/</id>
     <published>2024-05-02T15:20:16.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -302,23 +302,23 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="Linux" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/"/>
+    <category term="Linux" scheme="http://carlyleliu.vip/categories/Technology-Blog/Linux/"/>
     
-    <category term="Driver" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/Driver/"/>
+    <category term="Driver" scheme="http://carlyleliu.vip/categories/Technology-Blog/Linux/Driver/"/>
     
     
-    <category term="Linux" scheme="http://carlyleliu.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="http://carlyleliu.vip/tags/Linux/"/>
     
-    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    <category term="Driver" scheme="http://carlyleliu.vip/tags/Driver/"/>
     
   </entry>
   
   <entry>
     <title>Linux 驱动之基础（一）Device-I/O</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDeviceIO/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxDriverBaseDeviceIO/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDeviceIO/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDeviceIO/</id>
     <published>2024-04-22T13:23:06.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -330,23 +330,23 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="Linux" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/"/>
+    <category term="Linux" scheme="http://carlyleliu.vip/categories/Technology-Blog/Linux/"/>
     
-    <category term="Driver" scheme="http://carlyleliu.github.io/categories/Technology-Blog/Linux/Driver/"/>
+    <category term="Driver" scheme="http://carlyleliu.vip/categories/Technology-Blog/Linux/Driver/"/>
     
     
-    <category term="Linux" scheme="http://carlyleliu.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="http://carlyleliu.vip/tags/Linux/"/>
     
-    <category term="Driver" scheme="http://carlyleliu.github.io/tags/Driver/"/>
+    <category term="Driver" scheme="http://carlyleliu.vip/tags/Driver/"/>
     
   </entry>
   
   <entry>
     <title>UAC（六）UAC 同步方式</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
     <published>2024-04-19T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -361,21 +361,21 @@
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>UAC（五）Feature Unit</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACFU/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACFU/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/</id>
     <published>2024-04-17T13:13:11.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -406,21 +406,21 @@ dB = 20 * log(65536)
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>UAC（四）HID</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACHID/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACHID/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/</id>
     <published>2024-04-09T12:13:21.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -432,21 +432,21 @@ dB = 20 * log(65536)
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>UAC（三）Spec-Interrupt</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
     <published>2024-04-03T02:15:21.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -462,21 +462,21 @@ dB = 20 * log(65536)
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>UAC（二）Spec-Requests</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
     <published>2024-03-23T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -500,21 +500,21 @@ dB = 20 * log(65536)
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>UAC（一）Spec-Functional Characteristics</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
     <published>2024-03-03T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -527,21 +527,21 @@ dB = 20 * log(65536)
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
   <entry>
     <title>USB OTG</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBOTG/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBOTG/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/</id>
     <published>2024-03-01T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -553,19 +553,19 @@ dB = 20 * log(65536)
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
   </entry>
   
   <entry>
     <title>UAC（零）UAC Topology</title>
-    <link href="http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACTopology/"/>
-    <id>http://carlyleliu.github.io/2024/LinuxDriver/LinuxUSBUACTopology/</id>
+    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/"/>
+    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/</id>
     <published>2024-03-01T05:15:01.000Z</published>
     <updated>2024-08-16T23:55:16.000Z</updated>
     
@@ -592,14 +592,14 @@ dB = 20 * log(65536)
     
     
     
-    <category term="Technology Blog" scheme="http://carlyleliu.github.io/categories/Technology-Blog/"/>
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
     
-    <category term="USB" scheme="http://carlyleliu.github.io/categories/Technology-Blog/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="http://carlyleliu.github.io/tags/USB/"/>
+    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
     
-    <category term="UAC" scheme="http://carlyleliu.github.io/tags/UAC/"/>
+    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
     
   </entry>
   
