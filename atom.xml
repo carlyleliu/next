@@ -25,7 +25,7 @@
     
     
     <summary type="html">&lt;h1 id=&quot;aes&quot;&gt;AES&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86&quot;&gt;AES（Advanced Encryption Standard）&lt;/a&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU5JUFCJTk4JUU3JUJBJUE3JUU1JThBJUEwJUU1JUFGJTg2JUU2JUEwJTg3JUU1JTg3JTg2&quot;&gt;AES（Advanced Encryption Standard）&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/aes1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
@@ -190,7 +190,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;已迁移到notion page，请访问:&lt;a href=&quot;https://carlyleliu.notion.site/Docker-View-0db8f6c4c57241b2ab7e98a7c98660a7&quot;&gt;NAS 有趣的 Docker</summary>
+    <summary type="html">&lt;p&gt;已迁移到notion page，请访问:&lt;span class=&quot;exturl&quot;</summary>
         
       
     
@@ -382,7 +382,7 @@
     
     <summary type="html">&lt;h1 id=&quot;音量基本概念&quot;&gt;音量基本概念&lt;/h1&gt;
 &lt;h3 id=&quot;声学中的分贝&quot;&gt;&lt;strong&gt;声学中的分贝&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;因为人耳的特性，我们对声音的大小感知呈对数关系。所以我们通常用分贝描述声音大小，分贝（decibel）是量度两个相同单位之数量比例的单位，主要用于度量声音强度，常用 dB 表示。声学中，声音的强度定义为声压。计算分贝值时采用 20 微帕斯卡为参考值（通常被认为是人类的最少听觉响应值，大约是 3 米以外飞行的蚊子声音）。这一参考值是人类对声音能够感知的 &lt;a href=&quot;https://so.csdn.net/so/search?q=%E9%98%88%E5%80%BC&amp;amp;spm=1001.2101.3001.7020&quot;&gt;阈值&lt;/a&gt; 下限。声压是场量，因此使用声压计算分贝时使用下述版本的公式：&lt;/p&gt;
+&lt;p&gt;因为人耳的特性，我们对声音的大小感知呈对数关系。所以我们通常用分贝描述声音大小，分贝（decibel）是量度两个相同单位之数量比例的单位，主要用于度量声音强度，常用 dB 表示。声学中，声音的强度定义为声压。计算分贝值时采用 20 微帕斯卡为参考值（通常被认为是人类的最少听觉响应值，大约是 3 米以外飞行的蚊子声音）。这一参考值是人类对声音能够感知的 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9zby5jc2RuLm5ldC9zby9zZWFyY2g/cT0lRTklOTglODglRTUlODAlQkMmc3BtPTEwMDEuMjEwMS4zMDAxLjcwMjA=&quot;&gt;阈值&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 下限。声压是场量，因此使用声压计算分贝时使用下述版本的公式：&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
 L_p = 20log_{10}(&#92;frac{p_{rms}}{p_{ref}})dB
 &#92;]&lt;/span&gt;&lt;/p&gt;
