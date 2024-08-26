@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.vip/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.vip/"/>
-  <updated>2024-08-24T07:39:59.307Z</updated>
+  <updated>2024-08-26T13:05:19.954Z</updated>
   <id>http://carlyleliu.vip/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/"/>
     <id>http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/</id>
     <published>2024-08-23T12:22:04.000Z</published>
-    <updated>2024-08-24T07:39:59.307Z</updated>
+    <updated>2024-08-26T13:05:19.954Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;aes&quot;&gt;AES&lt;/h1&gt;
-&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU5JUFCJTk4JUU3JUJBJUE3JUU1JThBJUEwJUU1JUFGJTg2JUU2JUEwJTg3JUU1JTg3JTg2&quot;&gt;AES（Advanced Encryption Standard）&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86&quot;&gt;AES（Advanced Encryption Standard）&lt;/a&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/TEE/aes1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
@@ -44,7 +44,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/SecureBoot/"/>
     <id>http://carlyleliu.vip/2024/Embedded/SecureBoot/</id>
     <published>2024-08-19T02:22:04.000Z</published>
-    <updated>2024-08-24T07:38:52.527Z</updated>
+    <updated>2024-08-26T13:05:19.994Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;目的&quot;&gt;目的&lt;/h1&gt;
@@ -77,7 +77,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/"/>
     <id>http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/</id>
     <published>2024-08-17T02:22:04.000Z</published>
-    <updated>2024-08-24T07:38:52.527Z</updated>
+    <updated>2024-08-26T13:05:20.004Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;tee软件框架&quot;&gt;TEE软件框架&lt;/h1&gt;
@@ -104,7 +104,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/RPMB/"/>
     <id>http://carlyleliu.vip/2024/Embedded/RPMB/</id>
     <published>2024-08-15T02:22:04.000Z</published>
-    <updated>2024-08-24T07:38:52.527Z</updated>
+    <updated>2024-08-26T13:05:19.974Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;信息安全&quot;&gt;信息安全&lt;/h1&gt;
@@ -131,7 +131,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/"/>
     <id>http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/</id>
     <published>2024-08-14T02:22:04.000Z</published>
-    <updated>2024-08-24T07:38:52.527Z</updated>
+    <updated>2024-08-26T13:05:20.004Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;trustzone&quot;&gt;TrustZone&lt;/h1&gt;
@@ -156,7 +156,7 @@
     <link href="http://carlyleliu.vip/2024/Tools/HexoNextUsage/"/>
     <id>http://carlyleliu.vip/2024/Tools/HexoNextUsage/</id>
     <published>2024-07-14T03:59:43.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.484Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;安装-hexo&quot;&gt;安装 hexo&lt;/h1&gt;
@@ -183,14 +183,14 @@
     <link href="http://carlyleliu.vip/2024/Tools/NasDockerUsage/"/>
     <id>http://carlyleliu.vip/2024/Tools/NasDockerUsage/</id>
     <published>2024-07-01T03:59:43.000Z</published>
-    <updated>2024-08-17T00:02:45.000Z</updated>
+    <updated>2024-08-26T13:05:20.484Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;已迁移到notion page，请访问:&lt;span class=&quot;exturl&quot;</summary>
+    <summary type="html">&lt;p&gt;已迁移到notion page，请访问:&lt;a href=&quot;https://carlyleliu.notion.site/Docker-View-0db8f6c4c57241b2ab7e98a7c98660a7&quot;&gt;NAS 有趣的 Docker</summary>
         
       
     
@@ -210,7 +210,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/</id>
     <published>2024-06-30T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;修改uac配置参数后无法正常通信&quot;&gt;修改UAC配置参数后无法正常通信&lt;/h1&gt;
@@ -234,7 +234,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/</id>
     <published>2024-06-28T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;usb-sof统计方法&quot;&gt;USB sof统计方法&lt;/h1&gt;
@@ -269,7 +269,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</id>
     <published>2024-06-19T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;buffer-统计&quot;&gt;buffer 统计&lt;/h1&gt;
@@ -293,7 +293,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/</id>
     <published>2024-05-02T15:20:16.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.094Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;there-are-two-types-of-dma-mappings&quot;&gt;😊 There are two types of DMA mappings&lt;/h1&gt;
@@ -320,7 +320,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDeviceIO/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDeviceIO/</id>
     <published>2024-04-22T13:23:06.000Z</published>
-    <updated>2024-08-16T23:55:16.000Z</updated>
+    <updated>2024-08-26T13:05:20.094Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;memory-mapped-io&quot;&gt;Memory Mapped IO&lt;/h1&gt;
@@ -348,7 +348,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
     <published>2024-04-19T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;同步问题原因&quot;&gt;同步问题原因&lt;/h1&gt;
@@ -377,12 +377,12 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/</id>
     <published>2024-04-17T13:13:11.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;音量基本概念&quot;&gt;音量基本概念&lt;/h1&gt;
 &lt;h3 id=&quot;声学中的分贝&quot;&gt;&lt;strong&gt;声学中的分贝&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;因为人耳的特性，我们对声音的大小感知呈对数关系。所以我们通常用分贝描述声音大小，分贝（decibel）是量度两个相同单位之数量比例的单位，主要用于度量声音强度，常用 dB 表示。声学中，声音的强度定义为声压。计算分贝值时采用 20 微帕斯卡为参考值（通常被认为是人类的最少听觉响应值，大约是 3 米以外飞行的蚊子声音）。这一参考值是人类对声音能够感知的 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9zby5jc2RuLm5ldC9zby9zZWFyY2g/cT0lRTklOTglODglRTUlODAlQkMmc3BtPTEwMDEuMjEwMS4zMDAxLjcwMjA=&quot;&gt;阈值&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 下限。声压是场量，因此使用声压计算分贝时使用下述版本的公式：&lt;/p&gt;
+&lt;p&gt;因为人耳的特性，我们对声音的大小感知呈对数关系。所以我们通常用分贝描述声音大小，分贝（decibel）是量度两个相同单位之数量比例的单位，主要用于度量声音强度，常用 dB 表示。声学中，声音的强度定义为声压。计算分贝值时采用 20 微帕斯卡为参考值（通常被认为是人类的最少听觉响应值，大约是 3 米以外飞行的蚊子声音）。这一参考值是人类对声音能够感知的 &lt;a href=&quot;https://so.csdn.net/so/search?q=%E9%98%88%E5%80%BC&amp;amp;spm=1001.2101.3001.7020&quot;&gt;阈值&lt;/a&gt; 下限。声压是场量，因此使用声压计算分贝时使用下述版本的公式：&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
 L_p = 20log_{10}(&#92;frac{p_{rms}}{p_{ref}})dB
 &#92;]&lt;/span&gt;&lt;/p&gt;
@@ -422,7 +422,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/</id>
     <published>2024-04-09T12:13:21.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;hid-相关概念&quot;&gt;HID 相关概念&lt;/h1&gt;
@@ -448,7 +448,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
     <published>2024-04-03T02:15:21.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;interrupts&quot;&gt;&lt;strong&gt;Interrupts&lt;/strong&gt;&lt;/h1&gt;
@@ -478,7 +478,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
     <published>2024-03-23T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;standard-requests&quot;&gt;&lt;strong&gt;Standard Requests&lt;/strong&gt;&lt;/h1&gt;
@@ -516,7 +516,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
     <published>2024-03-03T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
@@ -543,7 +543,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/</id>
     <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.234Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;otg接口与转换器&quot;&gt;OTG接口与转换器&lt;/h1&gt;
@@ -567,7 +567,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/</id>
     <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-24T07:38:52.707Z</updated>
+    <updated>2024-08-26T13:05:20.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;uac-拓扑结构&quot;&gt;UAC 拓扑结构&lt;/h1&gt;
