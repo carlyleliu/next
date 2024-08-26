@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.vip/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.vip/"/>
-  <updated>2024-08-26T13:05:19.954Z</updated>
+  <updated>2024-08-26T14:22:08.844Z</updated>
   <id>http://carlyleliu.vip/</id>
   
   <author>
@@ -15,6 +15,292 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Odriver 之测速</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/odriverSpeed/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/odriverSpeed/</id>
+    <published>2024-08-26T13:05:19.824Z</published>
+    <updated>2024-08-26T14:22:08.844Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;传感器&quot;&gt;传感器&lt;/h1&gt;
+&lt;h2 id=&quot;绝对磁编码器&quot;&gt;绝对磁编码器&lt;/h2&gt;
+&lt;p&gt;绝对磁编码器比较简单，直接读寄存器就可以。实际使用中需要配合径向冲磁的磁铁使用，且最好能远离其他可能造成磁场变化的器件；其次需要注意角度更新频率，动态特性等参数。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/Actuator/"/>
+    
+    
+    <category term="Motor" scheme="http://carlyleliu.vip/tags/Motor/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="Odriver" scheme="http://carlyleliu.vip/tags/Odriver/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/tags/Actuator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openshoe 算法</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/openshoe/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/openshoe/</id>
+    <published>2024-08-26T13:05:19.824Z</published>
+    <updated>2024-08-26T14:22:44.464Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;概述&lt;/h1&gt;
+&lt;p&gt;openshoe 是一种通过惯性测量元件 (IMU) 来对运动进行积分以得到路径的控制算法。算法的核心是 ZUPT（零速度更新算法），在只有 IMU 惯性测量元件的情况下获得路径只能通过对加速度积分得到速度，再将速度对时间进行积分得到路径，这里如果不能对积分得到的速度进行有效的校正那么这个速度误差会时刻对时间进行积分，导致路径完全失效，因此必须采取有效手段及时对速度误差进行校正以得到较为准确的路径信息，ZUPT 就是一种基于检测零速度进行路径积分校正的算法。该算法的关键是对零速度的准确检测。&lt;/p&gt;
+&lt;h1 id=&quot;零速度检测算法&quot;&gt;零速度检测算法&lt;/h1&gt;
+&lt;p&gt;openshoe 采用广义似然检测算法对零速度进行检测，以判断 IMU 是否处于静止状态。&lt;/p&gt;
+&lt;h2 id=&quot;广义似然检测原理&quot;&gt;广义似然检测原理&lt;/h2&gt;
+&lt;p&gt;要理解广义似然检测原理需要先熟悉几个概率论中相关的概念，详细如下：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/Actuator/"/>
+    
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/tags/Actuator/"/>
+    
+    <category term="IMU" scheme="http://carlyleliu.vip/tags/IMU/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>odriver 之 SVM</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/odriverSVM/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/odriverSVM/</id>
+    <published>2024-08-26T13:05:19.814Z</published>
+    <updated>2024-08-26T14:22:27.564Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;源码&quot;&gt;源码&lt;/h1&gt;
+&lt;p&gt;SVM 函数的 alpha 和 beta 的值是经过了标幺化，基准值为 （最大相电压），也就是说 alpha 和 beta 的范围是 [-1,1]。约束：alpha-beta 向量的大小不得大于 $  $。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/Actuator/"/>
+    
+    
+    <category term="Motor" scheme="http://carlyleliu.vip/tags/Motor/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="Odriver" scheme="http://carlyleliu.vip/tags/Odriver/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/tags/Actuator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>foc 相关算法</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/focRelatedAlgorithms/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/focRelatedAlgorithms/</id>
+    <published>2024-08-26T13:05:19.804Z</published>
+    <updated>2024-08-26T14:21:08.144Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;mtpa&quot;&gt;MTPA&lt;/h1&gt;
+&lt;h2 id=&quot;为什么要用-mtpa&quot;&gt;为什么要用 MTPA&lt;/h2&gt;
+&lt;p&gt;当电机采用 id=0 的控制策略，这种控制方法忽略了磁阻转矩的作用，电磁转钜方程如下：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+&#92;tau _e = &#92;frac{3}{2}p[k_e &#92;cdot i_q + (L_d - L_q)&#92;cdot i_d &#92;cdot i_q]
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;转矩分为永磁转矩 Tr 和磁阻转矩 Tm，而 id=0 只剩下 Tr。这会导致电流的利用率不高，系统的效率降低。所以 id=0 的控制比较适用于隐极式电机（Ld=Lq），而对于凸极式电机并不最优，所以需要重新考虑控制策略。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/Actuator/"/>
+    
+    
+    <category term="Motor" scheme="http://carlyleliu.vip/tags/Motor/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/tags/Actuator/"/>
+    
+    <category term="FOC" scheme="http://carlyleliu.vip/tags/FOC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IMU 姿态解算</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/imuAttitudeCalculation/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/imuAttitudeCalculation/</id>
+    <published>2024-08-26T13:05:19.804Z</published>
+    <updated>2024-08-26T14:21:20.884Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;imu-通过加速度计解算姿态角&quot;&gt;IMU 通过加速度计解算姿态角&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Image/imuOrigin.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;通过三角函数可以将加速度计三个轴的角速度解算为姿态角，其中 &lt;span class=&quot;math inline&quot;&gt;&#92;(&#92;alpha&#92;)&lt;/span&gt; , &lt;span class=&quot;math inline&quot;&gt;&#92;(&#92;beta&#92;)&lt;/span&gt; 和 &lt;span class=&quot;math inline&quot;&gt;&#92;(&#92;gamma&#92;)&lt;/span&gt;（ &lt;span class=&quot;math inline&quot;&gt;&#92;(&#92;gamma&#92;)&lt;/span&gt; 是 z 轴与重力加速度之间的夹角）与三个轴之间的关系如上图所示：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+&#92;begin{aligned}
+&amp;amp;&#92;beta = arcsin(&#92;frac{a_x}{g}) &#92;&#92;
+&amp;amp;&#92;gamma  = arcsin(&#92;frac{a_y}{g})
+&#92;end{aligned}
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中重力加速度 $ g $ 的取值使用三轴角速度的矢量和即：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+g = &#92;sqrt{a_x^{2} + a_y^{2} + a_z^{2}}
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;将 g 的值带入上式可以得到：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+&#92;begin{aligned}
+&amp;amp;&#92;beta = arctan(&#92;frac{a_x}{&#92;sqrt{a_y^{2} + a_z^{2}}}) &#92;&#92;
+&amp;amp;&#92;gamma  = arctan(&#92;frac{a_y}{&#92;sqrt{a_x^{2} + a_z^{2}}})
+&#92;end{aligned}
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中 α 为俯仰角 pitch，β 为滚转角 roll，其中航向角 yaw 是没有办法通过加速度计来计算的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Image" scheme="http://carlyleliu.vip/categories/Technology-Blog/Image/"/>
+    
+    <category term="Stabilization" scheme="http://carlyleliu.vip/categories/Technology-Blog/Image/Stabilization/"/>
+    
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="IMU" scheme="http://carlyleliu.vip/tags/IMU/"/>
+    
+    <category term="EIS" scheme="http://carlyleliu.vip/tags/EIS/"/>
+    
+    <category term="Image" scheme="http://carlyleliu.vip/tags/Image/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IMU 误差模型及校准</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/imuCalibration/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/imuCalibration/</id>
+    <published>2024-08-26T13:05:19.804Z</published>
+    <updated>2024-08-26T14:21:47.864Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;传感器误差模型&quot;&gt;传感器误差模型&lt;/h1&gt;
+&lt;p&gt;对于理想的 IMU 三轴加速度计两两正交，构成一个正交的三轴直角坐标系，加速度计每一轴单独测量该轴的加速度，而陀螺仪则测量该轴的角速度。在实际的真实 IMU 中由于制造工艺的误差，三个坐标轴不可能完全两两正交，加速度计与陀螺仪的坐标系也不会完全重合，并且单个传感器也不是完全精确的。在实际器件中将数字输出量转化为实际物理量的 scale 参数在不同轴上是不同的，但是设备生产商都会提供一个默认的 scale 参数用于转换所有轴的数据，而且数字量的输出还会受到零偏（传感器在静止情况下也会有微小量的输出）的影响，这些就是造成 IMU 传感器的系统误差。&lt;/p&gt;
+&lt;p&gt;我们取实际器件的加速度计坐标系为 AF, 陀螺仪坐标系为 GF，根据 AF 和 GF 分别建立对应的正交坐标系 AOF 和 GOF，其建立约束为&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AOF 的 x 轴与 AF 的 x 轴重合。&lt;/li&gt;
+&lt;li&gt;AOF 的 y 轴位于 AF 的 x 与 y 轴的平面中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于 GOF 的建立约束与 AOF 的约束类比建立。最后再建立一个正交机体坐标系 BF，BF 通常与 AF 和 GF 之间有一个小角度的偏差。在非正交坐标系（AF 或 GF）中测量得到的物理量&lt;span class=&quot;math inline&quot;&gt;&#92;(s^S&#92;)&lt;/span&gt;可以转换到机体坐标系 BF 中得到&lt;span class=&quot;math inline&quot;&gt;&#92;(s^B&#92;)&lt;/span&gt;于是得到下式：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
+s^B = Ts^S, 
+T = &#92;begin{bmatrix}
+1 &amp;amp; -&#92;beta_{yz}  &amp;amp; &#92;beta_{zy} &#92;&#92; 
+&#92;beta_{xz} &amp;amp; 1 &amp;amp; -&#92;beta_{zx} &#92;&#92; 
+-&#92;beta_{xy} &amp;amp; &#92;beta_{yx} &amp;amp; 1 
+&#92;end{bmatrix}   &#92;tag{1}
+&#92;]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;&#92;(s^B 和 s^S&#92;)&lt;/span&gt; 表示加速度或角速度在机体坐标系 BF 和加速度坐标系 AF 或陀螺仪坐标系 GF 下测量表示量，&lt;span class=&quot;math inline&quot;&gt;&#92;(&#92;beta_{ij}&#92;)&lt;/span&gt; 表示加速度或陀螺仪的 i 轴绕机体坐标系 BF 的 j 轴的旋转角度。如图二所示： &lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Image/imuErr.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Image" scheme="http://carlyleliu.vip/categories/Technology-Blog/Image/"/>
+    
+    <category term="Stabilization" scheme="http://carlyleliu.vip/categories/Technology-Blog/Image/Stabilization/"/>
+    
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="IMU" scheme="http://carlyleliu.vip/tags/IMU/"/>
+    
+    <category term="EIS" scheme="http://carlyleliu.vip/tags/EIS/"/>
+    
+    <category term="Image" scheme="http://carlyleliu.vip/tags/Image/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FOC 电流采样</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/FOCCurrentSampling/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/FOCCurrentSampling/</id>
+    <published>2024-08-26T13:05:19.794Z</published>
+    <updated>2024-08-26T14:20:38.034Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;采样点&quot;&gt;采样点&lt;/h1&gt;
+&lt;p&gt;在基尔霍夫定律下，三相电流的合应该等于 0，因此只需要获取亮相电流就可以重构出完整的三相电流。&lt;/p&gt;
+&lt;p&gt;对于 STM32 一般通过高级定时器的 channel4 作为 ADC 的触发源，对于下桥臂电流采样，需要在下桥臂 MOS 管导筒的时候才能去采样，而且需要在 MOS 管导通时间以及电流稳定后才能采样到比较可靠的电流。 &lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Algorithm/r3_2_1.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/Actuator/"/>
+    
+    
+    <category term="Motor" scheme="http://carlyleliu.vip/tags/Motor/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/tags/Actuator/"/>
+    
+    <category term="FOC" scheme="http://carlyleliu.vip/tags/FOC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FOC 原理</title>
+    <link href="http://carlyleliu.vip/2024/Algorithm/focPrinciple/"/>
+    <id>http://carlyleliu.vip/2024/Algorithm/focPrinciple/</id>
+    <published>2024-08-26T13:05:19.794Z</published>
+    <updated>2024-08-26T14:20:51.364Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;物理学基础概念&quot;&gt;物理学基础概念&lt;/h1&gt;
+&lt;h2 id=&quot;左手定则&quot;&gt;左手定则&lt;/h2&gt;
+&lt;p&gt;将左手的食指，中指和拇指伸直，使其在空间内相互垂直。食指方向代表磁场的方向（从 N 级到 S 级），中指代表电流的方向（从正极到负极），那拇指所指的方向就是受力的方向。可用于判断安培力（运动导体所受到的力）和洛伦兹力（运动电荷所受的力）。 &lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Algorithm/leftHandRule.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;右手定则&quot;&gt;右手定则&lt;/h2&gt;
+&lt;p&gt;伸开右手，使拇指与其余四个手指垂直，并且都与手掌在同一平面内；让磁感线垂直于手心进入，并使拇指指向导线运动方向，这时四指所指的方向就是感应电流的方向。用于判断导体在做切割磁场时产生的电流方向。 &lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Algorithm/rightHandRule.jpg&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/categories/Technology-Blog/Robot/Actuator/"/>
+    
+    
+    <category term="Motor" scheme="http://carlyleliu.vip/tags/Motor/"/>
+    
+    <category term="Robot" scheme="http://carlyleliu.vip/tags/Robot/"/>
+    
+    <category term="Actuator" scheme="http://carlyleliu.vip/tags/Actuator/"/>
+    
+    <category term="FOC" scheme="http://carlyleliu.vip/tags/FOC/"/>
+    
+  </entry>
   
   <entry>
     <title>Encryption Algorithm</title>
@@ -309,9 +595,9 @@
     <category term="Driver" scheme="http://carlyleliu.vip/categories/Technology-Blog/Linux/Driver/"/>
     
     
-    <category term="Driver" scheme="http://carlyleliu.vip/tags/Driver/"/>
-    
     <category term="Linux" scheme="http://carlyleliu.vip/tags/Linux/"/>
+    
+    <category term="Driver" scheme="http://carlyleliu.vip/tags/Driver/"/>
     
   </entry>
   
@@ -337,269 +623,9 @@
     <category term="Driver" scheme="http://carlyleliu.vip/categories/Technology-Blog/Linux/Driver/"/>
     
     
-    <category term="Driver" scheme="http://carlyleliu.vip/tags/Driver/"/>
-    
     <category term="Linux" scheme="http://carlyleliu.vip/tags/Linux/"/>
     
-  </entry>
-  
-  <entry>
-    <title>UAC（六）UAC 同步方式</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
-    <published>2024-04-19T05:15:01.000Z</published>
-    <updated>2024-08-26T13:05:20.244Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;同步问题原因&quot;&gt;同步问题原因&lt;/h1&gt;
-&lt;h2 id=&quot;usb-isochronous-传输协议无问题&quot;&gt;USB Isochronous 传输（协议无问题）&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/USB_Transfer.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;isochronous-transfer-同步问题&quot;&gt;Isochronous Transfer 同步问题&lt;/h2&gt;
-&lt;p&gt;电脑播放器播放音乐时：是按一个固定的速率，比如 44.1KHZ，电脑内有一个晶振，可分频出一个 44.1KHZ，进行音乐播放，发给 USB 的数据流速率固定。USB 声卡自己得有一个晶振才能工作，它也可分频出一个 44.1KHZ，供给 I2S 信号或 DAC。&lt;/p&gt;
-&lt;p&gt;问题来了，晶振是有误差的，这两个 44.1KHZ 不可能完全一模一样，电脑可能是 44.100KHZ，USB 声卡可能是 44.098KHZ，误差约 50ppm，很正常的情况。虽然声卡晶振分频出来是 44.098KHZ，但声卡认为它就是工作在 44.100KHZ 下。好吧，如果二者时钟独立运行，那么 1 个小时会误差 0.2 秒，会出现不同步！ 即电脑播了 1 个小时的数据，USB 声卡实际是无法播完的，要多 0.2 秒才能播完。 如果声卡也要 1 小时播完，那这 1 小时就需要丢掉 0.2 秒的数据。&lt;/p&gt;
-&lt;p&gt;所以二者的时钟必须要同步一致才行，这就是 UAC 同步问题的原因，因此 USB 音频规定了一是采用“等时传输模式”，二是设备需要指定为 3 种同步方式之一：同步（synchronous），适应（adaptive），异步（asynchronous）。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UAC（五）Feature Unit</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/</id>
-    <published>2024-04-17T13:13:11.000Z</published>
-    <updated>2024-08-26T13:05:20.244Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;音量基本概念&quot;&gt;音量基本概念&lt;/h1&gt;
-&lt;h3 id=&quot;声学中的分贝&quot;&gt;&lt;strong&gt;声学中的分贝&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;因为人耳的特性，我们对声音的大小感知呈对数关系。所以我们通常用分贝描述声音大小，分贝（decibel）是量度两个相同单位之数量比例的单位，主要用于度量声音强度，常用 dB 表示。声学中，声音的强度定义为声压。计算分贝值时采用 20 微帕斯卡为参考值（通常被认为是人类的最少听觉响应值，大约是 3 米以外飞行的蚊子声音）。这一参考值是人类对声音能够感知的 &lt;a href=&quot;https://so.csdn.net/so/search?q=%E9%98%88%E5%80%BC&amp;amp;spm=1001.2101.3001.7020&quot;&gt;阈值&lt;/a&gt; 下限。声压是场量，因此使用声压计算分贝时使用下述版本的公式：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
-L_p = 20log_{10}(&#92;frac{p_{rms}}{p_{ref}})dB
-&#92;]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;其中的 pref 是标准参考声压值 20 微帕。&lt;/p&gt;
-&lt;h3 id=&quot;分贝声音变化范围&quot;&gt;&lt;strong&gt;分贝声音变化范围&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;在编程中，我们可以用以下公式计算两个声音之间的动态范围，单位为分贝：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
-dB = 20 * log(A1 / A2)
-&#92;]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;其中 A1 和 A2 是两个声音的振幅，在程序中表示每个声音样本的大小。声音采样大小（也就是量化深度）为 1bit 时，动态范围为 0，因为只可能有一个振幅。采样大小为 8bit 也就是一个字节时，最大振幅是最小振幅的 256 倍。因此，动态范围是 48 分贝，计算公式如下：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
-dB = 20 * log(256)
-&#92;]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;48 分贝的动态范围大约是一个安静房间和一台运行着电动割草机之间的区别。如果将声音采样大小增加一倍到 16bit，产生的动态范围则为 96 分贝，计算公式如下：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[
-dB = 20 * log(65536)
-&#92;]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;这非常接近听力最低阈值和产生痛感之间的区别，这个范围被认为非常适合还原音乐。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;音量滑块与声音增幅大小线性变化&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/fu1.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UAC（四）HID</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/</id>
-    <published>2024-04-09T12:13:21.000Z</published>
-    <updated>2024-08-26T13:05:20.244Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;hid-相关概念&quot;&gt;HID 相关概念&lt;/h1&gt;
-&lt;p&gt;报表描述符由描述 HID 设备的数据项目（Item）组成，Item 的第一个字节（项目前缀）由三部分构成，&lt;strong&gt;即项目类型（item type）、项目标签（item tag）和项目长度（item size）。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;HID 的项目有短项目和长项目两种，其中短项目的格式如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/hid1.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UAC（三）Spec-Interrupt</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
-    <published>2024-04-03T02:15:21.000Z</published>
-    <updated>2024-08-26T13:05:20.244Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;interrupts&quot;&gt;&lt;strong&gt;Interrupts&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;中断用于通知 host 音频功能的当前状态发生了变化。本规范目前定义了两种不同类型的中断：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Memory Change: 某些内部实体的内存位置已更新。可以通知主机软件，以便采取适当的行动。&lt;/li&gt;
-&lt;li&gt;Control Change: 音频函数内部的某些可寻址控件更改了其一个或多个属性值&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;时钟实体、单元或终端内部的音频控件可以是中断的源。同样，AudioControl 接口中的任何可寻址 Control 或任何 AudioStreaming 接口都可以生成中断。最后所有与音频端点相关的可寻址控件都可能是中断的源。&lt;/p&gt;
-&lt;p&gt;音频功能的状态变化通常是由发生的特定事件引起的。事件可以是用户发起的，也可以是设备发起的。用户发起的插孔插入或移除是用户发起事件的典型示例。主机可以切换选择器或混音器，以便从刚刚插入的设备 （例如耳机）播放音频，并停止从当前设备（例如扬声器） 播放音频。设备启动事件的示例如下：一个外部设备 （例如 A/V 接收器可以在其光学数字输出上从 PCM 转换为 AC-3 编码数据，这取决于当前正在播放的材料如果此设备连接到具有自动检测功能的音频功能的光学数字输入，则该音频功能上的接口可能需要重新配置（例如，启动 AC-3 解码过程），这可能会导致所有其他接口的格式发生某些变化，甚至变得不可用。设备可以发出中断，让主机知道音频功能需要重新配置。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UAC（二）Spec-Requests</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
-    <published>2024-03-23T05:15:01.000Z</published>
-    <updated>2024-08-26T13:05:20.244Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;standard-requests&quot;&gt;&lt;strong&gt;Standard Requests&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;音频设备类支持 USB 规范的第 9 节“USB 设备框架”中描述的标准请求。音频设备类对标准请求的值没有提出特定的要求。&lt;/p&gt;
-&lt;h1 id=&quot;class-specific-requests&quot;&gt;&lt;strong&gt;Class-Specific Requests&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;特定于类的请求用于设置和获取与音频相关的控件。这些控制器主要分为两组：那些操纵音频功能的控制器，如音量，音调，选择器的位置等。以及那些影响等时终点上的数据传输的数据，比如当前的采样频率。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;AudioControl Requests&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对音频功能的控制是通过操作嵌入在音频功能的实体中的单个控件的属性来执行的。特定于类的音频控件接口描述符包含一组实体描述符，每个描述符指示实体中存在哪些控件。音频控制请求总是指向音频功能的单个音频控制接口。请求包含足够的信息（实体 ID、控制选择器和通道号），以便音频功能决定必须路由特定请求的位置。同样的请求布局也可用于特定于供应商的对扩展单元的请求。但是，本规范不包括它们&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;AudioStreaming Requests&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对音频流接口的类特定行为的控制是通过操作接口控制或端点控制来执行的。它们可以是特定于类的（如本规范中定义的）或特定于供应商的。对于任何一种情况，都可以使用相同的请求布局。音频流请求被定向到控件所在的收件人。这可以是接口或它关联的等时端点。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;音频设备类支持一个附加的特定于类的请求：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Memory Requests&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;音频功能中的每个可寻址实体（时钟实体、终端、单元、接口和端点）都可以公开一个内存映射接口，从而提供通用地操作实体的方法。特定于供应商的控制实现可以基于这种类型的请求。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;原则上，所有的请求都是可选的。如果音频功能不支持某个请求，则必须通过在向该功能发出请求时停止控制管道来表明这一点。但是，如果支持某个集合请求，则也必须支持关联的 Get 请求。可以支持获取请求，而不支持关联的集合请求。如果支持中断，那么就必须实现所有必要的 Get 请求，这些请求需要从音频功能中检索适当的信息，以响应这些中断&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UAC（一）Spec-Functional Characteristics</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
-    <published>2024-03-03T05:15:01.000Z</published>
-    <updated>2024-08-26T13:05:20.244Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;在许多情况下，音频功能不作为独立设备存在。它是一种能力，与其他功能一起构成了一个“复合”设备。一个很好的例子 DVD-ROM 播放器就是音频、数据存储和传输控制功能的集合。音频功能因此位于设备类层次结构中的接口级别。它由多个接口组成，共同实现音频功能的接口。&lt;/p&gt;
-&lt;p&gt;音频功能被认为是一个“closed box”，具有非常独特的和定义良好的接口到 outside world。音频功能通过它们的音频接口进行寻址。每个音频功能都必须有一个 AudioControl 接口可以有 0 个或多个 AudioStreaming 和 0 个或多个 MIDI Streaming 接口。AudioControl（AC）接口用于访问 function 的音频控件，而 AudioStreaming (AS) 接口用于将音频流传入和传出 function。 MIDI streaming (MS) 接口可用于将 midi 数据流传输到和输出音频功能。单个 AudioControl 接口以及属于同一音频功能的 AudioStreaming 和 MIDI Streaming 接口的集合称为 Audio Interface Collection（AIC）。一个设备可以同时激活多个音频接口集合（AIC）。这些集合用于控制位于同一 composite device 中的多个独立音频功能。通过标准 USB 接口关联机制来描述音频接口集合，通过接口关联描述符 (IAD) 来表示接口绑定。&lt;/p&gt;
-&lt;p&gt;注：所有与 MIDI 相关的信息被分组在一个单独的文档中，MIDI 设备的通用串行总线设备类定义被认为是本规范的一部分。因此，本文档的其余部分将不再提及 MIDI Streaming 接口及其细节。 下图说明了这个概念：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Linux/USB/uac1.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>USB OTG</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/</id>
-    <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-26T13:05:20.234Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;otg接口与转换器&quot;&gt;OTG接口与转换器&lt;/h1&gt;
-&lt;p&gt;OTG是&quot;On The Go&quot;的英文缩写，字面上可以理解为“安上即可用”。USB传输是主从结构，一切USB传输都有Host发起。比如在开发板上可以插入U盘，这时开发板作为USB Host。但是开发板要跟PC通信，开发板就要作为USB Device。开发板要作为USB Host、USB Device两种角色，可以使用OTG插口：它可以根据硬件电路自动识别自己的角色，切换为USB Host或USB Deivce。&lt;/p&gt;
-&lt;p&gt;OTG插口有多种形态，常用的有Micro USB、Type C，如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://carlyleliu.com:11313/ImageHosting/TechnologyBlog/Note/OTG1.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UAC（零）UAC Topology</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/</id>
-    <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-26T13:05:20.244Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;uac-拓扑结构&quot;&gt;UAC 拓扑结构&lt;/h1&gt;
-&lt;p&gt;UAC 规范描述了以下类型的标准单元和终端，这些单元和终端被认为足以代表当前和近期可用的大多数视频功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;输入终端 - Input Terminal (IT)&lt;/li&gt;
-&lt;li&gt;输出终端 - Output Terminal (OT)&lt;/li&gt;
-&lt;li&gt;混音器单元 - Mixer Unit (MU)&lt;/li&gt;
-&lt;li&gt;选择器单元 - Selector Unit (SU)&lt;/li&gt;
-&lt;li&gt;特性单元 - Feature Unit (FU)&lt;/li&gt;
-&lt;li&gt;采样速率转换单元 - Sampling Rate Converter Unit (RU)&lt;/li&gt;
-&lt;li&gt;特效单元 - Effect Unit (EU)&lt;/li&gt;
-&lt;li&gt;处理单元 (PU) - Processing Unit (PU)&lt;/li&gt;
-&lt;li&gt;扩展单元 (XU) - Extension Unit (XU)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;除了单元和终端外，还引入了时钟实体的概念。定义了三种类型的时钟实体&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;时钟源 - Clock Source (CS)&lt;/li&gt;
-&lt;li&gt;时钟选择器 - Clock Selector (CX)&lt;/li&gt;
-&lt;li&gt;时钟倍频器 - Clock Multiplier (CM)&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
+    <category term="Driver" scheme="http://carlyleliu.vip/tags/Driver/"/>
     
   </entry>
   
