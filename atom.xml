@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.vip/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.vip/"/>
-  <updated>2024-08-30T17:22:48.138Z</updated>
+  <updated>2024-08-30T17:32:49.048Z</updated>
   <id>http://carlyleliu.vip/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/"/>
     <id>http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/</id>
     <published>2024-08-23T12:22:04.000Z</published>
-    <updated>2024-08-30T17:22:48.138Z</updated>
+    <updated>2024-08-30T17:32:49.048Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;aes&quot;&gt;AES&lt;/h1&gt;
+    <summary type="html">&lt;h2 id=&quot;aes&quot;&gt;# AES&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86&quot;&gt;AES（Advanced Encryption Standard）&lt;/a&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/aes1.png&quot;&gt;&lt;/p&gt;</summary>
     
