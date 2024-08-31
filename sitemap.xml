@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://carlyleliu.vip/2024/Tools/HexoNextUsage/</loc>
+    
+    <lastmod>2024-08-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/</loc>
     
     <lastmod>2024-08-30</lastmod>
@@ -533,7 +542,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</loc>
+    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -542,7 +551,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</loc>
+    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -785,15 +794,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryOptimization/</loc>
-    
-    <lastmod>2024-08-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageAllocate/</loc>
     
     <lastmod>2024-08-28</lastmod>
@@ -812,7 +812,16 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageRecycle/</loc>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryOptimization/</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemorymigrate/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -830,7 +839,16 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemorymigrate/</loc>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageRecycle/</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxSyncRCU/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -857,7 +875,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxSyncRCU/</loc>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxSyncSpinLock/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -867,15 +885,6 @@
   
   <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxSyncSem/</loc>
-    
-    <lastmod>2024-08-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxSyncSpinLock/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -1118,7 +1127,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart2/</loc>
+    <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart3/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -1127,7 +1136,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart3/</loc>
+    <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart2/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -1263,15 +1272,6 @@
   
   <url>
     <loc>http://carlyleliu.vip/2022/Science/linearAlgebra/</loc>
-    
-    <lastmod>2024-08-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://carlyleliu.vip/2024/Tools/HexoNextUsage/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -1523,7 +1523,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2019/Note/ArchLinuxConfig/</loc>
+    <loc>http://carlyleliu.vip/2019/Note/Buildroot/</loc>
     
     <lastmod>2024-08-26</lastmod>
     
@@ -1532,7 +1532,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2019/Note/Buildroot/</loc>
+    <loc>http://carlyleliu.vip/2019/Note/ArchLinuxConfig/</loc>
     
     <lastmod>2024-08-26</lastmod>
     
