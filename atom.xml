@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.vip/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.vip/"/>
-  <updated>2024-08-31T02:49:20.586Z</updated>
+  <updated>2024-08-31T16:18:51.946Z</updated>
   <id>http://carlyleliu.vip/</id>
   
   <author>
@@ -15,6 +15,113 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CPUIdle</title>
+    <link href="http://carlyleliu.vip/2024/Debug/LinuxCpuIdle/"/>
+    <id>http://carlyleliu.vip/2024/Debug/LinuxCpuIdle/</id>
+    <published>2024-08-30T11:44:15.000Z</published>
+    <updated>2024-08-31T16:18:51.946Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;cpu-idle实现原理&quot;&gt;cpu idle实现原理&lt;/h1&gt;
+&lt;p&gt;通过wfi或wfe指令进入low-power-state。在low-power-state下cpu core保持上电状态，但其大部分时钟停止或者进入时钟门限。这意味着core的绝大部分都处于static state，唯一消耗的功率是用于寻找中断唤醒条件的泄漏电流和少量逻辑时钟。进入low-power-state后将暂停当前的工作直到某个中断或event事件发生会退出low-power-state进入正常运行state。&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://lsky.carlyleliu.vip/i/2024/09/01/66d340abd8310.png&quot; alt=&quot;cpuidle1.png&quot;&gt;&lt;figcaption&gt;cpuidle1.png&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://lsky.carlyleliu.vip/i/2024/09/01/66d340d3ac355.png&quot; alt=&quot;cpuidle2.png&quot;&gt;&lt;figcaption&gt;cpuidle2.png&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;其唤醒wfi或wfe的interrupt或者event请参考《The AArch64 System Level Programmers’ Model 》D1.6 Mechanisms for entering a low-power state&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://lsky.carlyleliu.vip/i/2024/09/01/66d3410fd3e5d.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Programming" scheme="http://carlyleliu.vip/categories/Technology-Blog/Programming/"/>
+    
+    <category term="Debug" scheme="http://carlyleliu.vip/categories/Technology-Blog/Programming/Debug/"/>
+    
+    
+    <category term="Programming" scheme="http://carlyleliu.vip/tags/Programming/"/>
+    
+    <category term="Debug" scheme="http://carlyleliu.vip/tags/Debug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一次UAC 丢包问题分析过程</title>
+    <link href="http://carlyleliu.vip/2024/Debug/LinuxperfdebugExample/"/>
+    <id>http://carlyleliu.vip/2024/Debug/LinuxperfdebugExample/</id>
+    <published>2024-08-28T11:44:15.000Z</published>
+    <updated>2024-08-31T16:09:41.486Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;实验&quot;&gt;实验&lt;/h1&gt;
+&lt;p&gt;测试发现period_size=512或者256时均不发生丢包，于是做以下实验：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&quot;header&quot;&gt;
+&lt;th&gt;sampling rate&lt;/th&gt;
+&lt;th&gt;channel&lt;/th&gt;
+&lt;th&gt;bit depth&lt;/th&gt;
+&lt;th&gt;period_size&lt;/th&gt;
+&lt;th&gt;package size&lt;/th&gt;
+&lt;th&gt;是否丢包&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td&gt;48k&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;16bit&lt;/td&gt;
+&lt;td&gt;1024&lt;/td&gt;
+&lt;td&gt;4096Byte&lt;/td&gt;
+&lt;td&gt;丢包&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td&gt;48k&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;16bit&lt;/td&gt;
+&lt;td&gt;1024&lt;/td&gt;
+&lt;td&gt;2048Byte&lt;/td&gt;
+&lt;td&gt;丢包&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td&gt;48k&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;16bit&lt;/td&gt;
+&lt;td&gt;512&lt;/td&gt;
+&lt;td&gt;2048Byte&lt;/td&gt;
+&lt;td&gt;不丢包&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td&gt;48k&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;16bit&lt;/td&gt;
+&lt;td&gt;512&lt;/td&gt;
+&lt;td&gt;4096Byte&lt;/td&gt;
+&lt;td&gt;不丢包&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;通过实验发现，丢包与period_size相关与package size无关。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
+    
+    <category term="Programming" scheme="http://carlyleliu.vip/categories/Technology-Blog/Programming/"/>
+    
+    <category term="Debug" scheme="http://carlyleliu.vip/categories/Technology-Blog/Programming/Debug/"/>
+    
+    
+    <category term="Programming" scheme="http://carlyleliu.vip/tags/Programming/"/>
+    
+    <category term="Debug" scheme="http://carlyleliu.vip/tags/Debug/"/>
+    
+  </entry>
   
   <entry>
     <title>Encryption Algorithm</title>
@@ -524,71 +631,6 @@ dB = 20 * log(65536)
 &lt;p&gt;音频功能被认为是一个“closed box”，具有非常独特的和定义良好的接口到 outside world。音频功能通过它们的音频接口进行寻址。每个音频功能都必须有一个 AudioControl 接口可以有 0 个或多个 AudioStreaming 和 0 个或多个 MIDI Streaming 接口。AudioControl（AC）接口用于访问 function 的音频控件，而 AudioStreaming (AS) 接口用于将音频流传入和传出 function。 MIDI streaming (MS) 接口可用于将 midi 数据流传输到和输出音频功能。单个 AudioControl 接口以及属于同一音频功能的 AudioStreaming 和 MIDI Streaming 接口的集合称为 Audio Interface Collection（AIC）。一个设备可以同时激活多个音频接口集合（AIC）。这些集合用于控制位于同一 composite device 中的多个独立音频功能。通过标准 USB 接口关联机制来描述音频接口集合，通过接口关联描述符 (IAD) 来表示接口绑定。&lt;/p&gt;
 &lt;p&gt;注：所有与 MIDI 相关的信息被分组在一个单独的文档中，MIDI 设备的通用串行总线设备类定义被认为是本规范的一部分。因此，本文档的其余部分将不再提及 MIDI Streaming 接口及其细节。 下图说明了这个概念：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/USB/uac1.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-    <category term="UAC" scheme="http://carlyleliu.vip/tags/UAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>USB OTG</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBOTG/</id>
-    <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;otg接口与转换器&quot;&gt;OTG接口与转换器&lt;/h1&gt;
-&lt;p&gt;OTG是&quot;On The Go&quot;的英文缩写，字面上可以理解为“安上即可用”。USB传输是主从结构，一切USB传输都有Host发起。比如在开发板上可以插入U盘，这时开发板作为USB Host。但是开发板要跟PC通信，开发板就要作为USB Device。开发板要作为USB Host、USB Device两种角色，可以使用OTG插口：它可以根据硬件电路自动识别自己的角色，切换为USB Host或USB Deivce。&lt;/p&gt;
-&lt;p&gt;OTG插口有多种形态，常用的有Micro USB、Type C，如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Note/OTG1.png&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Technology Blog" scheme="http://carlyleliu.vip/categories/Technology-Blog/"/>
-    
-    <category term="USB" scheme="http://carlyleliu.vip/categories/Technology-Blog/USB/"/>
-    
-    
-    <category term="USB" scheme="http://carlyleliu.vip/tags/USB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UAC（零）UAC Topology</title>
-    <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/"/>
-    <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACTopology/</id>
-    <published>2024-03-01T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;uac-拓扑结构&quot;&gt;UAC 拓扑结构&lt;/h1&gt;
-&lt;p&gt;UAC 规范描述了以下类型的标准单元和终端，这些单元和终端被认为足以代表当前和近期可用的大多数视频功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;输入终端 - Input Terminal (IT)&lt;/li&gt;
-&lt;li&gt;输出终端 - Output Terminal (OT)&lt;/li&gt;
-&lt;li&gt;混音器单元 - Mixer Unit (MU)&lt;/li&gt;
-&lt;li&gt;选择器单元 - Selector Unit (SU)&lt;/li&gt;
-&lt;li&gt;特性单元 - Feature Unit (FU)&lt;/li&gt;
-&lt;li&gt;采样速率转换单元 - Sampling Rate Converter Unit (RU)&lt;/li&gt;
-&lt;li&gt;特效单元 - Effect Unit (EU)&lt;/li&gt;
-&lt;li&gt;处理单元 (PU) - Processing Unit (PU)&lt;/li&gt;
-&lt;li&gt;扩展单元 (XU) - Extension Unit (XU)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;除了单元和终端外，还引入了时钟实体的概念。定义了三种类型的时钟实体&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;时钟源 - Clock Source (CS)&lt;/li&gt;
-&lt;li&gt;时钟选择器 - Clock Selector (CX)&lt;/li&gt;
-&lt;li&gt;时钟倍频器 - Clock Multiplier (CM)&lt;/li&gt;
-&lt;/ul&gt;</summary>
     
     
     

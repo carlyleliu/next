@@ -157,13 +157,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">179</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -207,6 +207,243 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Program/rtosDesign/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/Program/rtosDesign/" class="post-title-link" itemprop="url">RTOS 的设计</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/RTOS/" itemprop="url" rel="index"><span itemprop="name">RTOS</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/Program/rtosDesign/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Program/rtosDesign/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="何为实时性">何为实时性？</h1>
+<p>RTOS 的实时性该怎么理解呢？快速？确定性？</p>
+<h2 id="从中断控制器视角看实时性">从中断控制器视角看实时性</h2>
+<p>我们知道一般都是 Cortex-M 跑 RTOS，Cortex-A 很少跑 RTOS，一般都是跑 Linux、Android 这些非实时系统。如果单纯从速度来看 A 核在高主频加持下一定会具有更快的速度才对呀，那 M 核的竞争力在哪里呢？实际上这就是 A 核和 M 核在设计上的两个不同方向的取舍。</p>
+<p>首先我们看 NVIC 中断控制器的设计：</p>
+<ul>
+<li>中断延迟波动很小：NVIC 支持中断嵌套，这样即使当前中断在处理中且非常耗时也没关系，因为可以通过高优先级的中断来响应更紧急的事件，这样中断延迟就不依赖与中断处理时间了，从设计上保证了延迟的确定性。</li>
+<li>中断延迟小：NVIC 在不同的中断会跳转到不同地址运行，且可以直接在硬中断上下文中执行中断程序，这样整个 pipeline 很短，且 NVIC 还支持<strong>尾链</strong>这个概念进一步降低延迟（当高优先级的 ISR 抢占低优先级 ISR 时，处理器会跳过上下文保存和恢复，直接处理第二个 ISR，没有任何额外的开销）。通常 NVIC 中断响应时间在十几到几十 ns 之间。</li>
+</ul>
+<p>NVIC 中断控制器在实时性上是满足要求的，快速和确定性都满足，但是他不适合处理大量中断，假如每秒要处理成千上万（这个中断数量对于 A 核来讲是很常见的 UAC、UVC，DSP 等一个模块每秒可能就有几千个中断）个中断，那么对 NVIC 来讲这是灾难性的，各种嵌套设计各种性能评估，除此之外对于多核系统 NVIC 也没有一套将中断分配给各个 CPU 核的机制，那么就无法充分利用多核的优势提高中断处理能力。而 A 核的 GIC 控制器就是为解决这些问题而设计的。</p>
+<p>Cortex-A 核的 GIC 中断控制器设计很复杂，但是不支持中断嵌套，由 Distributor、CPU interface、Redistributor、ITS 组成，Distributor 具有仲裁和分发的作用，会将中断发送给 Redistributor，Redistributor 将中断发送给 CPU interface。这样第一解决了多核问题，其次 GIC 没有中断嵌套，当中断发生后跳转到一个固定地址，然后判断中断源进行下一步跳转，在 Linux 中接下来就会分为中断上半部和下半部机制，上半部在硬中断上下文快速响应然后返回，以更快处理其他中断兼顾实时性。中断下半部为了不同的应用需求设计了 softirq、tasklet、workqueue、thread 等机制来实现大量的中断任务，兼顾高性能。GIC 中断控制器解决了 NVIC 的问题但是却丢了硬实时性。</p>
+<ul>
+<li>中断延迟比较大：中断处理的 PipeLine 比较长，中断响应延迟一般在 us 级别。</li>
+<li>中断延迟波动比较大：中断不支持嵌套那么就一定要等上一个中断返回才能得到处理，这个延迟就不可控了。</li>
+</ul>
+<p>从中断控制器视角看实时性是快速+确定的 latency。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/Program/rtosDesign/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/LinuxDriverTips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/Note/LinuxDriverTips/" class="post-title-link" itemprop="url">Linux Driver Tips</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/Note/LinuxDriverTips/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/LinuxDriverTips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>238</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="获取-ns-时间戳已弃用">获取 ns 时间戳（已弃用）</h1>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/timekeeping32.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timespec</span> <span class="title">ts</span>;</span></span><br><span class="line">u64 ns;</span><br><span class="line"></span><br><span class="line">getnstimeofday(&amp;ts);</span><br><span class="line">ns = timespec_to_ns(&amp;ts);</span><br></pre></td></tr></tbody></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cua2VybmVsLm9yZy9kb2MvaHRtbC9sYXRlc3QvY29yZS1hcGkvdGltZWtlZXBpbmcuaHRtbA==">ktime accessors — The Linux Kernel documentation<i class="fa fa-external-link-alt"></i></span></p>
+<p>可以使用 ktime_get_ns() 替代。 如果要获取 us 时间会涉及到 64bit 除法问题，会遇到如下问题：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: modpost: <span class="string">"__aeabi_uldivmod"</span> [common_drivers/drivers/usb/dwc_otg.ko] undefined!</span><br></pre></td></tr></tbody></table></figure>
+<p>调用 div_u64() 函数，需要 include &lt;linux/math64.h&gt;</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u64	tm = div_u64(ktime_get_raw_ns(),<span class="number">1000</span>);</span><br></pre></td></tr></tbody></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/Note/LinuxDriverTips/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1185,233 +1422,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Literature/SongciOther/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Literature/SongciOther/" class="post-title-link" itemprop="url">宋词-其他</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Literature-Appreciation/" itemprop="url" rel="index"><span itemprop="name">Literature Appreciation</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Literature-Appreciation/Poetry/" itemprop="url" rel="index"><span itemprop="name">Poetry</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/Literature/SongciOther/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Literature/SongciOther/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>573</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="长相思汴水流">长相思·汴水流</h1>
-<p>白居易</p>
-<p>汴水流，泗水流，流到瓜州古渡头。吴山点点愁。</p>
-<p>思悠悠，恨悠悠，恨到归时方始休。月明人倚楼。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/Literature/SongciOther/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Literature/Xinqiji/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Literature/Xinqiji/" class="post-title-link" itemprop="url">辛弃疾</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Literature-Appreciation/" itemprop="url" rel="index"><span itemprop="name">Literature Appreciation</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Literature-Appreciation/Poetry/" itemprop="url" rel="index"><span itemprop="name">Poetry</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/Literature/Xinqiji/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Literature/Xinqiji/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>314</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="西江月遣兴">西江月·遣兴</h1>
-<p>醉里且贪欢笑，要愁那得工夫。</p>
-<p>近来始觉古人书。信著全无是处。</p>
-<p>昨夜松边醉倒，问松我醉何如。</p>
-<p>只疑松动要来扶。以手推松曰去。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/Literature/Xinqiji/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1436,14 +1446,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">454k</span>
+    <span title="站点总字数">458k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27:32</span>
+    <span title="站点阅读时长">27:45</span>
   </span>
 </div>
 <div class="busuanzi-count">
