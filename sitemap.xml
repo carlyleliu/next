@@ -677,15 +677,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelDebugftrace/</loc>
-    
-    <lastmod>2024-08-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptARMExcept/</loc>
     
     <lastmod>2024-08-28</lastmod>
@@ -696,6 +687,15 @@
   
   <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptFramework/</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelDebugftrace/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -731,7 +731,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptTasklet/</loc>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -740,7 +740,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/</loc>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptTasklet/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -776,15 +776,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryDebug/</loc>
-    
-    <lastmod>2024-08-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryKSM/</loc>
     
     <lastmod>2024-08-28</lastmod>
@@ -795,6 +786,15 @@
   
   <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryOptimization/</loc>
+    
+    <lastmod>2024-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryDebug/</loc>
     
     <lastmod>2024-08-28</lastmod>
     
@@ -1790,13 +1790,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/tags/Poetry/</loc>
-    <lastmod>2024-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/tags/Kernel/</loc>
     <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -1826,6 +1819,13 @@
   
   <url>
     <loc>http://carlyleliu.vip/tags/Task/</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/tags/Poetry/</loc>
     <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2002,13 +2002,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/categories/Literature-Appreciation/</loc>
-    <lastmod>2024-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/categories/Technology-Blog/Programming/Principle/</loc>
     <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -2017,6 +2010,13 @@
   
   <url>
     <loc>http://carlyleliu.vip/categories/Technology-Blog/Programming/Performance/</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/categories/Literature-Appreciation/</loc>
     <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2065,14 +2065,14 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/categories/Literature-Appreciation/Poetry/</loc>
+    <loc>http://carlyleliu.vip/categories/Technology-Blog/Linux/Kernel/</loc>
     <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/categories/Technology-Blog/Linux/Kernel/</loc>
+    <loc>http://carlyleliu.vip/categories/Literature-Appreciation/Poetry/</loc>
     <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
