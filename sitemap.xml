@@ -1415,15 +1415,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2019/Note/CompilePipe/</loc>
-    
-    <lastmod>2024-08-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2019/Note/DockerUsage/</loc>
     
     <lastmod>2024-08-26</lastmod>
@@ -1434,6 +1425,15 @@
   
   <url>
     <loc>http://carlyleliu.vip/2019/Note/GtestGmock/</loc>
+    
+    <lastmod>2024-08-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2019/Note/CompilePipe/</loc>
     
     <lastmod>2024-08-26</lastmod>
     
@@ -1523,7 +1523,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2019/Note/ArchLinuxConfig/</loc>
+    <loc>http://carlyleliu.vip/2019/Note/Buildroot/</loc>
     
     <lastmod>2024-08-26</lastmod>
     
@@ -1532,7 +1532,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2019/Note/Buildroot/</loc>
+    <loc>http://carlyleliu.vip/2019/Note/ArchLinuxConfig/</loc>
     
     <lastmod>2024-08-26</lastmod>
     
