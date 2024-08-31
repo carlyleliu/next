@@ -23,18 +23,21 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"carlyleliu.vip","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="请输入密码查看.">
+    <meta name="description" content="AES AES（Advanced Encryption Standard），在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Encryption Algorithm">
 <meta property="og:url" content="http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/index.html">
 <meta property="og:site_name" content="Matrix">
-<meta property="og:description" content="请输入密码查看.">
+<meta property="og:description" content="AES AES（Advanced Encryption Standard），在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/aes1.png">
+<meta property="og:image" content="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/aes2.png">
 <meta property="article:published_time" content="2024-08-23T12:22:04.000Z">
 <meta property="article:modified_time" content="2024-08-31T02:49:20.586Z">
 <meta property="article:author" content="CarlyleLiu">
 <meta property="article:tag" content="TEE">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/aes1.png">
 
 
 <link rel="canonical" href="http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/">
@@ -134,7 +137,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -147,6 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#aes"><span class="nav-text">AES</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rsa"><span class="nav-text">RSA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90"><span class="nav-text">密钥生成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6"><span class="nav-text">数字证书</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-text">参考文献</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -349,18 +353,91 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="728afacf856e199f7dbf429552cdbead5648b7679fdd658855925ed9aa0cd06e">56342951e29897e35666cc3fe0db4ab5abb5d321f492ae7d7cc2a7caa9d5c535739334c6bc92d50c02e75a9693208fa73e859edc8eeacb0b30b541dc4b7b6a4acd0fa6cfb1e4eab9ea8881f1cb850187e30f597329498e5b923297fd7d2450f2dcf69638b8f08b157311c30560996298db9024488449de4834cdc27b012a9515895ff8664d36ba8ac5d244e6246388829775456a35dd23e689680a29cf6de9ce05e7205cc55794b4592ae469e0c1922727a13ba21e3e04a79c16c46a059128e8b896797e9257783db207df992a00830f6bce0d49913bc3a604fb3e5d88012bf8e0274fa4d5be467b2c5a0f02935f436e7bf3eba4632679dce0c077ee7812c42f8c34f775e2a413574ba927e95f01d006b1e5ebad3e1488abe99c70e3b046371fd589fcb432a8cdfd39c61045afc138bd84a908c2979319860035d4ff5e5ac25896f510060adf314656e6f72509bb9eead5f3c58934a317a409d161fcf7cdbe0d6afb569f3ad3539e5a1cd889538118247e01f5383b7020209260a1ffa35a3d34598c653ba66826b138fe7fec432b21e2db10241a166dbbed72fd19320eb25d719a4bf674a3974de6e98247c44af16c412a7cd6737ddc2d1b95a909aa1f8871c7227ef76a1550102767e5bf3f24711b028f292c5667c1bbb60e2fd885e7725024d09685a4815176a8b5ce49f94b3e67b5f7a8df50ecd5bf538cc1c35847edf208befe44e8c7f928e58bdc07c7cffc588b4725c591b6d4837d8f2dcc8153373377225df4dbbaabce17b64521026f78350f19cacd208e7bf2db06b629b60e9158c055547e8fa5b9c20f39cc31537458d67ec499c1275b363442cbbbe23dfd1f8bfd77b48237ce5e323a616d8f12b55b5c3c4ea886a158bd821ffdd3f07015007a6397c45cdf54c2e6778f74b1e3ddefdc78d7f7b3cb7d10e51e7b3ac214e6f76b4ff9832c93b32385a3b8926c8bc7274809832aca094c6e153e2194880b2764b4251e8b873cacc93fe169ae0e8cb3aee7226f998a544586f6b149a7964fe299eee246ce2a7f3b7b8a2c1e5503b42711bdd943dd59db7cbe3f447f90b3624d0ea6a2aa7ce6afa0f921becc9e902718755526f1a88b0e2934828a52095cea268c9decbd42be5b865fe8425ddbf18e255421e1aefbf11018e2f31205825d749ff7dd3e3a13fba3626cf940f3db2eac1a29a883a722d0bb59120545826a50186fda461346aed0711790601f352042810e99489140512a82cd783621d4cd049be4f1ec424302e56b2418f03b62bd7b9f3a530b816751ab291ebadad602f61c696b4a71c1e76b25d261190be2df4894af74a71943977e851ef5936b32632ce91b9c7ebe265079ca37909175487aeb9b28850eef7ec816bade760491b009c0d90decba523bea101d05ca1a1bfcb8a73c0ece73a20d18f8e9776d6400c3f4a8f361a7f7899b30cb8f8a6f6138ae57b38fde5194b9f3416e5c8f00ee0f5624e583ff6236a3fcc4fdc1673d6d994326dfd78b40a75836aec7f453fd565b11ecbc55ea9cd170b41ac9dd0fc9b5670520a3be0d44ef707917b5191591338402ff6d3ea8fad60872f87f431f143590f8ae909ca81feb254b3e636a4dd88cf2159827a296aa3dfe2af551d6c030ce449ef51bfd242e0f5508c25ee4f1244754d7b52d83b0a79ffdf62a0b36e76c78a7ec548f9aaab40df19e982496afad0c3a360fd714c2e44551c44d7874e4126d52afea4a7c3608f709b369c49da69f2a7374f99ea1ebf5a43a0614535fbbaf3cffa1d61b297a25bee08eaf9a9fd3fdbc96d01ec3af0fc734013bad347d9e779043cea94867a4a95bdb9372561eb23d6eb695bd2d923d34ac836a627b33e564f15f51d12dbf4294c8a389e874bd654afedea7af1efc514bafbee13ec9aa93edd7120c0e032837085525b47f4adaa0f24ae62320a761cb98f7bcabb17c5053c5a08165588d865198a78a24a53274463833c0e82fb100b790dafef5f79f7b133d6ec84402006b84975e1a48d8992e3ee87395cdc3a3cbe63a0dcf0283c7d9061c6c3ee8993b6eefd1fa7ba34bba78153ce312e07bac03043d3332b741f5a971e67febb0222c171f3e28d38ffb701375751e7ea611edac352c7f411aae01163e4ffc27cced2df02213aacfe7f011a3261839ef923ff42a33dee896cb553e967c1fec8328f1c84f823113a11885cd0185de53961b98f11480b5f52b3d652dff4e02a453e6bdc0a618482938284a40c1e935a1108d8150dad2195709014f068f595fc8980705698fb42353c934e9595910a8b072961cff7f462f55533c11c27524bf52b443a7bcda4790dc33716ade0993f363bdfa3ecd3a6937cd418a23fabb3e81dce35c4f45e63ac5123fbbd383f81ea5b97fc1e1c1a288c96f343c8a219f2c00ed5b922e47f9041a1431118faf916be16bf2bdeb52974db8e140e18db964b73daf8c69453a3a957e97511f4e26b611fc09cdc1d866c16d8fb0593fd1dcff84aa765c1ed6fadadb366a779944cb916ab9956b78b918e60496cdcbc7c6d0a0423e26e51fbd20011bc8dbc9070a4c7ee37d1621f7e0e778e1d203524e021e86e73dce891ee69ff07b940d9820ac7ef17746a56689df0546331262b5d9d22c06cc5feee9f9b312bbf5499af1390e71d720847c7d5108f2b9dd52af226c9883b3abebe2ac1c296329b59aef8fef3324c8e3763d3dba0d380a28a8d8489ebf229e98f4955ea85b11e0708c45454d8c0238bad0c4b8760603a5d415b1cc1074221c6246f17012a123f74ed1795bf3c58b5b25c978bd7e639ebb2217095c957881827f31da9492bdd535fda5893eb0f4a847fbed29514fd3b86e978244f2bc274dd628c1d2196a33580d3c5547e03d14572d5683d1a8ac58be73fe94f2f0fc35c6acdc1b9f5c34f3c9cda6078c8b3832db8b09231b4d2318ab815bfd34b2e17c80371fdb93482cf6be765d010cf9a3736f5bebe1b2d340699c13df4b8a7ebccf211c2b457dc5ff5efada4931dded2a374fe87c38f0eff333db7c0926c3426f8c64b2dd06c71debdd026aa41d037148ef3b6693b142907479c660ad7c0d10e83eaa62e357a82556d9f42c6c78c93892e6433350b0a8cf25247261073f6000e711db74885e5100e2a28dbcd5096becdaffca740f52ffb3066ec753f5add2cbfcda70c32dbee3e9d5b77225679f62fc7e1c625ff9035e5e7ce9049a2f0730094298f72812b376713f8af46c9649fe042351b0dc7e37e52ae7e6233558826bc8133ac177fe2f69915d4e4475004401ee686540743a7ba4a758962181186fac64a67110b03b648cf95ac3c14d600ad719afe42ab59f670a018cfda0a650c4b3704cd4c00abdad7ed25129593027315869f1f76653c01abaea4d81df8c47346f681213bf06d08e2fdfd8694f9e8f93ccf8a6a5d4356103eef84bafa86ff99b17386a849b9696759adb673dfeb98841cbecfb448a22c1302a021493b996ad164f2175c6822b65a7dfc98cb196cbd0ee9b181ec4d519ff7a96ab7109cd18b2ca5f30f8c0d3132c76b0f7d36bdcce78c8ba21282a1cefb3eb03f9b838248568348857d6be33ca1a9d03173b7066c872390bb881f9fb858f638de647f1f168b910efd249643a8aba12f512b09aa24c2fafc7cc4b364d5100faac1d328a9523621d9a0dbcefe8a50a9835258598888fa0a2e444bf5159bcc9a25a0dcfa6a5ddb7d42e3f2bb2b7454ec44b02c0f807ef8b34004a0c88c682c9cf6a3ac94c1bc138ff536dbabdc734226c0255ce32692efaf33ebe5b6d296555adbd93377cb86e631175c0e97d3fe458eea1c0d11a0384894a683d419d5072db4190517fd220904f8b6c3fa1d8b366a81ca03a73c2f6bacf3f22b12b4b069e944300fabbf87510572fca22ef7c66d2fdf873b17cf6cb15c5dce12ba8c92b1a5f2c27298215d4a69d36ef3dcfa2f47fa78215079a77681f42cd378087682220188a01057d25bb3c1262fee7ac4dbc1037633c768ab83adf30782072c63cf8dacd670e553034d0b587926a744316d12a720afed15857ba6f95c7d1b8ec1b4b0b6bf01aaf1b056b5198a94a86fcfd2045b2b6aa72cd88f66d50d56fdd2056ab4c519b6557bb74f6aebc155fefab72493df59217519f2c2677b890392fd7a274c9606d28b8032a4e4f082970bed4c5e454d436aa577b0bcef1bb0c689b5d2ac454261aae225eb7333491be378ac5c17d17ca8fd864e4878655df34fa6da7460ad4df5a6a69eb53237dbe0f00e37f9f537a3f3e5d37f765107a3ce822fd6eb320be226b007b8d3c25dea67e30a9e1279cf7965a0b95a555173907431b7b6ee8dd46b757d4c52cf1ed0422add723276593cad9b855e341a0a4de2f04fdd34d3df4261cc068ee631da4f70b397688561fb493fc25c66afffc01671ff480fb4bf3ec424c471da6686ee21ea68930e53942afe12ac09453166c93ed5fb819c161e49f7b9ba249c7393c3191144314933d5bbe62682f39fbd7267e65319977b5dee08f7ceb40ea7d4a603201ce13209317931e5baae3adef61fb48ef78a7a9dbe48e0475254319e30458b42ec26fdbde44fce703cf8a2c7d9c5e6c81299da9cc5bd3a85c88f6393b8167c5adb3c3204f77d9c60020d0fa1d46ee0c6f13a277970cb4f350805c78899cbe2231fe4201d27b0b9914fe5ed3c65ee2ea9f5806ba548056a87ac66cc3baa58bda8f8963f879ae691c9696c147aabdc701f86c98025d0d1d099574acf197bfad611621f38193d55dec6d2b4240229d1fc376370d4745124a44a14c4f9578051da1862ce7244d59c490633c9b69ad24de61f9fe4f843785bc300e17c4112c188d93feba14163ec2516e4466e8c7d0cc656df17343d2216939962edddb453fea4daabbd6b17f4f9a176213c9592ad18123b49d7f18158bbea0e79a88e17fc0c51dbe5ff1cd84da0be5309e449bd1543d14a635b09d81ccbe64b21a1a38c5f3e2db66b49c4a6d371acdf4286fb0ffa0eb45abeedbf7c594282872d2b7f22422391f9890704b1458375b90630408630062835564b4b1614fbeca9499933751f10fb1143d57a2ec48483c8104b288a030cf563c5a8ab0fc2346167d2b4852fc18a801af89e119828efc58af2df25e6485f55ac2c946368466f5f34adffef840889d2e9341d2e60efc14dd4c0b45a9f3156c02669234648ed3df5ac3274aea32d7d4d08a4dabc58d157e65c95b7e46e55c4377df215d8cad7be2664f1edbd5fd1bf3c46cabd275f0976ad189d7ff99547c905eb6f5f8ee7416e58e443a2ef2189ac9bae244ce6ed438e47076ab5d6e31f953ff3a90ee7d479ba7bf2961da9699f5efa3b290177d12e9f95e6fa960b5b508ab112d1a99df089b554a458621eedcfa83916f43d956589e3a726c6ddf938ba8f2f137557a6b6520b8e93716270fab656cb56f5f02960eeaf6296c834378e05c2b02ef29d25570fab48e9442578c0cc049c88e068c815245afda42768222cb909908c7444ab749b41ea5df4b20af4f188dd27fa93605b98d5762d491de34a7812fc58332ddf509704ac9fdb9e272ad8a6695a62e2b50f2d1650ee2a370818401f496a15c296656af1fb8d79aabe46f10e85e3ab5809a649c465f9154457f80568672f565bf04cd338d3b90d9b1ffa9e486728c428c49abbcf19a286036b01156979fe4367d693f5cd7d5d7cd516a69bc687c42a47a799bd2556f0078bd6b3271c5adb02f4f77744b7fdb48612249863ea7e589a257e02e5a7dd5a4b6a8b2ae26c032a4f037421034724a3246125af26879b12faf1e7087fdaa4de56f4d16581b0c85832219997d6660f0946aaf5290e8efd1b80a25d875ee9626ab69ca55a83bce954f6aee19271a0ebd4ff77ea3439f9350776c753feb9d30b8ba8fa228b43a9037c99de30eacd3fee5b1475fa8dc674debff622f429ed0fb51b6e1fcb61cf27016bdfd5208414c549e4479dc24bdf39cb6910e12557af2411fa63ff82eb0dbe2b47d873a58f0d7d7ecf85c60bc4120092c363ef270e90da049c761bf7bf46ebf0a51122103ead3a267d530d7a7cd959aae6f49eefc01ea3de0bd7353d5d4936aa5a0968da5ffb4bb44ef1cd33652ee9ee33674ac59ddfb2b26652dc88c305127c3f8a6314c46fd6cf13c30a4982b1e7fd6e10bbae82d86988ef82271f909ac27ef916a3ec8d79e13cb6a0af9ebaf863a1d75abb11e6cc063611a7081f67761de618cb853356a6aef9dd2c06eaa3be3c60d02c4cd55edca3e11037990eaf98846593a1d33819dc59b783b96779cf7c45cdf30d3fc02fe25755dfa7ccf5a017da4e9a9ed9f86f8e26513c37807a7bbe23540e19808ff59763ff3243b6348d229d33fa920925159a1bf324c159554680650a6c5c6ed98fc3a21f62bf9eb6424640599c9cf03a7fc8330abae978e55168a3510196b14c2cd2e2e3ab3c8b7ced25dfc0f0b391f34a7adc4860beb876000ea5238e0dd8a9c99aa97d2e4e5e91d04ff61c551800256fe3012808d2201a3efd35c6ccd2dd845f9280e07ceaff5eeb3724993ce60edd050c63eeaecc6216a5c7b48657316b8cce3b13b92486d0c189b1207547324b7c8765855067bd359846f1e8fb8b21bcb00aeccd9933f2617f201080f5bca0f037dceb8e79d26ee6605ceb548366adf7fb8bfd6cf9ddcf098f5541461992da5f4839c8ed3b9743d88e773ffe72c1eac239aecc874351cf80494fd0d9beb6c61c39c186fef2be62f7d6adf39e7a209bff20c4eeffd06efd5adada4988202bb76a9e8c49526e16c2f066b04b10ed039414418bbc8e81ff9f01c02ba12adaac3e326111c8442ee98a791fc80023ccbbdfbaa2f5b45776726034fba0fcc2dd7897c3ee5128f9ebc10e631a144f00f6af90650d1e018c34dbcedd261dd99f28d664e0a0640ef9f9594086946914936e81d967db6bd4eb9932b329524876b94f82ee53015d60c0d8ae7826f1a1e255286a08a89066794f54ab3375e9c0540b1ade0af2744a8c9bf5e2f4fa40df8ab05e8a4f2f66bd0ac2bebf03421946827656aaffda238751a777a1306ba492260ef43ce8007579dedef15af7720c2ace47e59c30a3c212298033578110cae9aefe938423f628fca4b05c11b7dde2f15c35012d3e8bb1abe2abbd2273b3901367e2a2263ce568ba8f8e6a296ab20ae1b8b2a45a2d822898ef975e58581bddb8c0ba58e600b569afa638a9fd3a7e42503921e753dc948cdaa901f4980443f2597a834320224fba4fef48b3e3c2b540ef9d19d5012950ec2786d04dd10d294fd96fc136efb6d2aa11d26ca2c59cf515113993ac088e0efad061b66c3cfe4987475bd855c705e8501cc17e992093c9e699c04167adbc5651a2512f834d1d1bc14f6c452286fa909c253a52259dbd381bdbc4f750f54665d42dbe9fff9ec20e182bd7639abcc85ff0a9fa75ea841f15c5074b835a147c08372b03d4cbd8adc6e40f5dcb63462964419bca05fb25d3c48d151a62ec88e4b09b62a051525d1fa93baa74e25f705e442d679c5be6a81f900c3206b90d97613748721c93db23504fe12fe7e372f98c858acf39b6ed3d33763e59a8940a41e68535b61d21515e8bc2cfb6d082d4dbafbae4fab7c07cfd88bda1bd9a608819690c8f17cbf1f3c590c95a8f8712f10dfcc4182585e661caec971984adb41f24beaa8309cc4826df852cf86628ae6d3f11f94163faa3918ece856a18f614e2ebb30a7cab73aec2ad1a57a81a37185d6f3192f1f786e51610f84cbce50f9708cf4d47aad390acf5c24821e1eab3383dc358bc50575d4f6c91540bfc3a0040bc39d25c738a41dae180a4df9c2815f056bddbe1307b2efae8a2142726c62154b45640edaae05ead3a8ab064d8cb992f216855d47f5944f65879c98940a664c0fb92848c60f64065341e914664d9dc13b9b3b910914f906243d8143d122ba9a9fe5dc4fca2d9e4f0686bcda7665e1581029766d033f71ce6376fdb858386fa8f2aeb18d2a7e5a320df7ee5b2834ab7015c18a79c82cdaf1819018aa91173440c747a2a670c255171997817a45f675c37d6e52201590759a21c554db75c6761167a36f67ef29aaaa7230fb67419d069039fb1ed183720f777bfcb9a18ec57e58a07cfcad5299aa275f870500e8beab6b0dd2e0be56f55a4a68ea96f72485946e4430665b80ff7daa37a4119ab6badeafb095320412e8694f3deaa8fae75a7e2a85c8fe72ed69d6dafe4a4510ce196b6c3f60d92dc42950e3e45cc0710e50c6ddd2107285644710f62e6fcbbbf575ec11482b35cfe6c1ab3b238a2b5765455f5f08ad8a9e41dd38b0b2c322de950ee7b5c4453188c91f82efff76c78009648f1bccff069e23ef2e4f5c75524d940d5bafc7da9524b698696ae4575407c24305a8fba8cd8b00027ac4064cb6e8b4251b53264258a3e1f5d760f318ff413ebac188e1c367220accc91d933a5e6754305d177635d301ff0d27ddb96d760a75ec4fe1cdfadb02f5c25cfba05b09d783a69268f0f08b77247731b49aa705fe91418f68aa93af6592406fe100ad141c438ae60807426bf15133d59623f5b2078991fe4e7e73906a762803cfb9220ea198a43c2875f0d9e28d3312a0c927b000f35d652f8a2de5c0ccc7fd12e5f601cc47d378fc5567ee01365d17edc91097b6cc90bbcf069e57d83f235926c4f17e4b93b47b1ec272b28974c0e277a19186529866dec68233c5dd2be97e1b0d27b522bb1d9bafaed2f9ec74841b4d4eaa891fc3879c7c15e9dce60978d0f53e67b70abd88b7da29e4cf8b42eeea9039843e03bc5d6fa6a6e8e537eb6c447e568c4da231d6c89cc1de05bc44903069703637defd348ac96c7f9b689dcd928d2d1b80b2e733b3ccbd89746bc63d13258c0c11157d6bd79b28d2833aade8bdd0477c3d3c7995dd537e694d54af6f62fc1000cbf46284e2805624027eb34d146a17ecfb605b1e0b68065106fa21542c4927e88113331aa9b812114a5cbf653c17021aabccdb6d1be8b5886c27d278e7e18a369cf5c337c6c68bcb6a782db52ffc0971d5394defc69f62e0c0a402a6bac85c16b019e7abc6ae2f6a3726da1bd6321ca045537e81cbd6a453be9df22de2b3e5a47d70d38d385195c688412121c1b00621ad9f53422f7e2482734f9cb981d20178a687bb7e33c4d0c140362bc7b4ec66e1877826b3fb514c965da7d07be85bd50d760f440523167c3420aa67a9524b2e587e67dfa0dc15516dbdef0bafd298ac92fe2b9ef48951c65af534f79c3ca8df1768af535b9af55c7962abf2164c3c7b7cee6bddeef97ed22531730a0d629597b9752f72fd6a78b893e41c3ab69de58463a79f1cc1e3c4842af1da69af380b7ebf438d89873a3347a9ae02167e830535418ebfd3c556ef36e6d42ad4c5cfa4e2728ecef1206ced08982d957bb0710bb7ee5cc36a2edbc4bd063d276dc3676069d0fdf241acd1ef070afd968a186a744e46e5c0b2debef716563d1a5cd01d0479857d3319f3d787f1e4e1cc89d0702d6d7597ff11cdbe5c6e82a1d34ce80abff9a97349296c4a2f3361e64e7db5c9eeb8c4c8972cc7f38e9e14ab50ab60d183969b8abf7b01fb5ceb49ee2a7e3df5288aacfb9607c5037cc7f86dea98884320957ff5b2a742913088344fa290a1839e209a4fccb53e63de5472a3b19b6c4de6b9c1109755ff2235e99072700b3432368e6d6a44b90e17db333d438281856540877f24d34b49a839e19809ab735fd2c855ad5c1058ca5d764b8a2d43267959b598d64221ac0634b962aa756a28a740181d620473bc3bd32594b3ef38ed832c09d38d5e522eb84b77ea84a8abbf6c7235448a8010ff8037d0f27965d51910a55693c5bd5cb2086238f13fd5483bf697d210aba0b6f80fa5e4783920bcd11a549d1845d9bdad4df6e07f994ad539b854abc658535b344bcbebf2703e957e09945f5020701755778910469a3e162f92780ddc42c040e22c5ebf0581935f8715d3bb078b8dc46ddc463ff7f8f71b7997567819adfd673c00bc8d9185841718936db9ad5ee54cca551c96b60ca7328b4253c42ef381edeca71de74726a68dbe1ecfb52a1031db87e00e0aeabbbe293a84fa5a95cbe723b560f9cf09e3707f2d37060117e355417a721f2d767b9f876397f72d48d3fde9c828c9e42aa7788fe1b5b31a6ec55b5218ddc247450f2f8d3e8bc850f9f593733c84c21303be3581f5013ff12fe20e796cb1b7993c291546ad84fcbd27a235ee42399400dc7538a4d14b78d7951943b990b79f3bb825550a57db662e20a86b23f721d253bc412a3f88e0ab7cfd39b4faab09eac03cb58c1efdf00ecaab1c0ef4c3eb7728d41297965e3988e4e7254aabf231eaabfda88b945574197b2cfb8bdf41486c04a7a738d679df24ae2c9d6ce455a5fb73cad15670b81dcd4067240e8cf462824a36faa65047216ebe3e9450f4017834c22eac99b0dcacde23c27d4fa7fb3bd4bb7d39ff99201a6767d7e1fb0a5f09bbb5f2b196bfa9ef19828e5b75e4b5fa4c1d5019c90f76ee07fdf846a870fd7ca2b142eb8b86e31e8c5b8d85287d4baab3ce702fa5444ecb781d19242056538d1db7e3704a82f936d3400a856cffd9a502b70baf2697c63f94261492438eab66b3b8f93cfe6e73080c2fc0508e5481078ec5a0173ba095b82d1a8377be4d985f69fb9e2d6a5d6286e960c39ab816d7a77477d40d278b3098e885294031e880d231c11f7eb88e0cd12c8f3dd399d6d8e2bb16f38f831896d3ff02269f5e2e21a9ef1a838e90cee5d93f7fbd4c2f4308a68544a0d5bef8dfca5101ea575b2da7eedf1905d4047f410f9589fa49308129a3874b103310b4c08c3cdcea4373d164de1cccf414b9750272bc849caf69421525294b8090255ada286d0b020ca82f894e6292ccd554b5e4113c9270089fa0b9734d6942bba479099fba8bcf513b7428f5d63f7855ce42b18169966418c99506a52c76262e8a3b3d074fa0adbbc022fb016252a7acd0f324f0c95325c98d090fe523fa59e03580ec36469d7de9368705ae8154a1fce44d5e46d29f3a11dd9beff0de226c9c4c5a4b337a81324cf752a9a9cc805c3f6e4d4925b993c5824a8f3789af3fb44ce23c68a390d9c3a78fccc9ab3a23d592048f33e68db8b8891f46d8c00820a0bd3e007ecf4a7e62b189d496dec30ec8cb6c272fb57344af9768f76a9cbb2c69222d4e18c8310037072f1e932e44e6b3fe96da9294ab4204f869796638ef8849e32e1a956fe1c7b053a65e3078ec09acc026085dccbb7af61636dcc6235c565a1a8d16a3de2119068ec70c40c02fa1dae487f2d3cf1a88821a5faf8819506e5628f62252c5ee147d2bb9bc4272c994c1970b4edbaf82b1333b4105327a15fdcce9987a94b271566a80d56199f7016fbd2ff6ee622a95bdc9</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    <div class="post-body" itemprop="articleBody"><h1 id="aes">AES</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU5JUFCJTk4JUU3JUJBJUE3JUU1JThBJUEwJUU1JUFGJTg2JUU2JUEwJTg3JUU1JTg3JTg2">AES（Advanced Encryption Standard）<i class="fa fa-external-link-alt"></i></span>，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。</p>
+<p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/aes1.png"></p>
+<span id="more"></span>
+<ol type="1">
+<li><strong>SubBytes</strong>：通过一个非线性的替换函数，用查找表(S-Box)的方式把每个字节替换成对应的字节。</li>
+<li><strong>ShiftRows</strong>：将矩阵中的每个横列进行循环式移位。</li>
+<li><strong>MixColumns</strong>：每一列的四个字节通过线性变换互相结合得到新的4字节值.</li>
+<li><strong>AddRoundKey</strong>：将输入与<strong>轮密钥</strong>进行XOR。</li>
+</ol>
+<p>以上就是AES加密中的一轮，不同密钥长度进行的轮数不同，128位10轮，192位12轮，256位14轮。</p>
+<p>下面具体分析每一步</p>
+<p><strong>SubBytes</strong></p>
+<p>从一张拥有256个值的替换表(S-Box)中找出对应的值替换。S-Box是固定的，查找公式也是固定。具体可参见<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvUmlqbmRhZWxfUy1ib3g=">Rijndael S-box<i class="fa fa-external-link-alt"></i></span>。用此步骤混淆了输入内容。</p>
+<p><strong>ShiftRows</strong></p>
+<p>上一步处理后将16个字节分为4组，每组4字节。以字节位单位进行乱序处理，这种打乱是有规律的。如上图中输入第一组第一个字节移动到输出第一组第一个字节，输入第一组第二个字节移动到输入第二组第二个字节，输入第一组第三个字节移动到输出第三组第三个字节。</p>
+<p><strong>MixColumns</strong></p>
+<p>可以理解为采用固定的公式，将每组4个字节做运算得出另外4个字节。具体可参见<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvUmlqbmRhZWxfbWl4X2NvbHVtbnM=">Rijndael mix columns<i class="fa fa-external-link-alt"></i></span>。</p>
+<p><strong>AddRoundKey</strong></p>
+<p>与轮密钥做异或。</p>
+<p><strong>轮密钥</strong></p>
+<p>轮密钥是通过密钥编排得到：将原始输入的密钥（128位、192位、256位）作为输入，得到子密钥。 <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/aes2.png"></p>
+<h1 id="rsa"><strong>RSA</strong></h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvUlNBJUU1JThBJUEwJUU1JUFGJTg2JUU2JUJDJTk0JUU3JUFFJTk3JUU2JUIzJTk1">RSA加密算法<i class="fa fa-external-link-alt"></i></span>是一种非对称加密算法，是1977年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。</p>
+<p>RSA基于一个数学难题：</p>
+<blockquote>
+<p>对两个质数相乘容易，而将其合数分解很难的这个特点进行的加密算法。 n=p1*p2，已知p1、p2求n简单，已知n求p1、p2困难。</p>
+</blockquote>
+<p>例如很快就能算出53*61=3233, 但已知3233算出53和61恐怕得一会。目前已经算出最长RSA密钥长度为768位，目前使用的密钥长度一般为1024或2048位。</p>
+<h2 id="密钥生成"><strong>密钥生成</strong></h2>
+<p>RSA密钥由一对公私钥组成，这对密钥如何生成，里头都包含什么？密钥生成过程：</p>
+<ol type="1">
+<li>随机选择两个不相等的质数p和q，N = pq</li>
+<li>φ(n) = (p-1)(q-1)</li>
+<li>随机选择一个整数E，条件是1&lt; E &lt; φ(n)，且E与φ(n) 互质</li>
+<li>ED MOD φ(n) = 1 (扩展欧几里得算法)</li>
+<li>将N和E封装成公钥，N和D封装成私钥</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th><strong>公钥</strong></th>
+<th><strong>E 和 N</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>私钥</td>
+<td>D 和 N</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>加密</td>
+<td>密文=明文^E % N</td>
+</tr>
+<tr class="even">
+<td>解密</td>
+<td>明文=密文^D % N</td>
+</tr>
+</tbody>
+</table>
+<p>假设攻击者获取到公钥和密文，明文=密文^D % N。N=pq，由于大整数因数分解很难，所以攻击者无法获取到pq，同理也无法获取到D，如果有一天找到有效的方法计算出N=pq，那么RSA算法就被破解了。</p>
+<h1 id="数字证书">数字证书</h1>
+<ul>
+<li><p>公钥加密，私钥解密——用于加密信息</p>
+<p>如果你想把某个消息秘密的发给某人，那你就可以用他的公钥加密。因为只有他知道他的私钥，所以这消息也就只有他本人能解开，于是你就达到了你的目的。</p></li>
+<li><p>私钥加密，公钥解密——用于数字签名</p>
+<p>严格来说，这里说的私钥加密是用私钥对摘要进行加密，接收方可以用公钥解密，解密成功则可验证信息的发送者是私钥的拥有人。因为公钥是公开的，所以起不了保密信息的作用。</p>
+<p>如果你想发布一个公告，需要一个手段来证明这确实是你本人发的，而不是其他人冒名顶替的。那你可以在你的公告开头或者结尾附上一段用你的私钥加密的内容，那所有其他人都可以用你的公钥来解密，看看解出来的内容是不是相符的。如果是的话，那就说明这公告确实是你发的—因为只有你的公钥才能解开你的私钥加密的内容，而其他人是拿不到你的私钥的。</p>
+<p>但这仅仅做到了数字签名的第一部分：证明这消息是你发的。数字签名还有第二部分：证明这消息内容确实是完整的—也就是没有经过任何形式的篡改（包括替换、缺少、新增）。</p>
+<p>要做到数字签名的第二部分，需要做的是：把你公告的原文做一次哈希（md5或者sha1都行），然后用你的私钥加密这段哈希作为签名，并一起公布出去。当别人收到你的公告时，他可以用你的公钥解密你的签名，如果解密成功，并且解密出来的哈希值确实和你的公告原文一致，那么他就证明了两点：这消息确实是你发的，而且内容是完整的。</p></li>
+<li><p>对公钥进行认证——数字证书</p>
+<p>究竟什么叫认证，说白了，就是对公钥做签名，</p>
+<p>黑客可以替换你的公钥，然后用他的私钥做数字签名给你发信息，而你用黑客伪造的公钥能成功验证，会让你误认为消息来源没变。</p>
+<p>这种情况下需要CA(证书中心certificate authority)对公钥进行认证。证书中心用自己的私钥，对信息发送者的公钥和一些相关信息一起加密，生成”数字证书”（Digital Certificate）。</p></li>
+</ul>
+<h1 id="参考文献">参考文献</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sMnguZ2l0Ym9va3MuaW8vdW5kZXJzdGFuZGluZy1jcnlwdG9ncmFwaHkvY29udGVudC9kb2NzL2NoYXB0ZXItMS9hZXMuaHRtbA==">https://l2x.gitbooks.io/understanding-cryptography/content/docs/chapter-1/aes.html<i class="fa fa-external-link-alt"></i></span><br>
+<span class="exturl" data-url="aHR0cHM6Ly9sMnguZ2l0Ym9va3MuaW8vdW5kZXJzdGFuZGluZy1jcnlwdG9ncmFwaHkvY29udGVudC9kb2NzL2NoYXB0ZXItMy9yc2EuaHRtbA==">https://l2x.gitbooks.io/understanding-cryptography/content/docs/chapter-3/rsa.html<i class="fa fa-external-link-alt"></i></span><br>
+<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FsaW1pbmdoL2FydGljbGUvZGV0YWlscy8xMDU1ODE2NTY=">https://blog.csdn.net/alimingh/article/details/105581656<i class="fa fa-external-link-alt"></i></span><br>
+<span class="exturl" data-url="aHR0cHM6Ly93d3cucnVhbnlpZmVuZy5jb20vYmxvZy8yMDExLzA4L3doYXRfaXNfYV9kaWdpdGFsX3NpZ25hdHVyZS5odG1s">https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html<i class="fa fa-external-link-alt"></i></span></p>
+
     </div>
 
     

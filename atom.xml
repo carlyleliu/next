@@ -24,7 +24,9 @@
     <updated>2024-08-31T02:49:20.586Z</updated>
     
     
-    <summary type="html">请输入密码查看.</summary>
+    <summary type="html">&lt;h1 id=&quot;aes&quot;&gt;AES&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU5JUFCJTk4JUU3JUJBJUE3JUU1JThBJUEwJUU1JUFGJTg2JUU2JUEwJTg3JUU1JTg3JTg2&quot;&gt;AES（Advanced Encryption Standard）&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES。其密钥长度则可以是128，192或256比特。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/aes1.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -45,7 +47,19 @@
     <updated>2024-08-30T17:22:24.748Z</updated>
     
     
-    <summary type="html">请输入密码查看.</summary>
+    <summary type="html">&lt;h1 id=&quot;目的&quot;&gt;目的&lt;/h1&gt;
+&lt;p&gt;安全启动的根本目的是为了防止消费者从软硬件层面对产品的部分关键系统进行读写、调试等高权限的操作。以限制消费者的能力，来达到保护产品的商业机密、知识产权等厂家权益的目的。当然，厂家是不会这样宣传 Secure Boot 的。他们的文案通常都是通过这项技术保护用户的隐私，防止恶意软件修改系统软硬件等等。&lt;/p&gt;
+&lt;p&gt;可以说，&lt;strong&gt;Secure Boot&lt;/strong&gt;&amp;nbsp;的安全模型建立在消费者是攻击者这一假设上。消费者在物理上拥有产品硬件，可以对产品进行物理连接、拆机、改装等等物理上的操作，比较专业的消费者甚至可以使用数字示波器监听 CPU 和 RAM 、eMMC 之间的数据传输来读取非常底层的数据传输。可以说跟传统的安全模型中的攻击者相比根本不在一个层面上。&lt;/p&gt;
+&lt;p&gt;消费者作为攻击者的目的，一般常见的有刷机安装自定义的操作系统（Mod）、绕过厂家封闭的支付平台（IAP）和应用商城安装自定义的应用程序、绕过版权保护系统（DRM）达到复制厂家保护的数字产品内容等等。这些操作往往都会直接影响厂家的利益，因此需要一种能抵抗消费者攻击的安全机制。&lt;/p&gt;
+&lt;p&gt;而且像 eMMC 这种芯片通常都是业界标准化的，攻击者甚至可以把芯片拆下来，然后用市面上现成的通用 eMMC 编程工具来读写上面的内容。&lt;/p&gt;
+&lt;p&gt;Secure Boot 安全机制的原理，就是将最为核心的安全机制整合到最关键的主 CPU 中。因此就算攻击者可以监听电路板上的线路，甚至拆装个别芯片单独调试，也无法破坏 Secure Boot 的安全机制。&lt;/p&gt;
+&lt;h1 id=&quot;ta的安全性&quot;&gt;TA的安全性&lt;/h1&gt;
+&lt;p&gt;保证TA的安全需要做到三点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;唯一性：由设备厂商发布，确保是由设备厂商自己发布的，而不是经过客户自己替换的&lt;/li&gt;
+&lt;li&gt;完整性：除了要保证TA是由设备厂商发布外还需要确保其内容没有经过改动，被用户修改了TA里面的内容&lt;/li&gt;
+&lt;li&gt;保密性：内容经过加密，别人从系统中导出TA固件也无法获取真实的信息，无法解密&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -66,7 +80,13 @@
     <updated>2024-08-30T17:22:33.758Z</updated>
     
     
-    <summary type="html">请输入密码查看.</summary>
+    <summary type="html">&lt;h1 id=&quot;tee软件框架&quot;&gt;TEE软件框架&lt;/h1&gt;
+&lt;p&gt;TEE 系统软件从整体上包含 REE 和 TEE 两部分，各自对应的基础组件如下图所示。 &lt;img src=&quot;https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/tee_soft1.png&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;REE 部分 Client Applications（CA） 一般是指指纹录入，支付应用等上层应用，其通过调用 TEE Client API 接口来与 TEE 环境的 Trusted OS 进行交互，这里的 TEE Client API 包括 TEE 厂商自定义的一些接口或 GlobalPlatform（GP） 全球组织定义的通用 API，其目的是制定一套标准的编程接口，方便开发者在不同软硬件平台下使用同一套代码实现其功能。&lt;/li&gt;
+&lt;li&gt;TEE Client API 通过 ioctl 系统调用对 TEE Driver 进行操作，TEE Driver 是沟通 REE 和 TEE 的桥梁，其通过 SMC 指令，实现将上层的 OpenSession，InvokeCommand，CloseSession 等标准调用的请求转发到 TEE 环境，同时其也会处理来自 TEE 的请求，将请求转发到 TEE Helper Daemon 让其处理。&lt;/li&gt;
+&lt;li&gt;TEE Helper Daemon 是一个辅助进程，用于 TEE 请求 REE 的资源。 一般来说，TEE 需要获得存储在 EMMC 的数据文件（例如安全加密文件，TA 可执行镜像文件等），而读写 EMMC 操作需要复杂的内核驱动的支持，显然如果把读写 EMMC 的驱动放到 TEE 侧运行会使软件复杂度会变得很高，因此 REE 需要一个可以访问这些资源的辅助进程支持，这就是 TEE Helper Daemon 的基本功能。TEE Helper Daemon 在软件逻辑实现上比较简单，以 OP-TEE 的 tee-supplicant 辅助进程为例，整体上是一个循环流程: 其首先通过 ioctl 接口查询是否有来自 TEE 的请求，如果没有，则进入睡眠等待状态，等待 TEE Driver 的唤醒信号，当 TEE Driver 收到来自 TEE 的请求后，会唤醒 tee-supplicant 辅助进程，然后根据请求号进行相应处理（读写数据文件，读写 EMMC 设备分区等），最后返回结果到 TEE Driver，完成一次循环，具体实现可参照《OP-TEE 中 tee-supplicant 执行流程》&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -87,7 +107,13 @@
     <updated>2024-08-30T17:22:13.918Z</updated>
     
     
-    <summary type="html">请输入密码查看.</summary>
+    <summary type="html">&lt;h1 id=&quot;信息安全&quot;&gt;信息安全&lt;/h1&gt;
+&lt;p&gt;信息安全的三个基本目标是机密性，完整性和可用性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;机密性意味着只有授权实体才能阅读和理解保密的信息。没有访问权限的其他人无法阅读或理解机密信息；&lt;/li&gt;
+&lt;li&gt;完整性意味着能够确保信息受到保护，以防止未经授权的更改，修改或删除。信息的完整性包括使用识别和认证等方法的起源，完整性和正确性；&lt;/li&gt;
+&lt;li&gt;可用性意味着信息始终可供授权用户使用。&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -108,7 +134,11 @@
     <updated>2024-08-30T17:22:29.098Z</updated>
     
     
-    <summary type="html">请输入密码查看.</summary>
+    <summary type="html">&lt;h1 id=&quot;trustzone&quot;&gt;TrustZone&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/tee1.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;如何区分当前访问状态是安全状态下的访问还是非安全状态下的访问&quot;&gt;如何区分当前访问状态是安全状态下的访问还是非安全状态下的访问？&lt;/h2&gt;
+&lt;p&gt;CPU发出的地址都是虚拟地址，需要经过页表转换才能得到物理地址，其中在pte页表中低12bit（针对4k大小的页表）为控制位，用来控制页表的访问属性，也就是说在页表建立的时候就确定了访问状态是安全状态还是非安全状态，其pte低12bit如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/TEE/tee2.png&quot;&gt;&lt;/p&gt;</summary>
     
     
     
