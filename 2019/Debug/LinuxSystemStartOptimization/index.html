@@ -1,32 +1,466 @@
-extends includes/layout.pug
-
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
-
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
-        
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
-
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux 启动优化 | Matrix</title><meta name="author" content="CarlyleLiu"><meta name="copyright" content="CarlyleLiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="启动流程 Linux 系统当前的启动流程如下： 1brom --&gt; boot0 --&gt; (monitor&#x2F;secure os) --&gt; uboot --&gt; rootfs --&gt; app brom 固化在 IC 内部，芯片出厂后就无法更改。后续将从 boot0 开始分阶段介绍启动优化的方法。 对于某些方案，会存在 monitor 或 secure os，这两者耗时很短，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 启动优化">
+<meta property="og:url" content="http://carlyleliu.vip/2019/Debug/LinuxSystemStartOptimization/index.html">
+<meta property="og:site_name" content="Matrix">
+<meta property="og:description" content="启动流程 Linux 系统当前的启动流程如下： 1brom --&gt; boot0 --&gt; (monitor&#x2F;secure os) --&gt; uboot --&gt; rootfs --&gt; app brom 固化在 IC 内部，芯片出厂后就无法更改。后续将从 boot0 开始分阶段介绍启动优化的方法。 对于某些方案，会存在 monitor 或 secure os，这两者耗时很短，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://unsplash.it/1600/900?random&1274">
+<meta property="article:published_time" content="2019-03-19T14:38:04.000Z">
+<meta property="article:modified_time" content="2024-08-26T13:05:19.944Z">
+<meta property="article:author" content="CarlyleLiu">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="Debug">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unsplash.it/1600/900?random&1274"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://carlyleliu.vip/2019/Debug/LinuxSystemStartOptimization/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux 启动优化',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-26 21:05:19'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
       
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Matrix" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">176</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">26</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://unsplash.it/1600/900?random&amp;1274')"><nav id="nav"><span id="blog-info"><a href="/" title="Matrix"><span class="site-name">Matrix</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux 启动优化</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-03-19T14:38:04.000Z" title="发表于 2019-03-19 22:38:04">2019-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-26T13:05:19.944Z" title="更新于 2024-08-26 21:05:19">2024-08-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology-Blog/">Technology Blog</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology-Blog/Programming/">Programming</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Technology-Blog/Programming/Performance/">Performance</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux 启动优化"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="启动流程">启动流程</h1>
+<p>Linux 系统当前的启动流程如下：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brom --&gt; boot0 --&gt; (monitor/secure os) --&gt; uboot --&gt; rootfs --&gt; app</span><br></pre></td></tr></tbody></table></figure>
+<p>brom 固化在 IC 内部，芯片出厂后就无法更改。后续将从 boot0 开始分阶段介绍启动优化的方法。</p>
+<p>对于某些方案，会存在 monitor 或 secure os，这两者耗时很短，略过。</p>
+<span id="more"></span>
+<p>下文涉及到一些配置文件，提前在此说明。</p>
+<p>env 配置文件路径：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sdk/device/config/chips/&lt;chip&gt;/configs/&lt;board&gt;/linux/env-&lt;kernel-version&gt;.cfg <span class="comment">#优先级高</span></span><br><span class="line">sdk/device/config/chips/&lt;chip&gt;/configs/default/env.cfg <span class="comment">#优先级低</span></span><br><span class="line">sdk/target/allwinner/&lt;board&gt;/configs/env-&lt;kernel-version&gt;.cfg <span class="comment">#旧 SDK</span></span><br></pre></td></tr></tbody></table></figure>
+<p>sys_config.fex 路径：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdk/device/config/chips/&lt;chip&gt;/configs/&lt;board&gt;/sys_config.fex <span class="comment">#新 SDK</span></span><br><span class="line">sdk/target/allwinner/&lt;board&gt;/configs/sys_config.fex <span class="comment">#旧 SDK</span></span><br></pre></td></tr></tbody></table></figure>
+<h1 id="测量方法">测量方法</h1>
+<h2 id="printk-time">printk time</h2>
+<p>打开 kernel 配置，使能如下选项：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kernel hacking ---&gt;</span><br><span class="line">    [*] Show timing information on printks</span><br></pre></td></tr></tbody></table></figure>
+<p>将会在内核的 log 前加入时间戳。</p>
+<p>💡 注：此方法主要用来测量内核启动过程中各个阶段的耗时。</p>
+<h2 id="initcall_debug">initcall_debug</h2>
+<p>修改 env 文件，在 kernel 的 cmdline 中加入参数，</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 增加 initcall_debug 变量</span></span><br><span class="line">initcall_debug=1</span><br><span class="line"><span class="comment"># 将 initcall_debug=${initcall_debug} 加入 setargs_xxx 中，如 setargs_nand， setargs_mmc，</span></span><br><span class="line">setargs_nor， setatgs_nand_ubi 等，</span><br><span class="line">setargs_nand=setenv bootargs console=<span class="variable">${console}</span> earlyprintk=<span class="variable">${earlyprintk}</span> root=<span class="variable">${nand_root</span></span><br><span class="line"><span class="variable">}</span> initcall_debug=<span class="variable">${initcall_debug}</span> init=<span class="variable">${init}</span></span><br></pre></td></tr></tbody></table></figure>
+<p>开启之后，启动中会打印每个 initcall 函数调用及其耗时。</p>
+<p>💡 注：此方法主要用来测量内核 initcall 的耗时。</p>
+<p>一般需同时配置上内核符号表，即 kallsyms 选项，以打印函数名。</p>
+<h2 id="bootgraph">bootgraph</h2>
+<p>在内核源码中自带了一个工具 (scripts/bootgraph.pl) 可用于分析启动时间。</p>
+<ul>
+<li>kernel 编译时需要包含 CONFIG_PRINTK_TIME 选项</li>
+<li>在 kernel cmdline 加上"initcall_debug=1"</li>
+<li>在系统启动完毕后执行"dmesg | perl $(Kernel_DIR)/scripts/bootgraph.pl &gt; output.svg"</li>
+<li>使用 SVG 浏览器（比如 Inkscape， Gimp， Firefox 等）来查看输出文件 output.svg</li>
+</ul>
+<p>💡 注：此方法主要用来测量内核启动过程中各个阶段的耗时。</p>
+<h2 id="bootchart">bootchart</h2>
+<p>bootchart 是一个用于 linux 启动过程性能分析的开源软件工具，在系统启动过程自动收集 CPU 占用率、进程等信息，并以图形方式显示分析结果，可用作指导优化系统启动过程</p>
+<ul>
+<li>修改 kernel cmdline。修改 env 配置文件 （路径见上文说明），将其中的 init 修改为"init=/sbin/bootchartd”</li>
+<li>收集信息。 bootchartd 会从/proc/stat， /proc/diskstat， /proc/[pid]/stat 中采集信息，经过处理后保存为 bootchart.tgz 文件</li>
+<li>转换图片。在 PC 上通过 pybootchartgui.py 工具将 bootchart.tgz 转换为 bootchart.png，方便分析</li>
+</ul>
+<p>💡 注：此方法主要用来测量挂载文件系统到主应用程序启动过程中的耗时。</p>
+<h2 id="gpio-示波器">gpio + 示波器</h2>
+<p>在适当的地方加入操作 gpio 的代码，通过示波器抓取波形得到各阶段耗时。</p>
+<p>💡 注：此方法可用来测量整个启动中各阶段的耗时。</p>
+<h2 id="grabserial">grabserial</h2>
+<p>Grabserial 是 Tim Bird 用 python 写的一个抓取串口的工具，这个工具能够为收到的每一行信息添加上时间戳。可从如下路径下载使用： <a target="_blank" rel="noopener" href="https://github.com/tbird20d/grabserial">https://github.com/tbird20d/grabserial</a></p>
+<p>介绍文档： <a target="_blank" rel="noopener" href="http://elinux.org/Grabserial">http://elinux.org/Grabserial</a></p>
+<p>常见的用法：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grabserial -v -S -d /dev/ttyUSB0 -e 30 -t</span><br></pre></td></tr></tbody></table></figure>
+<p>如果要在某个字符串重置时间戳，可以使用-m 参数：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grabserial -v -S -d /dev/ttyUSB0 -e 30 -t -m <span class="string">"Starting kernel"</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>-v 显示参数等信息</li>
+<li>-s 跳过对串口的检查</li>
+<li>-d 指定串口，如上述为指定 /dev/ttyUSB0 为操作的串口</li>
+<li>-e 参数指定时间，如上述命令表示抓取 30s 的串口记录</li>
+<li>-t 表示加上时间戳</li>
+<li>-m 匹配到指定字符串就重置时间戳的时间，也就是从 0 开始</li>
+</ul>
+<p>更多配置可以使用 -h 参数查看帮助。</p>
+<p>💡 注：此方法可用来测量整个启动中各阶段的耗时。</p>
+<h1 id="优化方法">优化方法</h1>
+<p>💡 注：本节提供一些优化方法以供参考，并非所有都在 sdk 上集成，主要原因有：</p>
+<ul>
+<li>优化没有止境。需要根据目标来选择优化方法，综合考虑优化效果与优化难度</li>
+<li>优化需要具有针对性。由于各方案 CPU 个数及频率、 flash 类型及大小、 kernel/rootfs 压缩类型与尺寸、所需功能、主应用等的不同，需要针对性的进行优化</li>
+</ul>
+<h2 id="boot0-启动优化">boot0 启动优化</h2>
+<p>boot0 运行在 SRAM，主要功能是对 DRAM 进行初始化，并将 uboot 加载至 DRAM。 对于安全方案来说， boot0 还会对 uboot、 monitor、 secure-os 等进行签名校验。</p>
+<p>boot0 可优化的地方不多，可以做的是：</p>
+<ul>
+<li>关闭串口输出。</li>
+<li>减少检测按键和检测串口的等待时间。</li>
+<li>加载 uboot 的时候，不要先加载后搬运，直接加载到 uboot 的运行地址</li>
+</ul>
+<p>对于 spinor 的方案，还可以直接从 boot0 启动，只需要在 boot0 中加载好 kernel 和 dtb，不需要经过 uboot ，然后直接跳转到 kernel 运行，可节省一定的时间。如果采用 boot0 启动 OS，则 boot0 读取数据量较大，其 flash 驱动也需要进行优化，如提高时钟，开启双线/四线/DMA/Cache 等。</p>
+<h2 id="uboot-启动优化">uboot 启动优化</h2>
+<p>uboot 主要功能是引导内核、量产升级、电源管理、开机音乐/logo、 fastboot 刷机等。</p>
+<ul>
+<li><p>完全去掉 uboot：<br>
+uboot 的包含很多重要功能，通常会保留。某些情况可以去掉，直接从 boot0 加载内核并启动，可节省一些时间</p></li>
+<li><p>避免 burnkey 的影响：<br>
+对于启用了 burnkey 支持，且还没使用 DragonSN 工具将 key 烧录进去的板子，每次启动到 uboot 都会尝试跟 PC 端工具交互产生如下 log，带来延时</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[1.334]usb burn from boot</span><br><span class="line">...</span><br><span class="line">[1.400]usb prepare ok</span><br><span class="line">usb sof ok</span><br><span class="line">[1.662]usb probe ok</span><br><span class="line">[1.664]usb setup ok</span><br><span class="line">...</span><br><span class="line">[4.698]do_burn_from_boot usb : have no handshake</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果产品不需要 burnkey，可将 sys_config.fex 中的 [target] 下 burn_key 设置为 0。</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[target]</span><br><span class="line">burn_key = 0</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>或者使用 DragonSN 工具，烧录一次 key，并设置烧录标志，以使后续启动可跳过检测。</p></li>
+<li><p>提高 CPU 以及 flash 读取频率：<br>
+可设置 sys_config.fex 中的 [target] 下 boot_clock 来修改 uboot 运行时 CPU 频率 （注：不能超过 SPEC 最大频率）</p>
+<p>对于 spinor/spinand，使用较高的时钟频率（一般是 100M），使用四线模式或者双线模式（看硬件是否支持），提高加载速度</p></li>
+<li><p>关闭串口输出<br>
+可将 sys_config.fex 中的 [platform] 下 debug_mode 设置为 0 来关闭 uboot 和 boot0 串口输出。</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[platform]</span><br><span class="line">debug_mode = 0</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>配置此项后，如果还有少量输出，有两个可能的原因：</p>
+<ul>
+<li>第一是这些输出是在读取 sys_config.fex 禁止串口输出流程之前产生</li>
+<li>第二是因为源码中直接使用了 puts 而没有使用 printf</li>
+</ul>
+<p>对于这两者情况，需要修改源码来完全关闭串口输出。</p></li>
+<li><p>修改 kernel 加载位置：<br>
+如果 uboot 将内核加载到 DRAM 的地址与内核中 load address 不匹配，就需要将内核移动到正确位置，这样会浪费一定的时间。因此，可以直接修改 uboot 加载内核为正确的地址。具体是修改 env 文件 （路径见上文） 的 boot_normal 与 boot_recovery 变量。需要根据不同的内核镜像格式来设置不同的值。</p>
+<p>假设 kernel 的 load address 为 0x40008000。如果使用的是 uImage，也就是在 kernel 的镜像前加了 64 字节，所以 uboot 应该将 kernel 加载到 0x40008000 - 0x40 = 0x40007fc0。</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#uImage/raw</span></span><br><span class="line">boot_normal=sunxi_flash <span class="built_in">read</span> 40007fc0 <span class="variable">${boot_partition}</span>;bootm 40007fc0</span><br><span class="line">boot_recovery=sunxi_flash <span class="built_in">read</span> 40007fc0 recovery;bootm 40007fc0</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果使用的是 boot.img，即 android 的 kernel 格式，其头部大小为 0x800，所以 uboot 应该将 kernel 加载 到 0x40008000 - 0x800 = 40007800。</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#boot.img/raw</span></span><br><span class="line">boot_normal=sunxi_flash <span class="built_in">read</span> 40007800 <span class="variable">${boot_partition}</span>;bootm 40007800</span><br><span class="line">boot_recovery=sunxi_flash <span class="built_in">read</span> 40007800 recovery;bootm 40007800</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果 uboot 加载 kernel 地址与 load address 不匹配， uboot 过程中串口输出可能会有：</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Loading Kernel Image ... OK</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果是匹配的， uboot 过程中串口输出可能会有：</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XIP Kernel Image ... OK</span><br></pre></td></tr></tbody></table></figure><p></p></li>
+<li><p>修改 kernel 加载大小：<br>
+最新代码会根据 uImage/boot.img 的头部信息，只读取必要的大小，可忽略此优化项。 对于旧代码， uboot 在加载内核的时候，有些情况会直接将整个分区读取出来。</p>
+<p>就是说假如内核只有 2M，而分区分了 4M 的话， uboot 就会读取 4M。这种情况下，可以将分区大小设置得刚好容纳 下内核，这样可避免 uboot 在加载内核的时候浪费时间。</p>
+<p>可修改 sys_partition*.fex 中 boot 分区的大小。 uboot 具体读出多少，通常会有 log 信息，可同真正内核镜像的 size 进行比较。</p></li>
+<li><p>关闭 kernel 校验：<br>
+uboot 加载了内核以后，默认会对内核进行校验，可以在串口输出中看到：</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Verifying Checksum ... OK</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果不想校验可以去掉，目前的情况是可以减少几十毫秒 （不同平台，不同内核大小，时间不同）的启动时间。</p></li>
+<li><p>uboot 重定位：<br>
+目前的启动过程中， uboot 在执行过程中会进行一次重定位，可以在串口中打印出这个值，然后修改 uboot 的加载地 址使得 boot0 将 uboot 加载进 DRAM 的时候就直接加载到这个地址。</p>
+<p>修改文件 sdk/lichee/brandy<em>/u-boot</em>/include/configs/sun_iw_p*.h 中的</p>
+<p></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define CONFIG_SYS_TEXT_BASE (0x40900000)</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>但这个方法有个弊端，如果后续修改了 uboot 的代码，则可能需要重新设置。</p>
+<p>目前这个操作耗时很少（某平台测得十几毫秒），不必要的话不建议做这个修改</p></li>
+<li><p>裁剪 uboot：<br>
+即使流程没有简化， uboot 体积的减小也可减少加载 uboot 的时间。 依据具体情况，可对 uboot 不需要的功能的模块进行裁剪，避免了启动中执行不必要的流程，可减少 uboot 加载时间。</p></li>
+<li><p>开启 logo 及音乐：<br>
+可尝试在 uboot 中开启开机 logo/音乐，尽快播出第一帧/声，提升用户体验。 此操作会延缓到达 OS/APP 的时间，但如果产品定义/用户体验是以第一帧/声为准的话，则有较大价值。</p></li>
+</ul>
+<h2 id="kernel-启动优化">kernel 启动优化</h2>
+<p>通常来说，内核启动耗时较多，需要更深入的优化。</p>
+<h3 id="kernel-压缩方式">kernel 压缩方式</h3>
+<p>比较不同压缩方式的启动时间和 flash 占用情况，选择一种符合实际情况的。此处给出某次测试结果供参考。实际优化的时候，需要重新测试，根据实际情况选择。</p>
+<table>
+<thead>
+<tr class="header">
+<th>压缩方式</th>
+<th>内核大小（M）</th>
+<th>加载时间（s）</th>
+<th>解压时间（s）</th>
+<th>总时间（s）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LZO</td>
+<td>2.4</td>
+<td>0.38</td>
+<td>0.23</td>
+<td>0.61</td>
+</tr>
+<tr class="even">
+<td>GZIP</td>
+<td>1.9</td>
+<td>0.35</td>
+<td>0.44</td>
+<td>0.79</td>
+</tr>
+<tr class="odd">
+<td>XZ</td>
+<td>1.5</td>
+<td>0.25</td>
+<td>2.17</td>
+<td>2.42</td>
+</tr>
+</tbody>
+</table>
+<h3 id="加载位置">加载位置</h3>
+<p>内核镜像可以由 kernel 自解压，也有 uboot 进行解压的情况。</p>
+<p>对于 kernel 自解压的情况，如果压缩过的 kernel 与解压后的 kernel 地址冲突，则会先把自己复制到安全的地方，然后再解压，防止自我覆盖。这就需要耗费复制的时间。</p>
+<p>比如对于运行地址为 0x80008000 的内核来说， bootloader 可以将其加载到 0x81008000，当然其他位置也可以。</p>
+<h3 id="内核裁剪">内核裁剪</h3>
+<p>裁剪内核，带来的加速是两个方面的。一是体积变小，加载解压耗时减少；二是内核启动时初始化内容变少。</p>
+<p>裁剪要根据产品的实际情况来，将不需要的功能及模块都去掉。具体是执行"make kernel_menuconfig"，关闭不需要的选项。</p>
+<h3 id="预设置-lpj-数值">预设置 lpj 数值</h3>
+<p>LPJ 也就是 loops_per_jiffy，每次启动都会计算一次，但如果没有做修改的话，这个值每次启动算出来都是一样的，可以直接提供数值跳过计算。</p>
+<p>如下 log 所示，有 skipped， lpj 由 timer 计算得来，不需要再校准 calibrate 了。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ 0.019918] Calibrating delay loop (skipped), value calculated using timer frequency..</span><br><span class="line">48.00 BogoMIPS (lpj=240000)</span><br></pre></td></tr></tbody></table></figure>
+<p>如果没有 skipped，则可以在 cmdline 中添加 lpj=XXX 进行预设。</p>
+<h3 id="initcall-优化">initcall 优化</h3>
+<p>在 cmdline 中设置 initcall_debug=1，即可打印跟踪所有内核初始化过程中调用 initcall 的顺序以及耗时。</p>
+<p>具体修改 env 配置文件（路径见上文），新增一行"initcall_debug=1"，并在"setargs_*"后加入"initcall_debug=${initcall_debug}"，如下所示。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setargs_nand=setenv bootargs console=<span class="variable">${console}</span> console=tty0 root=<span class="variable">${nand_root}</span> init=<span class="variable">${init}</span></span><br><span class="line">loglevel=<span class="variable">${loglevel}</span> partitions=<span class="variable">${partitions}</span> initcall_debug=<span class="variable">${initcall_debug}</span></span><br></pre></td></tr></tbody></table></figure>
+<p>加入后，内核启动时就会有类似如下的打印，对于耗时较多的 initcall，可进行深入优化。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[ 0.021772] initcall sunxi_pinctrl_init+0x0/0x44 returned 0 after 9765 usecs</span><br><span class="line">[ 0.067694] initcall param_sysfs_init+0x0/0x198 returned 0 after 29296 usecs</span><br><span class="line">[ 0.070240] initcall genhd_device_init+0x0/0x88 returned 0 after 9765 usecs</span><br><span class="line">[ 0.080405] initcall init_scsi+0x0/0x90 returned 0 after 9765 usecs</span><br><span class="line">[ 0.090384] initcall mmc_init+0x0/0x84 returned 0 after 9765 usecs</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="内核-initcall-module-并行">内核 initcall module 并行</h3>
+<p>内核 initcall 有很多级别，其中启动中最耗时的就是各 module 的 initcall，针对多核方案，可以考虑将 module initcall 并行执行来节省时间。</p>
+<p>目前内核 do_initcalls 是一个一个按照顺序来执行，可以修改成新建内核线程来执行。</p>
+<p>💡 注：当前 sdk 还未加入该优化。</p>
+<h3 id="减少-ptytty-个数">减少 pty/tty 个数</h3>
+<p>加入 initcall 打印之后，部分平台发现 pty/tty init 耗时很多，可减少个数来缩短 init 时间。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">initcall pty_init+0x0/0x3c4 returned 0 after 239627 usecs</span><br><span class="line">initcall chr_dev_init+0x0/0xdc returned 0 after 36581 usecs</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="内核-module">内核 module</h3>
+<p>需要考虑启动速度的界定，对于内核 module 的优化主要有两点：</p>
+<ul>
+<li>对于必须要加载的模块，直接编译进内核</li>
+<li>对于不急需的功能，可以编译成模块</li>
+</ul>
+<p>比如某个应用，会开启主界面联网，启动速度以出现主界面为准，那么可以考虑将 disp 编入内核， wifi 编译成模块，后续需要时再动态加载</p>
+<h3 id="deferred-initcalls">Deferred Initcalls</h3>
+<p>介绍页面及 patch： <a target="_blank" rel="noopener" href="http://elinux.org/Deferred_Initcalls">http://elinux.org/Deferred_Initcalls</a></p>
+<p>打上这个 patch 之后，可以标记一些 initcall 为 Deferred_Initcall。这些被标记的初始化函数，在系统启动的时候不会被调用</p>
+<p>进入文件系统后，在合适的时间，比如启动主应用之后，再通过文件系统接口，启动这些推迟了的调用，彻底完成初始化。</p>
+<h2 id="rootfs-启动优化">rootfs 启动优化</h2>
+<p>rootfs 启动优化主要是优化 rootfs 的挂载到 init 进程执行。</p>
+<h3 id="initramfs">initramfs</h3>
+<p>initramfs 是一个内存文件系统，会占用较多 DRAM。</p>
+<p>部分产品可能会用到 initramfs 来过渡到 rootfs，其优化思路大体与 rootfs 类似。可参考本节后续的优化方案。</p>
+<h3 id="rootfs-类型以及压缩">rootfs 类型以及压缩</h3>
+<p>存储介质、文件系统类型，压缩方式对 rootfs 挂载有很大影响。</p>
+<p>此处给出某次测试结果供参考。实际优化的时候，需要重新测试，根据实际情况选择</p>
+<table>
+<thead>
+<tr class="header">
+<th>类型</th>
+<th>压缩</th>
+<th>介质</th>
+<th>总时间（s）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>squashfs</td>
+<td>gzip</td>
+<td>emmc</td>
+<td>0.12</td>
+</tr>
+<tr class="even">
+<td>squashfs</td>
+<td>xz</td>
+<td>emmc</td>
+<td>0.27</td>
+</tr>
+<tr class="odd">
+<td>squashfs</td>
+<td>xz</td>
+<td>nand</td>
+<td>0.26</td>
+</tr>
+<tr class="even">
+<td>ext4</td>
+<td>-</td>
+<td>emmc</td>
+<td>0.12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rootfs-裁剪">rootfs 裁剪</h3>
+<p>文件系统越小，加载速度越快。裁剪的主要思路是：删换压，即删除没有用到的，用小的换大的，选择合适的压缩方式</p>
+<h3 id="指定文件系统类型">指定文件系统类型</h3>
+<p>内核在挂载 rootfs 时，会有一个 try 文件系统类型的过程。可以在 cmdline 直接指定，节省时间。</p>
+<p>具体是在 cmdline 中添加"rootfstype=<type>"，其中 type 为文件系统类型，如 ext4、 squashfs 等。</type></p>
+<h3 id="静态创建-dev-节点">静态创建 dev 节点</h3>
+<p>对于 dev 下面的节点，事先根据实际情况创建好，而不是在系统启动后动态生成，理论上也可以节省一定的时间。</p>
+<h3 id="rootfs-拆分">rootfs 拆分</h3>
+<p>可以将 rootfs 拆分成两个部分，一个小的文件系统先挂载执行，大的文件系统根据需要动态挂载</p>
+<h2 id="主应用程序启动优化">主应用程序启动优化</h2>
+<p>主应用程序主要是由客户开发，因此主导优化的还是客户，这里提一些优化措施：</p>
+<ul>
+<li>提升运行顺序。将应用程序放在 init 很前面执行</li>
+<li>动态/静态链接</li>
+<li>编译选项</li>
+<li>暂时不使用的库采用 dlopen 方式</li>
+<li>应用程序拆分</li>
+</ul>
+<h1 id="参考文献">参考文献</h1>
+<p>[1] <a target="_blank" rel="noopener" href="https://elinux.org/Boot_Time">https://elinux.org/Boot_Time</a><br>
+[2] <a target="_blank" rel="noopener" href="https://docs.blackfin.uclinux.org/doku.php?id=fast_boot_example">https://docs.blackfin.uclinux.org/doku.php?id=fast_boot_example</a><br>
+[3] <a target="_blank" rel="noopener" href="https://github.com/tbird20d/grabserial">https://github.com/tbird20d/grabserial</a><br>
+[4] <a target="_blank" rel="noopener" href="http://www.bootchart.org">http://www.bootchart.org</a><br>
+[5] A Framework for Optimization of the Boot Time on Embedded Linux Environment with Raspberry Pi Platform<br>
+《全志SDK文档》</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Programming/">Programming</a><a class="post-meta__tags" href="/tags/Debug/">Debug</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://unsplash.it/1600/900?random&amp;1274" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/Literature/SuShi/" title="苏轼"><img class="cover" src="https://unsplash.it/1600/900?random&amp;5953" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">苏轼</div></div></a></div><div class="next-post pull-right"><a href="/2019/Literature/LiQingzhao/" title="李清照"><img class="cover" src="https://unsplash.it/1600/900?random&amp;9277" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">李清照</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/Debug/LinuxMemoryOptimization/" title="Linux 内存优化"><img class="cover" src="https://unsplash.it/1600/900?random&511" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-03-01</div><div class="title">Linux 内存优化</div></div></a></div><div><a href="/2019/Debug/LinuxPerf/" title="Linux 性能分析"><img class="cover" src="https://unsplash.it/1600/900?random&1533" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-03-01</div><div class="title">Linux 性能分析</div></div></a></div><div><a href="/2019/Debug/LinuxSystemCropping/" title="Linux 系统裁剪"><img class="cover" src="https://unsplash.it/1600/900?random&3112" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-03-09</div><div class="title">Linux 系统裁剪</div></div></a></div><div><a href="/2022/Debug/ApplicationDebug/" title="应用崩溃调试分析"><img class="cover" src="https://unsplash.it/1600/900?random&2665" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-26</div><div class="title">应用崩溃调试分析</div></div></a></div><div><a href="/2022/Debug/CCMemLeakAsync/" title="C&#x2F;C++内存泄露分析过程"><img class="cover" src="https://unsplash.it/1600/900?random&3149" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-21</div><div class="title">C&#x2F;C++内存泄露分析过程</div></div></a></div><div><a href="/2022/Debug/ValgrindMemleak/" title="Valgrind 检测 C++内存泄漏"><img class="cover" src="https://unsplash.it/1600/900?random&7474" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-29</div><div class="title">Valgrind 检测 C++内存泄漏</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CarlyleLiu</div><div class="author-info__description">CarlyleLiu’s Blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">176</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">26</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/carlyleliu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/carlyleliu" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">启动流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">测量方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#printk-time"><span class="toc-number">2.1.</span> <span class="toc-text">printk time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#initcall_debug"><span class="toc-number">2.2.</span> <span class="toc-text">initcall_debug</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bootgraph"><span class="toc-number">2.3.</span> <span class="toc-text">bootgraph</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bootchart"><span class="toc-number">2.4.</span> <span class="toc-text">bootchart</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gpio-%E7%A4%BA%E6%B3%A2%E5%99%A8"><span class="toc-number">2.5.</span> <span class="toc-text">gpio + 示波器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#grabserial"><span class="toc-number">2.6.</span> <span class="toc-text">grabserial</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">优化方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#boot0-%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="toc-number">3.1.</span> <span class="toc-text">boot0 启动优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uboot-%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="toc-number">3.2.</span> <span class="toc-text">uboot 启动优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kernel-%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="toc-number">3.3.</span> <span class="toc-text">kernel 启动优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kernel-%E5%8E%8B%E7%BC%A9%E6%96%B9%E5%BC%8F"><span class="toc-number">3.3.1.</span> <span class="toc-text">kernel 压缩方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E4%BD%8D%E7%BD%AE"><span class="toc-number">3.3.2.</span> <span class="toc-text">加载位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E6%A0%B8%E8%A3%81%E5%89%AA"><span class="toc-number">3.3.3.</span> <span class="toc-text">内核裁剪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E8%AE%BE%E7%BD%AE-lpj-%E6%95%B0%E5%80%BC"><span class="toc-number">3.3.4.</span> <span class="toc-text">预设置 lpj 数值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#initcall-%E4%BC%98%E5%8C%96"><span class="toc-number">3.3.5.</span> <span class="toc-text">initcall 优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E6%A0%B8-initcall-module-%E5%B9%B6%E8%A1%8C"><span class="toc-number">3.3.6.</span> <span class="toc-text">内核 initcall module 并行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%B0%91-ptytty-%E4%B8%AA%E6%95%B0"><span class="toc-number">3.3.7.</span> <span class="toc-text">减少 pty&#x2F;tty 个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E6%A0%B8-module"><span class="toc-number">3.3.8.</span> <span class="toc-text">内核 module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deferred-initcalls"><span class="toc-number">3.3.9.</span> <span class="toc-text">Deferred Initcalls</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rootfs-%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">rootfs 启动优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#initramfs"><span class="toc-number">3.4.1.</span> <span class="toc-text">initramfs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rootfs-%E7%B1%BB%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8E%8B%E7%BC%A9"><span class="toc-number">3.4.2.</span> <span class="toc-text">rootfs 类型以及压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rootfs-%E8%A3%81%E5%89%AA"><span class="toc-number">3.4.3.</span> <span class="toc-text">rootfs 裁剪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.4.4.</span> <span class="toc-text">指定文件系统类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%88%9B%E5%BB%BA-dev-%E8%8A%82%E7%82%B9"><span class="toc-number">3.4.5.</span> <span class="toc-text">静态创建 dev 节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rootfs-%E6%8B%86%E5%88%86"><span class="toc-number">3.4.6.</span> <span class="toc-text">rootfs 拆分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="toc-number">3.5.</span> <span class="toc-text">主应用程序启动优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">4.</span> <span class="toc-text">参考文献</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/Embedded/EncryptionAlgorithm/" title="Encryption Algorithm"><img src="https://unsplash.it/1600/900?random&amp;1966" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Encryption Algorithm"/></a><div class="content"><a class="title" href="/2024/Embedded/EncryptionAlgorithm/" title="Encryption Algorithm">Encryption Algorithm</a><time datetime="2024-08-23T12:22:04.000Z" title="发表于 2024-08-23 20:22:04">2024-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Embedded/SecureBoot/" title="Secure Boot"><img src="https://unsplash.it/1600/900?random&amp;2577" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Secure Boot"/></a><div class="content"><a class="title" href="/2024/Embedded/SecureBoot/" title="Secure Boot">Secure Boot</a><time datetime="2024-08-19T02:22:04.000Z" title="发表于 2024-08-19 10:22:04">2024-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Embedded/TEESoftPipeLine/" title="TEE 软件交互流程"><img src="https://unsplash.it/1600/900?random&amp;4198" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TEE 软件交互流程"/></a><div class="content"><a class="title" href="/2024/Embedded/TEESoftPipeLine/" title="TEE 软件交互流程">TEE 软件交互流程</a><time datetime="2024-08-17T02:22:04.000Z" title="发表于 2024-08-17 10:22:04">2024-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Embedded/RPMB/" title="RPMB 简介"><img src="https://unsplash.it/1600/900?random&amp;1049" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RPMB 简介"/></a><div class="content"><a class="title" href="/2024/Embedded/RPMB/" title="RPMB 简介">RPMB 简介</a><time datetime="2024-08-15T02:22:04.000Z" title="发表于 2024-08-15 10:22:04">2024-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Embedded/TEEImplementationPrinciple/" title="TEE 实现原理"><img src="https://unsplash.it/1600/900?random&amp;4469" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TEE 实现原理"/></a><div class="content"><a class="title" href="/2024/Embedded/TEEImplementationPrinciple/" title="TEE 实现原理">TEE 实现原理</a><time datetime="2024-08-14T02:22:04.000Z" title="发表于 2024-08-14 10:22:04">2024-08-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2024 By CarlyleLiu</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
