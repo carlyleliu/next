@@ -1332,7 +1332,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #9c1a4a;
+  background: #2ac174;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2794,25 +2794,4 @@ header.header {
   .sidebar-active .footer-fixed {
     right: 320px;
   }
-}
-.sidebar {
-  background: url("https://lsky.carlyleliu.vip/i/2024/09/01/66d3452bb8dc4.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  bottom: 0;
-  box-shadow: inset 0 2px 6px #000;
-  position: fixed;
-  top: 0;
-  transition: all 0.2s ease-out;
-  width: $sidebar-desktop;
-  z-index: 20;
-}
-.sidebar a {
-  border-bottom-color: #fff;
-  color: #fff;
-}
-.sidebar a:hover {
-  border-bottom-color: $FFFFFF;
-  color: #fff;
 }
