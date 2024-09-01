@@ -6,7 +6,7 @@
   <link href="http://carlyleliu.vip/atom.xml" rel="self"/>
   
   <link href="http://carlyleliu.vip/"/>
-  <updated>2024-08-31T16:18:51.946Z</updated>
+  <updated>2024-09-01T16:38:46.594Z</updated>
   <id>http://carlyleliu.vip/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://carlyleliu.vip/2024/Debug/LinuxCpuIdle/"/>
     <id>http://carlyleliu.vip/2024/Debug/LinuxCpuIdle/</id>
     <published>2024-08-30T11:44:15.000Z</published>
-    <updated>2024-08-31T16:18:51.946Z</updated>
+    <updated>2024-09-01T16:38:46.594Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;cpu-idle实现原理&quot;&gt;cpu idle实现原理&lt;/h1&gt;
@@ -55,7 +55,7 @@
     <link href="http://carlyleliu.vip/2024/Debug/LinuxperfdebugExample/"/>
     <id>http://carlyleliu.vip/2024/Debug/LinuxperfdebugExample/</id>
     <published>2024-08-28T11:44:15.000Z</published>
-    <updated>2024-08-31T16:09:41.486Z</updated>
+    <updated>2024-09-01T16:38:46.594Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;实验&quot;&gt;实验&lt;/h1&gt;
@@ -128,7 +128,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/"/>
     <id>http://carlyleliu.vip/2024/Embedded/EncryptionAlgorithm/</id>
     <published>2024-08-23T12:22:04.000Z</published>
-    <updated>2024-08-31T02:49:20.586Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;aes&quot;&gt;AES&lt;/h1&gt;
@@ -151,7 +151,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/SecureBoot/"/>
     <id>http://carlyleliu.vip/2024/Embedded/SecureBoot/</id>
     <published>2024-08-19T02:22:04.000Z</published>
-    <updated>2024-08-30T17:22:24.748Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;目的&quot;&gt;目的&lt;/h1&gt;
@@ -184,7 +184,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/"/>
     <id>http://carlyleliu.vip/2024/Embedded/TEESoftPipeLine/</id>
     <published>2024-08-17T02:22:04.000Z</published>
-    <updated>2024-08-30T17:22:33.758Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;tee软件框架&quot;&gt;TEE软件框架&lt;/h1&gt;
@@ -211,7 +211,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/RPMB/"/>
     <id>http://carlyleliu.vip/2024/Embedded/RPMB/</id>
     <published>2024-08-15T02:22:04.000Z</published>
-    <updated>2024-08-30T17:22:13.918Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;信息安全&quot;&gt;信息安全&lt;/h1&gt;
@@ -238,7 +238,7 @@
     <link href="http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/"/>
     <id>http://carlyleliu.vip/2024/Embedded/TEEImplementationPrinciple/</id>
     <published>2024-08-14T02:22:04.000Z</published>
-    <updated>2024-08-30T17:22:29.098Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;trustzone&quot;&gt;TrustZone&lt;/h1&gt;
@@ -263,7 +263,7 @@
     <link href="http://carlyleliu.vip/2024/Tools/HexoNextUsage/"/>
     <id>http://carlyleliu.vip/2024/Tools/HexoNextUsage/</id>
     <published>2024-07-14T03:59:43.000Z</published>
-    <updated>2024-08-31T02:49:13.876Z</updated>
+    <updated>2024-09-01T16:38:19.244Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;安装-hexo&quot;&gt;安装 hexo&lt;/h1&gt;
@@ -290,7 +290,7 @@
     <link href="http://carlyleliu.vip/2024/Tools/NasDockerUsage/"/>
     <id>http://carlyleliu.vip/2024/Tools/NasDockerUsage/</id>
     <published>2024-07-01T03:59:43.000Z</published>
-    <updated>2024-08-26T13:05:20.484Z</updated>
+    <updated>2024-09-01T14:46:31.042Z</updated>
     
     
       
@@ -317,7 +317,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACCommonIssue/</id>
     <published>2024-06-30T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;修改uac配置参数后无法正常通信&quot;&gt;修改UAC配置参数后无法正常通信&lt;/h1&gt;
@@ -341,7 +341,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCPPM/</id>
     <published>2024-06-28T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;usb-sof统计方法&quot;&gt;USB sof统计方法&lt;/h1&gt;
@@ -376,7 +376,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</id>
     <published>2024-06-19T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;buffer-统计&quot;&gt;buffer 统计&lt;/h1&gt;
@@ -400,7 +400,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDMA-API/</id>
     <published>2024-05-02T15:20:16.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;there-are-two-types-of-dma-mappings&quot;&gt;😊 There are two types of DMA mappings&lt;/h1&gt;
@@ -427,7 +427,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDeviceIO/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxDriverBaseDeviceIO/</id>
     <published>2024-04-22T13:23:06.000Z</published>
-    <updated>2024-08-26T13:05:20.094Z</updated>
+    <updated>2024-09-01T15:44:38.867Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;memory-mapped-io&quot;&gt;Memory Mapped IO&lt;/h1&gt;
@@ -455,7 +455,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</id>
     <published>2024-04-19T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;同步问题原因&quot;&gt;同步问题原因&lt;/h1&gt;
@@ -484,7 +484,7 @@
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACFU/</id>
     <published>2024-04-17T13:13:11.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;音量基本概念&quot;&gt;音量基本概念&lt;/h1&gt;
@@ -529,7 +529,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACHID/</id>
     <published>2024-04-09T12:13:21.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;hid-相关概念&quot;&gt;HID 相关概念&lt;/h1&gt;
@@ -555,7 +555,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</id>
     <published>2024-04-03T02:15:21.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;interrupts&quot;&gt;&lt;strong&gt;Interrupts&lt;/strong&gt;&lt;/h1&gt;
@@ -585,7 +585,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecRequests/</id>
     <published>2024-03-23T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;standard-requests&quot;&gt;&lt;strong&gt;Standard Requests&lt;/strong&gt;&lt;/h1&gt;
@@ -623,7 +623,7 @@ dB = 20 * log(65536)
     <link href="http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/"/>
     <id>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</id>
     <published>2024-03-03T05:15:01.000Z</published>
-    <updated>2024-08-28T17:08:46.536Z</updated>
+    <updated>2024-09-01T16:37:58.404Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
