@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2022/Program/RefactorPart3/</loc>
+    <loc>http://carlyleliu.vip/2019/Program/rtosDesign/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2019/Program/rtosDesign/</loc>
+    <loc>http://carlyleliu.vip/2022/Program/RefactorPart3/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -272,15 +272,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2024/Embedded/RPMB/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2024/Embedded/SecureBoot/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -363,6 +354,15 @@
   
   <url>
     <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxAudioALSASummer/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2024/Embedded/RPMB/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -1172,24 +1172,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2022/Program/RefactorPart1/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://carlyleliu.vip/2022/Program/RefactorPart2/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart4/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -1208,6 +1190,24 @@
   </url>
   
   <url>
+    <loc>http://carlyleliu.vip/2022/Program/RefactorPart1/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2022/Program/RefactorPart2/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://carlyleliu.vip/2019/Program/ucosDesign/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -1217,7 +1217,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/</loc>
+    <loc>http://carlyleliu.vip/2021/Science/ANovelCameraPathPlanningAlgorithmForRealTimeVideoStabilization/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -1226,7 +1226,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/Science/ANovelCameraPathPlanningAlgorithmForRealTimeVideoStabilization/</loc>
+    <loc>http://carlyleliu.vip/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -1334,7 +1334,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2022/Algorithm/odriverSVM/</loc>
+    <loc>http://carlyleliu.vip/2020/Algorithm/imuCalibration/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -1343,7 +1343,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2020/Algorithm/imuCalibration/</loc>
+    <loc>http://carlyleliu.vip/2022/Algorithm/odriverSVM/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
