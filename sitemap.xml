@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/categories/index.html</loc>
+    <loc>http://carlyleliu.vip/tags/index.html</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/tags/index.html</loc>
+    <loc>http://carlyleliu.vip/categories/index.html</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -569,7 +569,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</loc>
+    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -578,7 +578,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNCFeedback/</loc>
+    <loc>http://carlyleliu.vip/2024/LinuxDriver/LinuxUSBUACASYNC/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -668,15 +668,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxFileSystemVFS/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxFileSystemblockIO/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -704,6 +695,24 @@
   </url>
   
   <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxFileSystemVFS/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptFramework/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelDebugftrace/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -714,15 +723,6 @@
   
   <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptARMExcept/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxKernelInterruptFramework/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -821,15 +821,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryOptimization/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageAllocate/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -839,7 +830,25 @@
   </url>
   
   <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryOptimization/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryPageMngr/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemorymigrate/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -866,7 +875,7 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemorymigrate/</loc>
+    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryslab/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -876,15 +885,6 @@
   
   <url>
     <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxSyncMutex/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://carlyleliu.vip/2021/LinuxKernel/LinuxMemoryslab/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -1163,15 +1163,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart3/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart4/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -1182,6 +1173,15 @@
   
   <url>
     <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart5/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/Program/LinksAndLibrariesPart3/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
@@ -1253,15 +1253,6 @@
   </url>
   
   <url>
-    <loc>http://carlyleliu.vip/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/</loc>
-    
-    <lastmod>2024-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://carlyleliu.vip/2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/</loc>
     
     <lastmod>2024-09-01</lastmod>
@@ -1272,6 +1263,15 @@
   
   <url>
     <loc>http://carlyleliu.vip/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://carlyleliu.vip/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/</loc>
     
     <lastmod>2024-09-01</lastmod>
     
