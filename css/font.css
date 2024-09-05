@@ -1,0 +1,13 @@
+@font-face{
+    font-family: 'JetBrains Mono';
+    font-display: swap;
+    src: url('../font/JetBrainsMono-Regular-2.ttf') format("truetype");
+}
+@font-face{
+    font-family: 'qingyaxingkai';
+    font-display: swap;
+    src: url('../font/qingyaxingkai-2.ttf') format("truetype");
+}
+body {
+    font-family: 'JetBrains Mono','qingyaxingkai';
+}
