@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">179</span>
+          <span class="site-state-item-count">204</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -216,7 +216,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Program/rtosDesign/">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -234,7 +234,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Program/rtosDesign/" class="post-title-link" itemprop="url">RTOS 的设计</a>
+          <a href="/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/" class="post-title-link" itemprop="url">使用陀螺仪的数字视频稳定和卷帘快门校正</a>
         </h2>
 
         <div class="post-meta-container">
@@ -249,7 +249,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Technology-Blog/RTOS/" itemprop="url" rel="index"><span itemprop="name">RTOS</span></a>
+          <a href="/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
         </span>
     </span>
 
@@ -262,8 +266,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/Program/rtosDesign/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Program/rtosDesign/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
+      <span>3.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
+      <span>11 分钟</span>
     </span>
 </div>
 
@@ -292,30 +296,316 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="何为实时性">何为实时性？</h1>
-<p>RTOS 的实时性该怎么理解呢？快速？确定性？</p>
-<h2 id="从中断控制器视角看实时性">从中断控制器视角看实时性</h2>
-<p>我们知道一般都是 Cortex-M 跑 RTOS，Cortex-A 很少跑 RTOS，一般都是跑 Linux、Android 这些非实时系统。如果单纯从速度来看 A 核在高主频加持下一定会具有更快的速度才对呀，那 M 核的竞争力在哪里呢？实际上这就是 A 核和 M 核在设计上的两个不同方向的取舍。</p>
-<p>首先我们看 NVIC 中断控制器的设计：</p>
+          <p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/EIS/dvs1.png"></p>
+<h1 id="abstract">Abstract</h1>
+<p>在本文中，我们提出了一种基于商用陀螺仪的强大实时视频稳定和滚动快门校正技术。首先来对相机运动和卷帘快门扭曲进行建模，然后从单个视频捕获自动校准陀螺仪和相机输出。 这种校准使我们能够仅使用陀螺仪数据来有效校正卷帘快门扭曲并稳定视频。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/" class="post-title-link" itemprop="url">基于 IMU 传感器的视频稳定混合运动估计</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>14 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="abstract">Abstract</h2>
+<p>在本文中，我们提出了一种混合方法来估计运动并通过切换函数稳定视频，该方法在 Kanade-Lucus-Tomasi (KLT) 跟踪器和 IMU 辅助运动估计器之间切换估计的运动。为了实现这一点，由于 KLT 跟踪器在较大运动期间的性能不佳，我们使用 KLT 跟踪器来校正低旋转的运动，并使用 IMU 辅助运动估计器来校正高旋转，此外，卡尔曼滤波器用于去除不需要的运动，从而平滑轨迹。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/" class="post-title-link" itemprop="url">EIS 电子防抖基本原理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="投影">投影</h1>
+<p>这里以小孔成像模型为例，全相模型是相同的流程只是投影模型不一样而已。在相机校准模型一文中已经介绍了将像素坐标系变换到相机坐标系中 <span class="exturl" data-url="aHR0cHM6Ly9jYXJseWxlbGl1LmdpdGh1Yi5pby8yMDIxL0NhbWVyYS9DYW1lcmFDYWxpYnJhdGlvbk1vZGVsLw==">相机校准模型<i class="fa fa-external-link-alt"></i></span> 如下：</p>
+<p><span class="math display">\[
+\begin{bmatrix} u \\ v \\ 1 \end{bmatrix} = \begin{bmatrix} \frac{1}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{1}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\&nbsp; y \\ 1 \end{bmatrix} = \frac{1}{z_c}\begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x_c\\&nbsp; y_c\\&nbsp; z_c \end{bmatrix}
+\]</span></p>
+<p>这里我们取 <span class="math inline">\(z_c = 1\)</span> 再做一个变换得到：</p>
+<p><span class="math display">\[
+\begin{bmatrix} x_c\\&nbsp; y_c\\&nbsp; z_c \end{bmatrix} =\begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} ^{-1} \begin{bmatrix} u \\ v \\ 1 \end{bmatrix}
+\]</span></p>
+<p>我们记 ：</p>
+<p><span class="math display">\[
+K_{内参}^{-1} = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} ^{-1} 
+\]</span></p>
+<p>则将像素坐标系与该矩阵相乘就可以将像素坐标系转换到相机坐标系上，待后面使用。</p>
+<h1 id="imu-数据处理">IMU 数据处理</h1>
+<p>具体可以参考 <span class="exturl" data-url="aHR0cHM6Ly9jYXJseWxlbGl1LmdpdGh1Yi5pby8yMDIwL0FsZ29yaXRobS9pbXVBdHRpdHVkZUNhbGN1bGF0aW9uLw==">imu 姿态解算<i class="fa fa-external-link-alt"></i></span> 一文，我们需要对 IMU 数据做三件事情：</p>
 <ul>
-<li>中断延迟波动很小：NVIC 支持中断嵌套，这样即使当前中断在处理中且非常耗时也没关系，因为可以通过高优先级的中断来响应更紧急的事件，这样中断延迟就不依赖与中断处理时间了，从设计上保证了延迟的确定性。</li>
-<li>中断延迟小：NVIC 在不同的中断会跳转到不同地址运行，且可以直接在硬中断上下文中执行中断程序，这样整个 pipeline 很短，且 NVIC 还支持<strong>尾链</strong>这个概念进一步降低延迟（当高优先级的 ISR 抢占低优先级 ISR 时，处理器会跳过上下文保存和恢复，直接处理第二个 ISR，没有任何额外的开销）。通常 NVIC 中断响应时间在十几到几十 ns 之间。</li>
+<li>IMU 坐标系对齐相机坐标系，这一步目的为了将 IMU 的正交三轴数据与 Camera 坐标系对齐。</li>
+<li><p>卡尔曼滤波：为了消除 IMU 的系统误差以及如果要做重力矫正需要做姿态解算（重力对齐）。这里常用的就是卡尔曼滤波和 mahony 滤波，这一层滤波的目的就是为了得到更为准确的相机姿态和相机抖动状态，如下图所示： <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/ISP/lpf.png"></p></li>
+<li><p>平滑滤波：在我们得到相机的抖动状态就可以对相机的姿态做一个平滑滤波（可以采用四元数求平均，或者高斯滤波等算法），这个平滑滤波的目的是为了得到相机防抖后想要得到的状态。 <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/ISP/anl5.png"></p></li>
 </ul>
-<p>NVIC 中断控制器在实时性上是满足要求的，快速和确定性都满足，但是他不适合处理大量中断，假如每秒要处理成千上万（这个中断数量对于 A 核来讲是很常见的 UAC、UVC，DSP 等一个模块每秒可能就有几千个中断）个中断，那么对 NVIC 来讲这是灾难性的，各种嵌套设计各种性能评估，除此之外对于多核系统 NVIC 也没有一套将中断分配给各个 CPU 核的机制，那么就无法充分利用多核的优势提高中断处理能力。而 A 核的 GIC 控制器就是为解决这些问题而设计的。</p>
-<p>Cortex-A 核的 GIC 中断控制器设计很复杂，但是不支持中断嵌套，由 Distributor、CPU interface、Redistributor、ITS 组成，Distributor 具有仲裁和分发的作用，会将中断发送给 Redistributor，Redistributor 将中断发送给 CPU interface。这样第一解决了多核问题，其次 GIC 没有中断嵌套，当中断发生后跳转到一个固定地址，然后判断中断源进行下一步跳转，在 Linux 中接下来就会分为中断上半部和下半部机制，上半部在硬中断上下文快速响应然后返回，以更快处理其他中断兼顾实时性。中断下半部为了不同的应用需求设计了 softirq、tasklet、workqueue、thread 等机制来实现大量的中断任务，兼顾高性能。GIC 中断控制器解决了 NVIC 的问题但是却丢了硬实时性。</p>
+<p>我们将从 Large inner region 曲线或者 Small inner region 曲线到 Input 曲线的变换矩阵记为 <span class="math inline">\(M(\alpha, \beta, \gamma)\)</span> 为了简化模型这里面的数据是已经将 IMU 坐标系变化到相机坐标系下的变换矩阵。</p>
+<p>到这里我们就得到了两条曲线和一个变换矩阵。</p>
+<h1 id="求透视变换矩阵">求透视变换矩阵</h1>
+<p>这里我们记旋转矩阵为：</p>
+<p><span class="math display">\[
+\begin{aligned}
+M(\alpha, \beta, \gamma) &amp; =\left[\begin{array}{ccc}
+\cos \gamma &amp; -\sin \gamma &amp; 0 \\
+\sin \gamma &amp; \cos \gamma &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}\right]\left[\begin{array}{ccc}
+\cos \beta &amp; 0 &amp; \sin \beta \\
+0 &amp; 1 &amp; 0 \\
+-\sin \beta &amp; 0 &amp; \cos \beta
+\end{array}\right]\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; \cos \alpha &amp; -\sin \alpha \\
+0 &amp; \sin \alpha &amp; \cos \alpha
+\end{array}\right] \\
+&amp; =\left[\begin{array}{ccc}
+\cos \gamma \cos \beta &amp; -\sin \gamma &amp; \cos \gamma \sin \beta \\
+\sin \gamma \cos \beta &amp; \cos \gamma &amp; \sin \gamma \sin \beta \\
+-\sin \beta &amp; 0 &amp; \cos \beta
+\end{array}\right]\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; \cos \alpha &amp; -\sin \alpha \\
+0 &amp; \sin \alpha &amp; \cos \alpha
+\end{array}\right] \\
+&amp; =\left[\begin{array}{ccc}
+\cos \gamma \cos \beta &amp; -\sin \gamma \cos \alpha+\cos \gamma \sin \beta \sin \alpha &amp; \sin \gamma \sin \alpha+\cos \gamma \sin \beta \cos \alpha \\
+\sin \gamma \cos \beta &amp; \cos \gamma \cos \alpha+\sin \gamma \sin \beta \sin \alpha &amp; -\cos \gamma \sin \alpha+\sin \gamma \sin \beta \cos \alpha \\
+-\sin \beta &amp; \cos \beta \sin \alpha &amp; \cos \beta \cos \alpha
+\end{array}\right]
+\end{aligned}
+\]</span></p>
+<p>综合前面两节的内容我们可以通过如下公式得到投影变换矩阵 R：</p>
+<p><span class="math display">\[
+R = K_{内参}^{-1} \ast M(\alpha ,\beta ,\gamma ) \ast K_{内参}
+\]</span></p>
+<p>改写成完整的公式如下：</p>
+<p><span class="math display">\[
+R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}^{-1} \ast \left[\begin{array}{ccc}
+\cos \gamma \cos \beta &amp; -\sin \gamma \cos \alpha+\cos \gamma \sin \beta \sin \alpha &amp; \sin \gamma \sin \alpha+\cos \gamma \sin \beta \cos \alpha \\
+\sin \gamma \cos \beta &amp; \cos \gamma \cos \alpha+\sin \gamma \sin \beta \sin \alpha &amp; -\cos \gamma \sin \alpha+\sin \gamma \sin \beta \cos \alpha \\
+-\sin \beta &amp; \cos \beta \sin \alpha &amp; \cos \beta \cos \alpha
+\end{array}\right] \ast \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>该公式是通过相机的内参矩阵将像素坐标系变换到相机坐标系，然后通过 IMU 得到相机的姿态，将相机坐标系变换到世界坐标系下对相机的姿态进行稳定，得到稳定后的相机姿态，再将上述矩阵的逆乘起来变换回像素坐标系。这样就得到了透视变换的矩阵，将像素的坐标与该 R 矩阵相乘就得到了该像素防抖后的坐标值（就是 opencv 里的 remap）。</p>
+<h1 id="特别注意">特别注意</h1>
 <ul>
-<li>中断延迟比较大：中断处理的 PipeLine 比较长，中断响应延迟一般在 us 级别。</li>
-<li>中断延迟波动比较大：中断不支持嵌套那么就一定要等上一个中断返回才能得到处理，这个延迟就不可控了。</li>
+<li>在做 IMU 姿态解算的时候要给陀螺仪足够的置信度，不然可能很难得到较好的防抖效果。</li>
+<li>要将视频帧的时间戳与 IMU 的时间戳对齐，不然一定不能得到较好的效果，笔者没有研究好这块算法手动试出来的，精度要在 1ms 内才行，另外有香港科技大学的 VIO 项目里面有相关论文和实现可以参考。</li>
+<li>rollingshutter 需要矫正，其实算法上需要做的就是找到帧曝光开始和结束的时刻，然后将旋转矩阵按行进行插值得到每一行的矩阵然后分别对每一行进行应用 remap 就可以了。</li>
+<li>这里没有考虑破图问题，实际工程中要考虑破图问题。</li>
+<li>这里存在一个问题就是将原图乘透视变换矩阵得到的坐标值大概率是浮点值，但是像素坐标系下只有蒸熟点那么就会造成画质损失，如果想改善这个，可以通过将目标图像乘矩阵 R 的逆得到原图的坐标点，当然这里也会得到浮点坐标坐标值，但是对于原图我们可以通过双线性插值得到变换后的图像值（注意这里是操作图像值而不是坐标值了）。</li>
+<li>实际使用中一般不会直接使用旋转矩阵，会改用四元数来处理，便于插值。</li>
 </ul>
-<p>从中断控制器视角看实时性是快速+确定的 latency。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/Program/rtosDesign/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+
       
     </div>
 
@@ -341,7 +631,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/LinuxDriverTips/">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2021/Camera/CameraCalibrationModel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -359,7 +649,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Note/LinuxDriverTips/" class="post-title-link" itemprop="url">Linux Driver Tips</a>
+          <a href="/2021/Camera/CameraCalibrationModel/" class="post-title-link" itemprop="url">相机校准模型</a>
         </h2>
 
         <div class="post-meta-container">
@@ -370,7 +660,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
         </span>
     </span>
 
@@ -383,8 +681,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/Note/LinuxDriverTips/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/LinuxDriverTips/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/Camera/CameraCalibrationModel/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Camera/CameraCalibrationModel/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -395,14 +693,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>238</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -413,16 +711,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="获取-ns-时间戳已弃用">获取 ns 时间戳（已弃用）</h1>
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/timekeeping32.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timespec</span> <span class="title">ts</span>;</span></span><br><span class="line">u64 ns;</span><br><span class="line"></span><br><span class="line">getnstimeofday(&amp;ts);</span><br><span class="line">ns = timespec_to_ns(&amp;ts);</span><br></pre></td></tr></tbody></table></figure>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cua2VybmVsLm9yZy9kb2MvaHRtbC9sYXRlc3QvY29yZS1hcGkvdGltZWtlZXBpbmcuaHRtbA==">ktime accessors — The Linux Kernel documentation<i class="fa fa-external-link-alt"></i></span></p>
-<p>可以使用 ktime_get_ns() 替代。 如果要获取 us 时间会涉及到 64bit 除法问题，会遇到如下问题：</p>
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: modpost: <span class="string">"__aeabi_uldivmod"</span> [common_drivers/drivers/usb/dwc_otg.ko] undefined!</span><br></pre></td></tr></tbody></table></figure>
-<p>调用 div_u64() 函数，需要 include &lt;linux/math64.h&gt;</p>
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u64	tm = div_u64(ktime_get_raw_ns(),<span class="number">1000</span>);</span><br></pre></td></tr></tbody></table></figure>
+          <h1 id="小孔成像模型">小孔成像模型</h1>
+<p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/CoordinateSystem1.png"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/Note/LinuxDriverTips/#more" rel="contents">
+              <a class="btn" href="/2021/Camera/CameraCalibrationModel/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -453,7 +746,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/DockerUsage/">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverV4L2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -471,7 +764,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Note/DockerUsage/" class="post-title-link" itemprop="url">Docker 常用命令</a>
+          <a href="/2020/LinuxDriver/LinuxDriverV4L2/" class="post-title-link" itemprop="url">Linux 驱动之 V4L2 子系统</a>
         </h2>
 
         <div class="post-meta-container">
@@ -482,7 +775,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
         </span>
     </span>
 
@@ -495,8 +796,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/Note/DockerUsage/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/DockerUsage/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/LinuxDriver/LinuxDriverV4L2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverV4L2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -507,115 +808,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>137</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="基本使用">基本使用</h1>
-<h2 id="设置开机自启动并启动-docker-ce">设置开机自启动并启动 Docker-CE</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></tbody></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/Note/DockerUsage/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/CPPTips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Note/CPPTips/" class="post-title-link" itemprop="url">C/C++ Tips</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/Note/CPPTips/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/CPPTips/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>721</span>
+      <span>897</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -633,12 +826,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="c-tips">C Tips</h1>
-<h2 id="区别以下函数">区别以下函数</h2>
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* <span class="title function_">f</span><span class="params">()</span>;        <span class="comment">//f 为一个函数，函数返回值为指向整形的指针</span></span><br><span class="line"><span class="type">int</span> (*f)();      <span class="comment">//f 为一个指针，该指针指向一个函数</span></span><br><span class="line"><span class="type">int</span>* f[];        <span class="comment">//f 为一个数组，数组内容为指针</span></span><br><span class="line"><span class="type">int</span> (*f[])();    <span class="comment">//f 为数组，数组的内容为指向函数的指针</span></span><br><span class="line"><span class="type">int</span>*(*f[])();    <span class="comment">//f 为数组，数组的内容为指向函数的指针，该函数返回一个指向整形的指针</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">f</span><span class="params">()</span>[];       <span class="comment">//不存在</span></span><br><span class="line"><span class="type">int</span> f[]();       <span class="comment">//不存在</span></span><br></pre></td></tr></tbody></table></figure>
+          <h1 id="概述">概述</h1>
+<p>V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。</p>
+<h1 id="框架">框架</h1>
+<p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Framework.jpeg"></p>
+<p>该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片模块对应 Soc 的各个子模块，video_device 结构体主要用来控制 Soc 的 video 模块，v4l2_device 会包含多个 v4l2_subdev ，每个 v4l2_subdev 用来控制各自的子模块，某些驱动不需要 v4l2_subdev ，依靠 video 模块就能实现功能。</p>
+<ul>
+<li>video_device：一个字符设备，为用户空间提供设备节点（/dev/videoX），提供系统调用的相关操作，是采集设备的抽象接口。</li>
+<li>vb2_queue：与 vb2_v4l2_buffer 一起用于数据流的实际逻辑和 DMA 操作。</li>
+<li>v4l2_device：表示一个 v4l2 设备的实例。</li>
+<li>v4l2_subdev：属于 v4l2 设备的子设备，一个 v4l2 设备可以拥有多个子设备。</li>
+<li>videobuf：v4l2 驱动的缓存管理。</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/Note/CPPTips/#more" rel="contents">
+              <a class="btn" href="/2020/LinuxDriver/LinuxDriverV4L2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -669,7 +871,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/ArchLinuxConfig/">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverRegulator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -687,7 +889,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Note/ArchLinuxConfig/" class="post-title-link" itemprop="url">archlinux(Manjaro) 配置</a>
+          <a href="/2020/LinuxDriver/LinuxDriverRegulator/" class="post-title-link" itemprop="url">Linux 驱动之 Regulator 子系统</a>
         </h2>
 
         <div class="post-meta-container">
@@ -698,7 +900,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
         </span>
     </span>
 
@@ -711,8 +921,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/Note/ArchLinuxConfig/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/ArchLinuxConfig/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/LinuxDriver/LinuxDriverRegulator/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverRegulator/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -723,14 +933,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>227</span>
+      <span>4.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>15 分钟</span>
     </span>
 </div>
 
@@ -741,14 +951,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="设置国内源">设置国内源</h1>
-<p>设置官方镜像源（包括 core， extra， community， multilib ）</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></tbody></table></figure>
-<p>然后勾选你需要的镜像源，确认即可。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy //更新数据源</span><br></pre></td></tr></tbody></table></figure>
+          <h1 id="概述">概述</h1>
+<p>该框架旨在提供标准内核接口来控制电压和电流 Regulator。其目的是允许系统动态控制 Regulator 功率输出，以节省功率并延长电池寿命。 这适用于电压 Regulator（电压输出可控）和电流 Regulator（电流限制可控）。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/Note/ArchLinuxConfig/#more" rel="contents">
+              <a class="btn" href="/2020/LinuxDriver/LinuxDriverRegulator/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -779,7 +986,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/UML/">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverRTC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -797,7 +1004,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Note/UML/" class="post-title-link" itemprop="url">UML 类图</a>
+          <a href="/2020/LinuxDriver/LinuxDriverRTC/" class="post-title-link" itemprop="url">Linux 驱动之 RTC</a>
         </h2>
 
         <div class="post-meta-container">
@@ -808,7 +1015,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
         </span>
     </span>
 
@@ -821,8 +1036,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/Note/UML/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/UML/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/LinuxDriver/LinuxDriverRTC/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverRTC/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -833,7 +1048,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>963</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -851,13 +1066,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="uml-类图">UML 类图</h1>
-<h2 id="类示例">类示例</h2>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Circle</span></span><br><span class="line">{</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">double</span> radius_;</span><br><span class="line">    Point center_;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setRadius</span><span class="params">(<span class="type">double</span> _radius)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setCenter</span><span class="params">(Point _center)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">getArea</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">getCircumfrence</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Note/uml1.png"></p>
+          <h1 id="概述">概述</h1>
+<p>RTC 和系统时钟有不同的用途。前者是硬件时钟，以非易失方式维护绝对时间和日期，而后者是内核维护的软件时钟，用于实现 gettimeofday（2）和 time（2）系统调用，以及在文件上设置时间戳等。系统时钟报告从起点开始的秒和微秒，起点定义为 POSIX 纪元：1970-01-0100:00：00 +0000(UTC)。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/Note/UML/#more" rel="contents">
+              <a class="btn" href="/2020/LinuxDriver/LinuxDriverRTC/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -888,7 +1101,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/GtestGmock/">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverCCF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -906,437 +1119,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Note/GtestGmock/" class="post-title-link" itemprop="url">GTest & GMock</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/Note/GtestGmock/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/GtestGmock/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>771</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="assert_-expect_">ASSERT_ &amp; EXPECT_</h1>
-<h2 id="bool">Bool</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Fatal assertion</th>
-<th>Nonfatal assertion</th>
-<th>Verifies</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>ASSERT_TRUE(condition);</td>
-<td>EXPECT_TRUE(condition);</td>
-<td>condition is true</td>
-</tr>
-<tr class="even">
-<td>ASSERT_FALSE(condition);</td>
-<td>EXPECT_FALSE(condition);</td>
-<td>condition is false</td>
-</tr>
-</tbody>
-</table>
-<h2 id="value">Value</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Fatal assertion</th>
-<th>Nonfatal assertion</th>
-<th>Verifies</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>ASSERT_EQ(val1, val2);</td>
-<td>EXPECT_EQ(val1, val2);</td>
-<td>val1 == val2</td>
-</tr>
-<tr class="even">
-<td>ASSERT_NE(val1, val2);</td>
-<td>EXPECT_NE(val1, val2);</td>
-<td>val1 != val2</td>
-</tr>
-<tr class="odd">
-<td>ASSERT_LT(val1, val2);</td>
-<td>EXPECT_LT(val1, val2);</td>
-<td>val1 &lt; val2</td>
-</tr>
-<tr class="even">
-<td>ASSERT_LE(val1, val2);</td>
-<td>EXPECT_LE(val1, val2);</td>
-<td>val1 &lt;= val2</td>
-</tr>
-<tr class="odd">
-<td>ASSERT_GT(val1, val2);</td>
-<td>EXPECT_GT(val1, val2);</td>
-<td>val1 &gt; val2</td>
-</tr>
-<tr class="even">
-<td>ASSERT_GE(val1, val2);</td>
-<td>EXPECT_GE(val1, val2);</td>
-<td>val1 &gt;= val2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="string">string</h2>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Fatal assertion</th>
-<th>Nonfatal assertion</th>
-<th>Verifies</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>ASSERT_STREQ(str1,str2);</td>
-<td>EXPECT_STREQ(str1,str2);</td>
-<td>the two C strings have the same content</td>
-</tr>
-<tr class="even">
-<td>ASSERT_STRNE(str1,str2);</td>
-<td>EXPECT_STRNE(str1,str2);</td>
-<td>the two C strings have different contents</td>
-</tr>
-<tr class="odd">
-<td>ASSERT_STRCASEEQ(str1,str2);</td>
-<td>EXPECT_STRCASEEQ(str1,str2);</td>
-<td>the two C strings have the same content, ignoring case</td>
-</tr>
-<tr class="even">
-<td>ASSERT_STRCASENE(str1,str2);</td>
-<td>EXPECT_STRCASENE(str1,str2);</td>
-<td>the two C strings have different contents, ignoring case</td>
-</tr>
-</tbody>
-</table>
-<p><strong>注意：“CASE”表明忽略大小写，一个 NULL 指针和空字符串不一样</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/Note/GtestGmock/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Note/QCC518x/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Note/QCC518x/" class="post-title-link" itemprop="url">QCC518x 开发环境搭建</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/Note/QCC518x/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Note/QCC518x/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>96</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="软件安装">软件安装</h1>
-<p>需要安装 visual studio c++ 2010 redistributable</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy9kb3dubG9hZC9kZXRhaWxzLmFzcHg/aWQ9MjY5OTk=">Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package MFC Security Update<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="编译出错路径">编译出错（路径）</h1>
-<p>需要将 sdk 尽量放到根目录下，路径名不要太长不然会出现编译出错的问题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/Note/QCC518x/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Literature/Yesaining/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Literature/Yesaining/" class="post-title-link" itemprop="url">叶赛宁</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Literature-Appreciation/" itemprop="url" rel="index"><span itemprop="name">Literature Appreciation</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Literature-Appreciation/Poetry/" itemprop="url" rel="index"><span itemprop="name">Poetry</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/Literature/Yesaining/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Literature/Yesaining/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>229</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="不惋惜不呼唤我也不啼哭叶赛宁">😗不惋惜，不呼唤，我也不啼哭（叶赛宁）</h1>
-<p>不惋惜，不呼唤，我也不啼哭，</p>
-<p>一切将逝去……如苹果花丛的薄雾</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/Literature/Yesaining/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2019/Program/ucosDesign/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/Program/ucosDesign/" class="post-title-link" itemprop="url">ucos 相关实现</a>
+          <a href="/2020/LinuxDriver/LinuxDriverCCF/" class="post-title-link" itemprop="url">Linux 驱动之 CCF 子系统</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1351,7 +1134,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Technology-Blog/RTOS/" itemprop="url" rel="index"><span itemprop="name">RTOS</span></a>
+          <a href="/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
         </span>
     </span>
 
@@ -1364,8 +1151,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/Program/ucosDesign/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/Program/ucosDesign/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/LinuxDriver/LinuxDriverCCF/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverCCF/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1376,7 +1163,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1394,12 +1181,261 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="ucos-优先级调度算法">ucos 优先级调度算法</h1>
-<h2 id="保证调度延迟的确定性">保证调度延迟的确定性</h2>
-<p>普通查表法会从头开始遍历数组，这样就绪态最高优先级的 task 会比就绪态优先级低的 task 先被查找到，造成不同优先级 task 在调度上花费时间不一致的情况，这违背了实时性的原则。 <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/RTOS/RTOS_Sche_issue.png"></p>
+          <h1 id="概述">概述</h1>
+<p>CCF 主要用于系统 clock 的管理等操作。clk 的种类说明： <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/clk_type.png"></p>
+<p>如上图所示，时钟源大概可分为如下几种：</p>
+<ul>
+<li>提供基础时钟源的晶振（可分为有源晶振、无源晶振两种）</li>
+<li>用于倍频的锁相环</li>
+<li>用于分频的 divider</li>
+<li>用于多路时钟源选择的 mux</li>
+<li>用于时钟使能的与门电路等</li>
+</ul>
+<p>而在 CCF 子系统的抽象中，这五种均抽象为 clk，但是针对这 5 种类型的时钟也提供了单独的时钟注册函数（也就是对 clk_register 函数的封装，并针对不同的时钟类型定义了不同的结构体）。</p>
+<p>在 CCF 子系统中，针对硬件时钟的操作接口，也抽象了对应的结构体 struct clk_ops，包含时钟的使能接口、时钟频率的修改接口等等。而针对上述所说的不同种类的时钟源，其并不需要实现所有 struct clk_ops 中定义的接口。针对“时钟使能的与门电路”而言，仅需要实现 enabel、disable、is_enable 接口即可；针对多路时钟源选择的 mux 而言，则需要实现父时钟源的设置及获取的接口 set_parent、get_parent 等；对于倍频、分频而言，则需要实现时钟频率相关的接口 set_rate、recalc_rate 等。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/Program/ucosDesign/#more" rel="contents">
+              <a class="btn" href="/2020/LinuxDriver/LinuxDriverCCF/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverInput/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/LinuxDriver/LinuxDriverInput/" class="post-title-link" itemprop="url">Linux 驱动之 Input 子系统</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/LinuxDriver/LinuxDriverInput/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverInput/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="概述">概述</h1>
+<p>按键输入、键盘、鼠标、触摸屏等等这些都属于输入设备，按键和键盘就是代表按键信息，鼠标和触摸屏代表坐标信息，因此在应用层的处理就不同。为此 input 子系统分为 input 驱动层、 input 核心层、 input 事件处理层，最终给用户空间提供可访问的设备节点，input 子系统框架如图 所示： <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/input.png"></p>
+<ul>
+<li>驱动层：输入设备的具体驱动程序，比如按键驱动程序，向内核层报告输入内容。</li>
+<li>核心层：承上启下，为驱动层提供输入设备注册和操作接口。通知事件层对输入事件进行处理。</li>
+<li>事件层：主要和用户空间进行交互。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/LinuxDriver/LinuxDriverInput/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://carlyleliu.vip/2020/LinuxDriver/LinuxDriverRegmap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/LinuxDriver/LinuxDriverRegmap/" class="post-title-link" itemprop="url">Linux 驱动之 Regmap 子系统</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/LinuxDriver/LinuxDriverRegmap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverRegmap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="概述">概述</h1>
+<p>内核版本 3.1 中引入了 Regmap API，用于统一内核开发人员访问 SPI/IIC 设备的方式，无论是 SPI 设备还是 IIC 设备，只需要初始化，配置 Regmap 就可以通过 Regmap 读写设备。Regmap 子系统主要提供如下两种功能：</p>
+<ul>
+<li>第一是为 IIC/SPI/MMIO 等提供统一的访问接口，linux 中大量的 iic 和 spi 设备就可以通过统一的接口进行访问尤其对于那些同时支持 iic 和 spi 接口的设备。</li>
+<li>第二是提供缓存访问机制用于加速设备访问设备，对于支持缓存的设备这将大大加快设备的当问速度。</li>
+</ul>
+<p>下面看一下 Regmapz 子系统在驱动中的位置，如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE2YTVhMzg1NjUzYmI2NDkzMGMxYzAz">原图<i class="fa fa-external-link-alt"></i></span> <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/Regmap.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/LinuxDriver/LinuxDriverRegmap/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1423,7 +1459,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/17/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1446,14 +1482,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">458k</span>
+    <span title="站点总字数">483k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27:45</span>
+    <span title="站点阅读时长">29:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
