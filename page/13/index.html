@@ -51,7 +51,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="https://waline.carlyleliu.vip">
   <noscript>
     <link rel="stylesheet" href="/next/css/noscript.css">
   </noscript>
@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/next/archives/">
-          <span class="site-state-item-count">179</span>
+          <span class="site-state-item-count">204</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/next/categories/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/next/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -216,7 +216,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptARMExcept/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryDebug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -234,7 +234,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptARMExcept/" class="post-title-link" itemprop="url">Linux 中断子系统（二）ARM64 的异常处理过程</a>
+          <a href="/next/2021/LinuxKernel/LinuxMemoryDebug/" class="post-title-link" itemprop="url">Linux 内存管理（十一）调试信息</a>
         </h2>
 
         <div class="post-meta-container">
@@ -261,13 +261,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxKernelInterruptARMExcept/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxKernelInterruptARMExcept/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryDebug/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryDebug/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -278,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
+      <span>4.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>15 分钟</span>
     </span>
 </div>
 
@@ -296,15 +296,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/IRQExceptProcess.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1Nzk2NjA3OTEyOTA2ZjUwN2QxMDg=">原图<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="异常级别">异常级别</h1>
-<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/ARM64_ELEVEL.png"></p>
-<p>通常 ARM64 的进程执行在 EL0 级别，内核执行在 EL1 级别。</p>
-<p>虚拟机是现在流行的虚拟化技术，在计算机上创建一个虚拟机，虚拟机里可以运行一个操作系统。常用的开源虚拟机管理软件是 QEMU，QEMU 支持基于内核的虚拟机 KVM，KVM 的特点是直接在处理器上执行客户机的操作系统，所以虚拟机的执行速度很快。</p>
-<p>ARM64 架构的安全扩展定义了两种安全状态，正常世界和安全世界，两个世界只能通过异常级别 3 的安全监视器切换。</p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MemoryDebug.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM4OTE1MGYzNDZmYjA3MjVmYmIzZjM=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptARMExcept/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryDebug/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -335,7 +330,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptSummery/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryKSM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -353,7 +348,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptSummery/" class="post-title-link" itemprop="url">Linux 中断子系统（一）综述</a>
+          <a href="/next/2021/LinuxKernel/LinuxMemoryKSM/" class="post-title-link" itemprop="url">Linux 内存管理（十）KSM</a>
         </h2>
 
         <div class="post-meta-container">
@@ -380,13 +375,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxKernelInterruptSummery/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxKernelInterruptSummery/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryKSM/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryKSM/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -397,14 +392,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
+      <span>6.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>23 分钟</span>
     </span>
 </div>
 
@@ -415,10 +410,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/KernelInterruptSummery.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1NzIyNWYzNDZmYjA3MjVmNTU0YjU=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MemoryKSM.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM4NjUyOGYzNDZmYjA3MjVmYjQ1YmI=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptSummery/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryKSM/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -449,7 +444,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Tools/Toolsrecommand/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemorymigrate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -467,119 +462,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Tools/Toolsrecommand/" class="post-title-link" itemprop="url">工具推荐</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Share/" itemprop="url" rel="index"><span itemprop="name">Share</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Share/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Tools/Toolsrecommand/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Tools/Toolsrecommand/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>11 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="效率类">效率类</h1>
-<h2 id="notion">Notion</h2>
-<p>Notion 是一款提供笔记、任务、数据库、看板、维基、日历和提醒等组件的应用程序。用户可以将这些组件连接起来，来创建自己的系统，用于知识管理、笔记记录、数据管理、项目管理等。这些组件和系统可以单独使用，也可以与他人进行跨平台协作。<span class="exturl" data-url="aHR0cHM6Ly93d3cubm90aW9uLnNvLzJiMmU4NDYxOWE2YjQwN2Q5MWExYzUzZjI4ZmQxOTE1">Notion<i class="fa fa-external-link-alt"></i></span></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/Tools/Toolsrecommand/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Science/ANovelCameraPathPlanningAlgorithmForRealTimeVideoStabilization/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Science/ANovelCameraPathPlanningAlgorithmForRealTimeVideoStabilization/" class="post-title-link" itemprop="url">一种用于实时视频稳定的新型相机路径规划算法</a>
+          <a href="/next/2021/LinuxKernel/LinuxMemorymigrate/" class="post-title-link" itemprop="url">Linux 内存管理（九）页面迁移和内存规整</a>
         </h2>
 
         <div class="post-meta-container">
@@ -594,11 +477,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -606,13 +489,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Science/ANovelCameraPathPlanningAlgorithmForRealTimeVideoStabilization/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/ANovelCameraPathPlanningAlgorithmForRealTimeVideoStabilization/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemorymigrate/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemorymigrate/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -623,7 +506,579 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.2k</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/Memorymigrate.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM4NjE3MTYzNzY4OTA3MTA1ZTU2Mzk=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemorymigrate/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryPageRecycle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxMemoryPageRecycle/" class="post-title-link" itemprop="url">Linux 内存管理（八）页面回收</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryPageRecycle/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryPageRecycle/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>19 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MemoryRecycle.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM4NTkyMDFlMDg1MzA2ZjhjODBhY2Q=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryPageRecycle/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryProcessSpace/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxMemoryProcessSpace/" class="post-title-link" itemprop="url">Linux 内存管理（七）进程地址空间</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryProcessSpace/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryProcessSpace/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>17 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MemoryProcessSpace.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM3NDZmYzU2NTNiYjA3MWU3MTM0NTc=">原图<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="进程地址空间">进程地址空间</h1>
+<p>进程地址空间在内核中使用 vm_area_struct 数据结构来描述，简称 VMA，表示进程地址空间或进程线性区。由于这些地址空间属于各个用户进程，因此在用户进程的 mm_struct 数据结构中有相应的成员，用于对这些 VMA 进行管理。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryProcessSpace/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryslab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxMemoryslab/" class="post-title-link" itemprop="url">Linux 内存管理（六）伙伴系统和 slab 分配器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryslab/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryslab/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>16 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/Memoryslab.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM3NDI1M2YzNDZmYjA3MjVmODQ0Yjg=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryslab/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryPageAllocate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxMemoryPageAllocate/" class="post-title-link" itemprop="url">Linux 内存管理（五）页面分配器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryPageAllocate/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryPageAllocate/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MemoryPageAllocate.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM3MmRhZDA3OTEyOTA2ZjUwYTdmYWI=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryPageAllocate/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryPageMngr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxMemoryPageMngr/" class="post-title-link" itemprop="url">Linux 内存管理（四）虚拟内存管理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryPageMngr/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryPageMngr/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -641,12 +1096,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="introduction">Introduction</h1>
-<p>视频稳定根据运动模型分为 2D 和 3D 方法。 第一种方法是 2D 视频稳定 [2]，它使用 2D 运动模型（例如简单的平移模型、2D 刚性模型和 2D 仿射模型 [3-12]）描述两个连续帧之间的关系。 如果相机在 3D 空间中沿 x 轴和 y 轴的旋转很小，则 2D 视频稳定可提供良好的性能 [13]。 然而，随着相机运动变得动态，二维运动模型无法描述连续帧之间的几何关系，性能非常有限。 lee 等 提出了一种无需明确估计相机运动即可直接稳定视频的方法 [14]。 该方法找到一组变换来平滑特征轨迹 [15, 16] 并稳定视频。</p>
-<p>第二种方法是 Buehler 等人引入的 3D 视频稳定 [17]。早期的 3D 方法使用来自运动的结构 (SFM) 技术重建场景和相机运动的 3D 模型 [18]。然后在新的 3D 相机路径上渲染稳定的视图 [17, 19]。 3D 视频稳定提供比 2D 方法更好的性能。由于这些 3D 方法在处理缺乏视差的视频时经常失败，因此它们在许多情况下并不实用 [20]。 Liu 提出了结合 2D 和 3D 视频稳定优点的子空间视频稳定 [21]，然而，由于长特征轨迹的数量不足，这种方法对于包含动态运动的视频通常会失败 [20]。因此，Wang [20] 针对 3D 重建困难或长特征轨迹不可用的视频提出了视频稳定。Liu 等人 [22] 提出了一种运动模型 SteadyFlow，它是一种通过强制强空间相干性的特定光流。Grundmann 等人基于单应性混合模型 [23]，提出了免校准滚动快门去抖。 Dong 提出了使用基于帧间单应性估计的运动模型的实时应用视频稳定 [24]。Ringaby 等人提出了一种通过将相机旋转参数化为连续曲线来校正和稳定视频的方法 [25]。Karpendo 等人建议使用陀螺仪进行视频稳定和滚动快门校正 [26]。 Lee 提出了基于人类视觉系统的视频稳定 [27]。</p>
+          <h1 id="页表寻址过程">页表寻址过程</h1>
+<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/pagefindAddress.png"></p>
+<p>这里就是 cpu 将一个虚拟地址转换为物理地址的过程，整个过程是比较繁琐耗时的，因此这个过程一般在一个专门的硬件中完成就是 MMU、MMU 中为了可以加快速度引入了 TLB cache 快速查找 pte。我们需要注意到一点就是到了 PTE 这一级需要提供的是物理地址的页起始地址，这个地址是以 page size 为单位的，对于 4k 的 page，那么 pte 的低 12bit 就是没有使用的，而这 12bit 就正好用来作为 page 的权限控制位，对于 ARM64（39bit va）其高位 [40-63] 也没有使用因此也可以用来做一些其他事情。这里来看看 arm-v8 对低 12bit 的定义：</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/Science/ANovelCameraPathPlanningAlgorithmForRealTimeVideoStabilization/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryPageMngr/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -677,7 +1132,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryBasic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -695,652 +1150,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/" class="post-title-link" itemprop="url">基于陀螺仪的视频稳定非线性滤波器</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="abstract">Abstract</h1>
-<p>我们提出了一种对移动设备上捕获的视频进行视频稳定和滚动快门校正的方法。该方法使用来自机载陀螺仪的数据来跟踪相机的角速度，并且可以在相机捕获期间内实时运行。我们消除了由于手抖动引起的小抖动和滚动快门失真，营造出在三脚架上拍摄的视频的效果。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/" class="post-title-link" itemprop="url">使用陀螺仪的数字视频稳定和卷帘快门校正</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>11 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/EIS/dvs1.png"></p>
-<h1 id="abstract">Abstract</h1>
-<p>在本文中，我们提出了一种基于商用陀螺仪的强大实时视频稳定和滚动快门校正技术。首先来对相机运动和卷帘快门扭曲进行建模，然后从单个视频捕获自动校准陀螺仪和相机输出。 这种校准使我们能够仅使用陀螺仪数据来有效校正卷帘快门扭曲并稳定视频。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/" class="post-title-link" itemprop="url">基于 IMU 传感器的视频稳定混合运动估计</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="abstract">Abstract</h2>
-<p>在本文中，我们提出了一种混合方法来估计运动并通过切换函数稳定视频，该方法在 Kanade-Lucus-Tomasi (KLT) 跟踪器和 IMU 辅助运动估计器之间切换估计的运动。为了实现这一点，由于 KLT 跟踪器在较大运动期间的性能不佳，我们使用 KLT 跟踪器来校正低旋转的运动，并使用 IMU 辅助运动估计器来校正高旋转，此外，卡尔曼滤波器用于去除不需要的运动，从而平滑轨迹。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/" class="post-title-link" itemprop="url">EIS 电子防抖基本原理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Science/BasicPrinciplesOfEISElectronicImageStabilization/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="投影">投影</h1>
-<p>这里以小孔成像模型为例，全相模型是相同的流程只是投影模型不一样而已。在相机校准模型一文中已经介绍了将像素坐标系变换到相机坐标系中 <a href="https://carlyleliu.github.io/2021/Camera/CameraCalibrationModel/">相机校准模型</a> 如下：</p>
-<p><span class="math display">\[
-\begin{bmatrix} u \\ v \\ 1 \end{bmatrix} = \begin{bmatrix} \frac{1}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{1}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\&nbsp; y \\ 1 \end{bmatrix} = \frac{1}{z_c}\begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x_c\\&nbsp; y_c\\&nbsp; z_c \end{bmatrix}
-\]</span></p>
-<p>这里我们取 <span class="math inline">\(z_c = 1\)</span> 再做一个变换得到：</p>
-<p><span class="math display">\[
-\begin{bmatrix} x_c\\&nbsp; y_c\\&nbsp; z_c \end{bmatrix} =\begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} ^{-1} \begin{bmatrix} u \\ v \\ 1 \end{bmatrix}
-\]</span></p>
-<p>我们记 ：</p>
-<p><span class="math display">\[
-K_{内参}^{-1} = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} ^{-1} 
-\]</span></p>
-<p>则将像素坐标系与该矩阵相乘就可以将像素坐标系转换到相机坐标系上，待后面使用。</p>
-<h1 id="imu-数据处理">IMU 数据处理</h1>
-<p>具体可以参考 <a href="https://carlyleliu.github.io/2020/Algorithm/imuAttitudeCalculation/">imu 姿态解算</a> 一文，我们需要对 IMU 数据做三件事情：</p>
-<ul>
-<li>IMU 坐标系对齐相机坐标系，这一步目的为了将 IMU 的正交三轴数据与 Camera 坐标系对齐。</li>
-<li><p>卡尔曼滤波：为了消除 IMU 的系统误差以及如果要做重力矫正需要做姿态解算（重力对齐）。这里常用的就是卡尔曼滤波和 mahony 滤波，这一层滤波的目的就是为了得到更为准确的相机姿态和相机抖动状态，如下图所示： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/ISP/lpf.png"></p></li>
-<li><p>平滑滤波：在我们得到相机的抖动状态就可以对相机的姿态做一个平滑滤波（可以采用四元数求平均，或者高斯滤波等算法），这个平滑滤波的目的是为了得到相机防抖后想要得到的状态。 <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/ISP/anl5.png"></p></li>
-</ul>
-<p>我们将从 Large inner region 曲线或者 Small inner region 曲线到 Input 曲线的变换矩阵记为 <span class="math inline">\(M(\alpha, \beta, \gamma)\)</span> 为了简化模型这里面的数据是已经将 IMU 坐标系变化到相机坐标系下的变换矩阵。</p>
-<p>到这里我们就得到了两条曲线和一个变换矩阵。</p>
-<h1 id="求透视变换矩阵">求透视变换矩阵</h1>
-<p>这里我们记旋转矩阵为：</p>
-<p><span class="math display">\[
-\begin{aligned}
-M(\alpha, \beta, \gamma) &amp; =\left[\begin{array}{ccc}
-\cos \gamma &amp; -\sin \gamma &amp; 0 \\
-\sin \gamma &amp; \cos \gamma &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{array}\right]\left[\begin{array}{ccc}
-\cos \beta &amp; 0 &amp; \sin \beta \\
-0 &amp; 1 &amp; 0 \\
--\sin \beta &amp; 0 &amp; \cos \beta
-\end{array}\right]\left[\begin{array}{ccc}
-1 &amp; 0 &amp; 0 \\
-0 &amp; \cos \alpha &amp; -\sin \alpha \\
-0 &amp; \sin \alpha &amp; \cos \alpha
-\end{array}\right] \\
-&amp; =\left[\begin{array}{ccc}
-\cos \gamma \cos \beta &amp; -\sin \gamma &amp; \cos \gamma \sin \beta \\
-\sin \gamma \cos \beta &amp; \cos \gamma &amp; \sin \gamma \sin \beta \\
--\sin \beta &amp; 0 &amp; \cos \beta
-\end{array}\right]\left[\begin{array}{ccc}
-1 &amp; 0 &amp; 0 \\
-0 &amp; \cos \alpha &amp; -\sin \alpha \\
-0 &amp; \sin \alpha &amp; \cos \alpha
-\end{array}\right] \\
-&amp; =\left[\begin{array}{ccc}
-\cos \gamma \cos \beta &amp; -\sin \gamma \cos \alpha+\cos \gamma \sin \beta \sin \alpha &amp; \sin \gamma \sin \alpha+\cos \gamma \sin \beta \cos \alpha \\
-\sin \gamma \cos \beta &amp; \cos \gamma \cos \alpha+\sin \gamma \sin \beta \sin \alpha &amp; -\cos \gamma \sin \alpha+\sin \gamma \sin \beta \cos \alpha \\
--\sin \beta &amp; \cos \beta \sin \alpha &amp; \cos \beta \cos \alpha
-\end{array}\right]
-\end{aligned}
-\]</span></p>
-<p>综合前面两节的内容我们可以通过如下公式得到投影变换矩阵 R：</p>
-<p><span class="math display">\[
-R = K_{内参}^{-1} \ast M(\alpha ,\beta ,\gamma ) \ast K_{内参}
-\]</span></p>
-<p>改写成完整的公式如下：</p>
-<p><span class="math display">\[
-R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}^{-1} \ast \left[\begin{array}{ccc}
-\cos \gamma \cos \beta &amp; -\sin \gamma \cos \alpha+\cos \gamma \sin \beta \sin \alpha &amp; \sin \gamma \sin \alpha+\cos \gamma \sin \beta \cos \alpha \\
-\sin \gamma \cos \beta &amp; \cos \gamma \cos \alpha+\sin \gamma \sin \beta \sin \alpha &amp; -\cos \gamma \sin \alpha+\sin \gamma \sin \beta \cos \alpha \\
--\sin \beta &amp; \cos \beta \sin \alpha &amp; \cos \beta \cos \alpha
-\end{array}\right] \ast \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; v_0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}
-\]</span></p>
-<p>该公式是通过相机的内参矩阵将像素坐标系变换到相机坐标系，然后通过 IMU 得到相机的姿态，将相机坐标系变换到世界坐标系下对相机的姿态进行稳定，得到稳定后的相机姿态，再将上述矩阵的逆乘起来变换回像素坐标系。这样就得到了透视变换的矩阵，将像素的坐标与该 R 矩阵相乘就得到了该像素防抖后的坐标值（就是 opencv 里的 remap）。</p>
-<h1 id="特别注意">特别注意</h1>
-<ul>
-<li>在做 IMU 姿态解算的时候要给陀螺仪足够的置信度，不然可能很难得到较好的防抖效果。</li>
-<li>要将视频帧的时间戳与 IMU 的时间戳对齐，不然一定不能得到较好的效果，笔者没有研究好这块算法手动试出来的，精度要在 1ms 内才行，另外有香港科技大学的 VIO 项目里面有相关论文和实现可以参考。</li>
-<li>rollingshutter 需要矫正，其实算法上需要做的就是找到帧曝光开始和结束的时刻，然后将旋转矩阵按行进行插值得到每一行的矩阵然后分别对每一行进行应用 remap 就可以了。</li>
-<li>这里没有考虑破图问题，实际工程中要考虑破图问题。</li>
-<li>这里存在一个问题就是将原图乘透视变换矩阵得到的坐标值大概率是浮点值，但是像素坐标系下只有蒸熟点那么就会造成画质损失，如果想改善这个，可以通过将目标图像乘矩阵 R 的逆得到原图的坐标点，当然这里也会得到浮点坐标坐标值，但是对于原图我们可以通过双线性插值得到变换后的图像值（注意这里是操作图像值而不是坐标值了）。</li>
-<li>实际使用中一般不会直接使用旋转矩阵，会改用四元数来处理，便于插值。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Camera/CameraCalibrationModel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Camera/CameraCalibrationModel/" class="post-title-link" itemprop="url">相机校准模型</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/" itemprop="url" rel="index"><span itemprop="name">Image</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Image/Stabilization/" itemprop="url" rel="index"><span itemprop="name">Stabilization</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Camera/CameraCalibrationModel/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Camera/CameraCalibrationModel/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="小孔成像模型">小孔成像模型</h1>
-<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/CoordinateSystem1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/Camera/CameraCalibrationModel/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverV4L2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverV4L2/" class="post-title-link" itemprop="url">Linux 驱动之 V4L2 子系统</a>
+          <a href="/next/2021/LinuxKernel/LinuxMemoryBasic/" class="post-title-link" itemprop="url">Linux 内存管理（三）物理地址管理</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1359,7 +1169,7 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -1367,13 +1177,13 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverV4L2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverV4L2/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryBasic/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryBasic/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1384,14 +1194,14 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>897</span>
+      <span>5.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>19 分钟</span>
     </span>
 </div>
 
@@ -1402,21 +1212,124 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="概述">概述</h1>
-<p>V4L2 是专门为 linux 设备设计的一套视频框架，其主体框架在 linux 内核，可以理解为是整个 linux 系统上面的视频源捕获驱动框架。其广泛应用在嵌入式设备以及移动端、个人电脑设备上面，市面上的编码产品类如：SDV、手机、IPC、行车记录仪都会用到这个框架来进行视频采集。</p>
-<h1 id="框架">框架</h1>
-<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/V4L2_Framework.jpeg"></p>
-<p>该图描述了 v4l2 驱动框架的整体结构，v4l2 本质上也是一个字符设备驱动程序，图中芯片模块对应 Soc 的各个子模块，video_device 结构体主要用来控制 Soc 的 video 模块，v4l2_device 会包含多个 v4l2_subdev ，每个 v4l2_subdev 用来控制各自的子模块，某些驱动不需要 v4l2_subdev ，依靠 video 模块就能实现功能。</p>
-<ul>
-<li>video_device：一个字符设备，为用户空间提供设备节点（/dev/videoX），提供系统调用的相关操作，是采集设备的抽象接口。</li>
-<li>vb2_queue：与 vb2_v4l2_buffer 一起用于数据流的实际逻辑和 DMA 操作。</li>
-<li>v4l2_device：表示一个 v4l2 设备的实例。</li>
-<li>v4l2_subdev：属于 v4l2 设备的子设备，一个 v4l2 设备可以拥有多个子设备。</li>
-<li>videobuf：v4l2 驱动的缓存管理。</li>
-</ul>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/Memorybasic1.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM3MjRjNTU2NTNiYjA3MWU3MGVjMmY=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverV4L2/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryBasic/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryARM64linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxMemoryARM64linux/" class="post-title-link" itemprop="url">Linux 内存管理（二）ARM64 的虚拟地址转换在 linux 中的实现</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryARM64linux/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryARM64linux/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>23 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MemoryARM64linux.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM3MTc1NjFlMDg1MzA2ZjhjNGRlZDk=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryARM64linux/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1440,7 +1353,7 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/next/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/next/">1</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/next/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/18/">18</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/next/page/14/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/next/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/next/">1</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/next/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/21/">21</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/next/page/14/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1463,14 +1376,14 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">458k</span>
+    <span title="站点总字数">483k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27:45</span>
+    <span title="站点阅读时长">29:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -1542,8 +1455,17 @@ R = \begin{bmatrix} \frac{f}{d_x}&amp; 0 &amp;u_o \\ 0 &amp; \frac{f}{d_y}&amp; 
 <script src="/next/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"vooxle","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/next/js/third-party/comments/disqus.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline.carlyleliu.vip","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"(发表评论)","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/next/page/13/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
 
 </body>
 </html>

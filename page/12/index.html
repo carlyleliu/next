@@ -51,7 +51,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="https://waline.carlyleliu.vip">
   <noscript>
     <link rel="stylesheet" href="/next/css/noscript.css">
   </noscript>
@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/next/archives/">
-          <span class="site-state-item-count">179</span>
+          <span class="site-state-item-count">204</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/next/categories/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/next/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -216,7 +216,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskCFS/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxFileSystemVFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -234,7 +234,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxTaskCFS/" class="post-title-link" itemprop="url">Linux 进程管理（三）CFS 调度器</a>
+          <a href="/next/2021/LinuxKernel/LinuxFileSystemVFS/" class="post-title-link" itemprop="url">Linux 文件系统（三）VFS</a>
         </h2>
 
         <div class="post-meta-container">
@@ -261,13 +261,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxTaskCFS/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxTaskCFS/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxFileSystemVFS/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxFileSystemVFS/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -278,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.5k</span>
+      <span>5.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>17 分钟</span>
+      <span>19 分钟</span>
     </span>
 </div>
 
@@ -296,10 +296,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskCFS.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2OTgxMzBlM2U3NDA3NGNmMGU2NGU=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/LinuxFSVFS.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjNhYmExNzdkOWMwODA3MGU1YjkwODc=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskCFS/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxFileSystemVFS/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -330,7 +330,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskCreate/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxFileSystemBasic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -348,7 +348,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxTaskCreate/" class="post-title-link" itemprop="url">Linux 进程管理（二）进程的创建和终止</a>
+          <a href="/next/2021/LinuxKernel/LinuxFileSystemBasic/" class="post-title-link" itemprop="url">Linux 文件系统（一）基本概念</a>
         </h2>
 
         <div class="post-meta-container">
@@ -375,13 +375,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxTaskCreate/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxTaskCreate/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxFileSystemBasic/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxFileSystemBasic/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -392,7 +392,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
+      <span>2.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -410,10 +410,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskCreate.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1ZmQxYmYzNDZmYjA3MjVmNjhhYjg=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/FSBasic.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjNhYjMyOTFlMDg1MzA2ZjhjZDczYTk=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskCreate/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxFileSystemBasic/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -444,7 +444,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskBasic/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxFileSystemblockIO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -462,7 +462,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxTaskBasic/" class="post-title-link" itemprop="url">Linux 进程管理（一）基本概念</a>
+          <a href="/next/2021/LinuxKernel/LinuxFileSystemblockIO/" class="post-title-link" itemprop="url">Linux 文件系统（二）块 I/O</a>
         </h2>
 
         <div class="post-meta-container">
@@ -489,13 +489,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxTaskBasic/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxTaskBasic/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxFileSystemblockIO/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxFileSystemblockIO/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -506,14 +506,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.7k</span>
+      <span>4.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
+      <span>15 分钟</span>
     </span>
 </div>
 
@@ -524,18 +524,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/ProcessBasic.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1ZDg4NDFlMDg1MzA2ZjhjMzUxZjM=">原图<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="进程的概念">进程的概念</h1>
-<p>进程是处于执行期的程序以及相关的资源的总称。进程并不仅仅局限于一段可执行程序代码，通常进程还要包含其他资源，像数据段、打开的文件、挂起的信号、处理器状态、一个或多个具有内存映射的内存地址空间及一个或多个执行线程（thread of execution）等。</p>
-<p>线程（thread），是在进程中活动的对象。每个线程都拥有一个独立的程序计数器、线程栈和一组进程寄存器，内核调度的对象是线程，而不是进程。</p>
-<p>在现代操作系统中，进程提供两种虚拟机制：虚拟处理器和虚拟内存。</p>
-<ul>
-<li>虚拟处理器给进程一种假象，让这些进程觉得自己在独享处理器</li>
-<li>虚拟内存让进程在分配和管理内存时觉得自己拥有整个系统的所有内存资源</li>
-</ul>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/LinuxFSBlockI_O.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjNhZTkxMTA3OTEyOTA2ZjUxNDZjODg=">原图<i class="fa fa-external-link-alt"></i></span></p>
+<p>系统中能够随机访问固定大小数据片的硬件设备称作块设备，这些固定大小的数据片就称作块。另一种基本的设备类型是字符设备，字符设备按照子节流的方式被有序访问，像串口和键盘就属于字符设备。对于这两种类型的设备，它们的区别在于是否可以随机访问数据。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskBasic/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxFileSystemblockIO/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -566,7 +559,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Program/ARM64Struct/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelDebugMem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -584,121 +577,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Program/ARM64Struct/" class="post-title-link" itemprop="url">ARM64 架构基础</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Programming/Principle/" itemprop="url" rel="index"><span itemprop="name">Principle</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Program/ARM64Struct/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Program/ARM64Struct/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Program/Language/ARM64Struct.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1OTNjNzU2NTNiYjA3MWU2ZTllYjE=">原图<i class="fa fa-external-link-alt"></i></span></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/Program/ARM64Struct/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/" class="post-title-link" itemprop="url">Linux 中断子系统（七）WorkQueue</a>
+          <a href="/next/2021/LinuxKernel/LinuxKernelDebugMem/" class="post-title-link" itemprop="url">Linux 内核调试（二）内存检测</a>
         </h2>
 
         <div class="post-meta-container">
@@ -725,13 +604,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxKernelInterruptWorkQueue/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxKernelDebugMem/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxKernelDebugMem/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -742,14 +621,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>516</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -760,10 +639,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/IRQWorkQueue.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1OTA4ZTA3OTEyOTA2ZjUwODBjYjM=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/Debugftrace.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM5YjAzNWU0MDFmZDA3MGJiYTBlYmE=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelDebugMem/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -794,7 +673,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptTasklet/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelDebugftrace/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -812,7 +691,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptTasklet/" class="post-title-link" itemprop="url">Linux 中断子系统（六）Tasklet</a>
+          <a href="/next/2021/LinuxKernel/LinuxKernelDebugftrace/" class="post-title-link" itemprop="url">Linux 内核调试（一）ftrace</a>
         </h2>
 
         <div class="post-meta-container">
@@ -839,13 +718,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxKernelInterruptTasklet/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxKernelInterruptTasklet/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxKernelDebugftrace/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxKernelDebugftrace/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -856,14 +735,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>751</span>
+      <span>8.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>32 分钟</span>
     </span>
 </div>
 
@@ -874,10 +753,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/IRQTasklet.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1OGVlMzA3OTEyOTA2ZjUwODA4YWM=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/Debugftrace.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM5YjAzNWU0MDFmZDA3MGJiYTBlYmE=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptTasklet/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelDebugftrace/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -908,7 +787,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptSoftIRQ/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncRCU/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -926,7 +805,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptSoftIRQ/" class="post-title-link" itemprop="url">Linux 中断子系统（五）SoftIRQ</a>
+          <a href="/next/2021/LinuxKernel/LinuxSyncRCU/" class="post-title-link" itemprop="url">Linux 并发与同步（四）RCU</a>
         </h2>
 
         <div class="post-meta-container">
@@ -953,241 +832,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxKernelInterruptSoftIRQ/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxKernelInterruptSoftIRQ/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
     </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>7 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/IRQSoftIRQ.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1OGNkN2U0MDFmZDA3MGJiMGNkYmI=">原图<i class="fa fa-external-link-alt"></i></span></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptSoftIRQ/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
+    <span class="post-meta-item-text">Waline：</span>
   
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptFramework/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptFramework/" class="post-title-link" itemprop="url">Linux 中断子系统（四）中断驱动实现</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxKernelInterruptFramework/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxKernelInterruptFramework/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/IRQLinuxImpl.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1ODljMjYzNzY4OTA3MTA1ODk3YjM=">原图<i class="fa fa-external-link-alt"></i></span></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptFramework/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptLinuxDealWith/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptLinuxDealWith/" class="post-title-link" itemprop="url">Linux 中断子系统（三）Linux 中断处理过程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/LinuxKernel/LinuxKernelInterruptLinuxDealWith/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/LinuxKernel/LinuxKernelInterruptLinuxDealWith/" itemprop="commentCount"></span>
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxSyncRCU/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxSyncRCU/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1216,10 +867,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/IRQLinuxDealWith.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1ODFjZDU2NTNiYjA3MWU2ZTZkYmU=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/syncRCU.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM5YWMzNzBlM2U3NDA3NGNmODlhMDI=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptLinuxDealWith/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxSyncRCU/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1250,7 +901,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Tools/WordpressUsage/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncMutex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -1268,7 +919,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2021/Tools/WordpressUsage/" class="post-title-link" itemprop="url">WordPress搭建博客</a>
+          <a href="/next/2021/LinuxKernel/LinuxSyncMutex/" class="post-title-link" itemprop="url">Linux 并发与同步（三）互斥锁</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1279,11 +930,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Share/" itemprop="url" rel="index"><span itemprop="name">Share</span></a>
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Share/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -1291,13 +946,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2021/Tools/WordpressUsage/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/Tools/WordpressUsage/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxSyncMutex/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxSyncMutex/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1308,14 +963,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>38</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -1326,14 +981,352 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="准备-lamp-环境">准备 LAMP 环境</h1>
-<h2 id="安装wordpress">安装wordpress</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://cn.wordpress.org/latest-zh_CN.zip</span><br><span class="line">unzip latest-zh_CN.zip</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="安装mysql">安装Mysql</h2>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server -y</span><br><span class="line">sudo systemctl start mysql</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> mysql</span><br></pre></td></tr></tbody></table></figure>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/SyncMutex.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM5YTdkMzA3OTEyOTA2ZjUxMGZiNDA=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2021/Tools/WordpressUsage/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxSyncMutex/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncSem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxSyncSem/" class="post-title-link" itemprop="url">Linux 并发与同步（二）信号量</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxSyncSem/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxSyncSem/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/EventSeq.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM5OTFiYzYzNzY4OTA3MTA2MTQ3N2M=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxSyncSem/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncSpinLock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxSyncSpinLock/" class="post-title-link" itemprop="url">Linux 并发与同步（一）自旋锁</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxSyncSpinLock/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxSyncSpinLock/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/EventSpinLock.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM5ODMzMDFlZmFkNDA3NTI1N2M2ZDA=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxSyncSpinLock/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryOptimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxMemoryOptimization/" class="post-title-link" itemprop="url">Linux 内存管理（十二）内存调优</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryOptimization/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryOptimization/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MemoryOptimization.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM4OTk5NWU0MDFmZDA3MGJiNzI0OGI=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryOptimization/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1357,7 +1350,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/next/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/next/">1</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/next/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/18/">18</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/next/page/13/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/next/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/next/">1</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/next/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/21/">21</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/next/page/13/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1380,14 +1373,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">458k</span>
+    <span title="站点总字数">483k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27:45</span>
+    <span title="站点阅读时长">29:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -1459,8 +1452,17 @@
 <script src="/next/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"vooxle","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/next/js/third-party/comments/disqus.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline.carlyleliu.vip","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"(发表评论)","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/next/page/12/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
 
 </body>
 </html>

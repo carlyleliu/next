@@ -51,7 +51,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="https://waline.carlyleliu.vip">
   <noscript>
     <link rel="stylesheet" href="/next/css/noscript.css">
   </noscript>
@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/next/archives/">
-          <span class="site-state-item-count">179</span>
+          <span class="site-state-item-count">204</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/next/categories/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/next/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -216,7 +216,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverRegulator/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxMemoryCache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -234,7 +234,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverRegulator/" class="post-title-link" itemprop="url">Linux 驱动之 Regulator 子系统</a>
+          <a href="/next/2021/LinuxKernel/LinuxMemoryCache/" class="post-title-link" itemprop="url">Linux 内存管理（一）Cache</a>
         </h2>
 
         <div class="post-meta-container">
@@ -253,7 +253,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -261,13 +261,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverRegulator/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverRegulator/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxMemoryCache/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxMemoryCache/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -278,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.1k</span>
+      <span>4.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>15 分钟</span>
+      <span>18 分钟</span>
     </span>
 </div>
 
@@ -296,11 +296,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="概述">概述</h1>
-<p>该框架旨在提供标准内核接口来控制电压和电流 Regulator。其目的是允许系统动态控制 Regulator 功率输出，以节省功率并延长电池寿命。 这适用于电压 Regulator（电压输出可控）和电流 Regulator（电流限制可控）。</p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/MMCache.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2ZDczZDdkOWMwODA3MGU1MjAzMDM=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverRegulator/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxMemoryCache/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -331,7 +330,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverRTC/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskExt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -349,7 +348,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverRTC/" class="post-title-link" itemprop="url">Linux 驱动之 RTC</a>
+          <a href="/next/2021/LinuxKernel/LinuxTaskExt/" class="post-title-link" itemprop="url">Linux 进程管理（番外篇）调度算法的演变</a>
         </h2>
 
         <div class="post-meta-container">
@@ -368,7 +367,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -376,13 +375,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverRTC/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverRTC/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxTaskExt/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxTaskExt/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -393,14 +392,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
+      <span>4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>14 分钟</span>
     </span>
 </div>
 
@@ -411,11 +410,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="概述">概述</h1>
-<p>RTC 和系统时钟有不同的用途。前者是硬件时钟，以非易失方式维护绝对时间和日期，而后者是内核维护的软件时钟，用于实现 gettimeofday（2）和 time（2）系统调用，以及在文件上设置时间戳等。系统时钟报告从起点开始的秒和微秒，起点定义为 POSIX 纪元：1970-01-0100:00：00 +0000(UTC)。</p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskSchAlgoHistory.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2MDJmYTYzNzY4OTA3MTA1OWI5Mjk=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverRTC/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskExt/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -446,7 +444,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverCCF/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskSummery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -464,7 +462,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverCCF/" class="post-title-link" itemprop="url">Linux 驱动之 CCF 子系统</a>
+          <a href="/next/2021/LinuxKernel/LinuxTaskSummery/" class="post-title-link" itemprop="url">Linux 进程管理（六）总结</a>
         </h2>
 
         <div class="post-meta-container">
@@ -483,7 +481,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -491,13 +489,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverCCF/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverCCF/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxTaskSummery/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxTaskSummery/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -508,7 +506,463 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskSummery.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2ZDNiYzYzNzY4OTA3MTA1YTYyZTE=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskSummery/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskDebug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxTaskDebug/" class="post-title-link" itemprop="url">Linux 进程管理（五）进程调度的调试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxTaskDebug/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxTaskDebug/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskDebug.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2Y2ZlMzU2NTNiYjA3MWU3MDI5MDM=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskDebug/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskSMP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxTaskSMP/" class="post-title-link" itemprop="url">Linux 进程管理（四）多核调度</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxTaskSMP/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxTaskSMP/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskSMP.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2YjhlYzFlZmFkNDA3NTI1MTE2NDk=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskSMP/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskCFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxTaskCFS/" class="post-title-link" itemprop="url">Linux 进程管理（三）CFS 调度器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxTaskCFS/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxTaskCFS/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>17 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskCFS.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM2OTgxMzBlM2U3NDA3NGNmMGU2NGU=">原图<i class="fa fa-external-link-alt"></i></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskCFS/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskCreate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/next/images/avatar.gif">
+      <meta itemprop="name" content="CarlyleLiu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matrix">
+      <meta itemprop="description" content="CarlyleLiu’s Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Matrix">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/next/2021/LinuxKernel/LinuxTaskCreate/" class="post-title-link" itemprop="url">Linux 进程管理（二）进程的创建和终止</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxTaskCreate/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxTaskCreate/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -526,21 +980,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="概述">概述</h1>
-<p>CCF 主要用于系统 clock 的管理等操作。clk 的种类说明： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/clk_type.png"></p>
-<p>如上图所示，时钟源大概可分为如下几种：</p>
-<ul>
-<li>提供基础时钟源的晶振（可分为有源晶振、无源晶振两种）</li>
-<li>用于倍频的锁相环</li>
-<li>用于分频的 divider</li>
-<li>用于多路时钟源选择的 mux</li>
-<li>用于时钟使能的与门电路等</li>
-</ul>
-<p>而在 CCF 子系统的抽象中，这五种均抽象为 clk，但是针对这 5 种类型的时钟也提供了单独的时钟注册函数（也就是对 clk_register 函数的封装，并针对不同的时钟类型定义了不同的结构体）。</p>
-<p>在 CCF 子系统中，针对硬件时钟的操作接口，也抽象了对应的结构体 struct clk_ops，包含时钟的使能接口、时钟频率的修改接口等等。而针对上述所说的不同种类的时钟源，其并不需要实现所有 struct clk_ops 中定义的接口。针对“时钟使能的与门电路”而言，仅需要实现 enabel、disable、is_enable 接口即可；针对多路时钟源选择的 mux 而言，则需要实现父时钟源的设置及获取的接口 set_parent、get_parent 等；对于倍频、分频而言，则需要实现时钟频率相关的接口 set_rate、recalc_rate 等。</p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/TaskCreate.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1ZmQxYmYzNDZmYjA3MjVmNjhhYjg=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverCCF/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskCreate/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -571,7 +1014,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverInput/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskBasic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -589,7 +1032,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverInput/" class="post-title-link" itemprop="url">Linux 驱动之 Input 子系统</a>
+          <a href="/next/2021/LinuxKernel/LinuxTaskBasic/" class="post-title-link" itemprop="url">Linux 进程管理（一）基本概念</a>
         </h2>
 
         <div class="post-meta-container">
@@ -608,7 +1051,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -616,13 +1059,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverInput/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverInput/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxTaskBasic/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxTaskBasic/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -633,14 +1076,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
+      <span>3.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>14 分钟</span>
     </span>
 </div>
 
@@ -651,16 +1094,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="概述">概述</h1>
-<p>按键输入、键盘、鼠标、触摸屏等等这些都属于输入设备，按键和键盘就是代表按键信息，鼠标和触摸屏代表坐标信息，因此在应用层的处理就不同。为此 input 子系统分为 input 驱动层、 input 核心层、 input 事件处理层，最终给用户空间提供可访问的设备节点，input 子系统框架如图 所示： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/input.png"></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/ProcessBasic.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1ZDg4NDFlMDg1MzA2ZjhjMzUxZjM=">原图<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="进程的概念">进程的概念</h1>
+<p>进程是处于执行期的程序以及相关的资源的总称。进程并不仅仅局限于一段可执行程序代码，通常进程还要包含其他资源，像数据段、打开的文件、挂起的信号、处理器状态、一个或多个具有内存映射的内存地址空间及一个或多个执行线程（thread of execution）等。</p>
+<p>线程（thread），是在进程中活动的对象。每个线程都拥有一个独立的程序计数器、线程栈和一组进程寄存器，内核调度的对象是线程，而不是进程。</p>
+<p>在现代操作系统中，进程提供两种虚拟机制：虚拟处理器和虚拟内存。</p>
 <ul>
-<li>驱动层：输入设备的具体驱动程序，比如按键驱动程序，向内核层报告输入内容。</li>
-<li>核心层：承上启下，为驱动层提供输入设备注册和操作接口。通知事件层对输入事件进行处理。</li>
-<li>事件层：主要和用户空间进行交互。</li>
+<li>虚拟处理器给进程一种假象，让这些进程觉得自己在独享处理器</li>
+<li>虚拟内存让进程在分配和管理内存时觉得自己拥有整个系统的所有内存资源</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverInput/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxTaskBasic/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -691,7 +1136,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverRegmap/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/Program/ARM64Struct/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -709,7 +1154,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverRegmap/" class="post-title-link" itemprop="url">Linux 驱动之 Regmap 子系统</a>
+          <a href="/next/2021/Program/ARM64Struct/" class="post-title-link" itemprop="url">ARM64 架构基础</a>
         </h2>
 
         <div class="post-meta-container">
@@ -724,11 +1169,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+          <a href="/next/categories/Technology-Blog/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+          <a href="/next/categories/Technology-Blog/Programming/Principle/" itemprop="url" rel="index"><span itemprop="name">Principle</span></a>
         </span>
     </span>
 
@@ -736,13 +1181,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverRegmap/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverRegmap/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/Program/ARM64Struct/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/Program/ARM64Struct/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -753,14 +1198,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>3.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>14 分钟</span>
     </span>
 </div>
 
@@ -771,16 +1216,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="概述">概述</h1>
-<p>内核版本 3.1 中引入了 Regmap API，用于统一内核开发人员访问 SPI/IIC 设备的方式，无论是 SPI 设备还是 IIC 设备，只需要初始化，配置 Regmap 就可以通过 Regmap 读写设备。Regmap 子系统主要提供如下两种功能：</p>
-<ul>
-<li>第一是为 IIC/SPI/MMIO 等提供统一的访问接口，linux 中大量的 iic 和 spi 设备就可以通过统一的接口进行访问尤其对于那些同时支持 iic 和 spi 接口的设备。</li>
-<li>第二是提供缓存访问机制用于加速设备访问设备，对于支持缓存的设备这将大大加快设备的当问速度。</li>
-</ul>
-<p>下面看一下 Regmapz 子系统在驱动中的位置，如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE2YTVhMzg1NjUzYmI2NDkzMGMxYzAz">原图<i class="fa fa-external-link-alt"></i></span> <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/Regmap.png"></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Program/Language/ARM64Struct.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1OTNjNzU2NTNiYjA3MWU2ZTllYjE=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverRegmap/#more" rel="contents">
+              <a class="btn" href="/next/2021/Program/ARM64Struct/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -811,7 +1250,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverPinctrl/">
+    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/next/images/avatar.gif">
@@ -829,7 +1268,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverPinctrl/" class="post-title-link" itemprop="url">Linux 驱动之 Pinctrl 子系统</a>
+          <a href="/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/" class="post-title-link" itemprop="url">Linux 中断子系统（七）WorkQueue</a>
         </h2>
 
         <div class="post-meta-container">
@@ -848,7 +1287,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
+          <a href="/next/categories/Technology-Blog/Linux/Kernel/" itemprop="url" rel="index"><span itemprop="name">Kernel</span></a>
         </span>
     </span>
 
@@ -856,13 +1295,13 @@
   
   <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverPinctrl/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverPinctrl/" itemprop="commentCount"></span>
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -873,487 +1312,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="pinctrl-概述">Pinctrl 概述</h1>
-<p>关于 pinctrl 主要可以归结为两类设置，其中一类是功能选择，即一组 gpio 是用于 iic 还是 uart 还是就作为普通 gpio 来用，另一类是 gpio 的特性配置，即上拉、下拉、驱动能力和速率的配置。而 pinctrl 主要负责这两类配置的管理工作。总结起来 pinctrl 主要完成以下三种功能：</p>
-<ul>
-<li>引脚枚举与命名 (Enumerating and naming)</li>
-<li>引脚复用 (Multiplexing)：比如用作 GPIO、I2C 或其他功能</li>
-<li>引脚配置 (Configuration)：比如上拉、下来、open drain、驱动强度等</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverPinctrl/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverGPIO/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverGPIO/" class="post-title-link" itemprop="url">Linux 驱动之 GPIO 子系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverGPIO/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverGPIO/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="gpio-概述">GPIO 概述</h1>
-<p>以前学习 stm32 的时候看到手册里有关于 gpio 的电路图，如下： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/gpio.png"></p>
-<ul>
-<li><p>保护二极体：<br>
-IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的电压输入。当引脚电压高于 VDD 时，上方的二极体导通；当引脚电压低于 VSS 时，下方的二极体导通，防止不正常电压引入晶片导致晶片烧毁</p></li>
-<li><p>P-MOS 管和 N-MOS 管：<br>
-由 P-MOS 管和 N-MOS 管组成的单元电路使得 GPIO 具有“推挽输出”和“开漏输出”的模式</p></li>
-<li><p>TTL 肖特基触发器：<br>
-信号经过触发器后，模拟信号转化为 0 和 1 的数字信号。但是，当 GPIO 引脚作为 ADC 采集电压的输入通道时，用其“模拟输入”功能，此时信号不再经过触发器进行 TTL 电平转换。ADC 外设要采集到的原始的模拟信号</p></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverGPIO/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverSPI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverSPI/" class="post-title-link" itemprop="url">Linux 驱动之 SPI 子系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverSPI/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverSPI/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>543</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="linux-spi-驱动框架">Linux SPI 驱动框架</h1>
-<p>对于 SPI 的驱动框架与 I2C 是大致一致的，也分为两层，控制器驱动程序层叫 spi_controller ，主要提供 transfer 函数，进行 spi 协议的收发。</p>
-<p>另一层是设备驱动层，基于 spi_bus_type，在 driver 里则使用 spi_read、spi_writer 等函数，最终也会调用到 controller-&gt;transfer 函数进行发送接收。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverSPI/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverPWM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverPWM/" class="post-title-link" itemprop="url">Linux 驱动之 PWM</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverPWM/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverPWM/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>324</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="pwm-概述">PWM 概述</h1>
-<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/PWM.png"></p>
-<ul>
-<li>Ton：信号高电平持续时间</li>
-<li>Toff：信号底电平持续时间</li>
-<li>Period： 完整 pwm 周期</li>
-<li>Duty cycle：pwm 信号周期内保持为 ON 的时间百分比</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverPWM/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverIIC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/next/images/avatar.gif">
-      <meta itemprop="name" content="CarlyleLiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Matrix">
-      <meta itemprop="description" content="CarlyleLiu’s Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Matrix">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/next/2020/LinuxDriver/LinuxDriverIIC/" class="post-title-link" itemprop="url">Linux 驱动之 IIC 子系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/" itemprop="url" rel="index"><span itemprop="name">Technology Blog</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/next/categories/Technology-Blog/Linux/Driver/" itemprop="url" rel="index"><span itemprop="name">Driver</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/next/2020/LinuxDriver/LinuxDriverIIC/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/LinuxDriver/LinuxDriverIIC/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1371,21 +1330,10 @@ IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的�
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="iic-协议">IIC 协议</h1>
-<h2 id="写操作">写操作</h2>
-<p>流程如下：</p>
-<ul>
-<li>主芯片要发出一个 start 信号</li>
-<li>然后发出一个设备地址（用来确定是往哪一个芯片写数据），方向（读/写，0 表示写，1 表示读）</li>
-<li>从设备回应（用来确定这个设备是否存在），然后就可以传输数据</li>
-<li>主设备发送一个字节数据给从设备，并等待回应</li>
-<li>每传输一字节数据，接收方要有一个回应信号（确定数据是否接受完成），然后再传输下一个数据</li>
-<li>数据发送完之后，主芯片就会发送一个停止信号</li>
-</ul>
-<p>下图：白色背景表示"主→从"，灰色背景表示"从→主" <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/007_i2c_write.png"></p>
+          <p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Kernel/IRQWorkQueue.png"> <span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9lbWJlZC82MjM1OTA4ZTA3OTEyOTA2ZjUwODBjYjM=">原图<i class="fa fa-external-link-alt"></i></span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/next/2020/LinuxDriver/LinuxDriverIIC/#more" rel="contents">
+              <a class="btn" href="/next/2021/LinuxKernel/LinuxKernelInterruptWorkQueue/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1409,7 +1357,7 @@ IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的�
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/next/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/next/">1</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/next/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/18/">18</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/next/page/15/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/next/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/next/">1</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/next/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/next/page/21/">21</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/next/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1432,14 +1380,14 @@ IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的�
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">458k</span>
+    <span title="站点总字数">483k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27:45</span>
+    <span title="站点阅读时长">29:17</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -1511,8 +1459,17 @@ IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的�
 <script src="/next/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"vooxle","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/next/js/third-party/comments/disqus.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline.carlyleliu.vip","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"(发表评论)","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/next/page/14/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
 
 </body>
 </html>

@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Algorithm/DifferentialWheelKinematicsSolution/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRawBayerDemosaic/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Algorithm/FOCCurrentSampling/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRawLSC/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/Algorithm/focPrinciple/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRGBCCM/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/Algorithm/focRelatedAlgorithms/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPYUVCE/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/Algorithm/imuAttitudeCalculation/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPYUVEdgeEnhancement/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/Algorithm/imuCalibration/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPYUVHueAndSaturation/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Algorithm/odriverSVM/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensDepthOfField/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -74,7 +74,34 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Algorithm/odriverSpeed/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensAberration/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensOpticalBasics/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensVignetting/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRawNoiseReduction/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -101,6 +128,15 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/2022/Debug/ApplicationDebug/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/2023/Camera/CameraSensorStruct/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -110,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Debug/ApplicationDebug/</loc>
+    <loc>https://carlyleliu.github.io/next/2024/Embedded/EncryptionAlgorithm/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -137,25 +173,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2024/Embedded/EncryptionAlgorithm/</loc>
-    
-    <lastmod>2024-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/2024/Embedded/TEEImplementationPrinciple/</loc>
-    
-    <lastmod>2024-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSACreateSoundCard/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -191,6 +209,15 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSACreateSoundCard/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSAMachineDriver/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -209,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSAPlugin/</loc>
+    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSAVCardLatency/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -219,15 +246,6 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSASummer/</loc>
-    
-    <lastmod>2024-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSAVCardLatency/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -254,6 +272,15 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxAudioALSAPlugin/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverCCF/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -264,15 +291,6 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverDeviceModule/</loc>
-    
-    <lastmod>2024-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverDeviceTree/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -299,6 +317,15 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverDeviceTree/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverIIC/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -317,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverPWM/</loc>
+    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverPinctrl/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -326,7 +353,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverPinctrl/</loc>
+    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverPWM/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -353,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverRegulator/</loc>
+    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverSPI/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -362,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverSPI/</loc>
+    <loc>https://carlyleliu.github.io/next/2020/LinuxDriver/LinuxDriverRegulator/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -479,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</loc>
+    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -488,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxUSBUACSpecInterrupt/</loc>
+    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxUSBUACSpecFunctionalCharacteristics/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -506,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxUSBUACTopology/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxFileSystemBasic/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -515,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxFileSystemBasic/</loc>
+    <loc>https://carlyleliu.github.io/next/2024/LinuxDriver/LinuxUSBUACTopology/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -533,7 +560,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxFileSystemblockIO/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelDebugMem/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -542,7 +569,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxKernelDebugMem/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxFileSystemblockIO/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -740,7 +767,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncMutex/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncRCU/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -749,7 +776,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncRCU/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncMutex/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -767,7 +794,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncSpinLock/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskBasic/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -776,7 +803,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskBasic/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxSyncSpinLock/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -803,15 +830,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskDebug/</loc>
-    
-    <lastmod>2024-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskExt/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -822,6 +840,15 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskSMP/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2021/LinuxKernel/LinuxTaskDebug/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -911,7 +938,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Program/CPP11Part3/</loc>
+    <loc>https://carlyleliu.github.io/next/2022/Program/CPP11Part1/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -929,7 +956,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Program/CPP11Part1/</loc>
+    <loc>https://carlyleliu.github.io/next/2022/Program/CPP11Part3/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1019,15 +1046,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/Program/LinksAndLibrariesPart3/</loc>
-    
-    <lastmod>2024-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/2021/Program/LinksAndLibrariesPart4/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -1037,7 +1055,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Program/RefactorPart1/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/Program/LinksAndLibrariesPart3/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1055,7 +1073,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Program/RefactorPart2/</loc>
+    <loc>https://carlyleliu.github.io/next/2022/Program/RefactorPart1/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1065,6 +1083,15 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/2019/Program/rtosDesign/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2022/Program/RefactorPart2/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1109,7 +1136,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2022/Science/CalculusPart2/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1118,7 +1145,16 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2022/Science/CalculusPart2/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1136,7 +1172,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/</loc>
+    <loc>https://carlyleliu.github.io/next/2021/Tools/Toolsrecommand/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1172,7 +1208,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2021/Tools/Toolsrecommand/</loc>
+    <loc>https://carlyleliu.github.io/next/about/index.html</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1181,7 +1217,70 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/about/index.html</loc>
+    <loc>https://carlyleliu.github.io/next/2022/Algorithm/DifferentialWheelKinematicsSolution/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2022/Algorithm/FOCCurrentSampling/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2020/Algorithm/focPrinciple/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2020/Algorithm/focRelatedAlgorithms/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2020/Algorithm/imuCalibration/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2020/Algorithm/imuAttitudeCalculation/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2022/Algorithm/odriverSVM/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/Algorithm/odriverSpeed/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1199,15 +1298,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPAE/</loc>
-    
-    <lastmod>2024-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPAF/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -1217,7 +1307,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRGBCCM/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPAE/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1226,7 +1316,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRawBayerDemosaic/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/CV5Pipeline/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1235,7 +1325,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRawLSC/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/AFProgramResearch/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1244,7 +1334,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPRawNoiseReduction/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/CalibModule/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1253,7 +1343,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPYUVCE/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/3DLUT/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1262,7 +1352,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPYUVEdgeEnhancement/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/CameraFrameSorting/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1271,7 +1361,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraISPYUVHueAndSaturation/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/CameraAutomaticExposure/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1280,7 +1370,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensAberration/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/EisPipeline/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1289,7 +1379,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensDepthOfField/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/IQDebug/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1298,7 +1388,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensOpticalBasics/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/ColorConsistencyAcceptanceCriteria/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1307,7 +1397,142 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/2023/Camera/CameraLensVignetting/</loc>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/ISPFrameworkMenu/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/ImageCorrectionAndTestingMethodsForCameraModules/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/ModulationTransferFunction/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/MP4Muxer/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/PrepareRecording/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/OV48CDualNativeISOConfigurationMethod/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/PureVideoPipeline/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/RawCompressionEffectAnalysis/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/RecordingPicture/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/SensorRaw10bitvs12bit/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/SensorSNR/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/SpatialFrequencyResponse/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/TheStorageStructureofFileTailinJPGRAW(DNG)/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/TimeLapseanti-shakeDesign/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/zoomImpl/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/2023/encryption/rawCompression/</loc>
     
     <lastmod>2024-10-06</lastmod>
     
@@ -1935,6 +2160,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Encryption/</loc>
+    <lastmod>2024-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -2093,6 +2325,13 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/categories/Share/</loc>
+    <lastmod>2024-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Image/Encryption/</loc>
     <lastmod>2024-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

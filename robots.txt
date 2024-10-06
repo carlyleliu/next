@@ -12,5 +12,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /categories/
 
-Sitemap: http://carlyleliu.github.io/sitemap.xml
-Sitemap: http://carlyleliu.github.io/baidusitemap.xml
+Sitemap: https://carlyleliu.github.io/sitemap.xml
+Sitemap: https://carlyleliu.github.io/baidusitemap.xml
