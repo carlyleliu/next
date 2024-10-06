@@ -527,7 +527,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="概述">概述</h1>
-<p>CCF 主要用于系统 clock 的管理等操作。clk 的种类说明： <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/clk_type.png"></p>
+<p>CCF 主要用于系统 clock 的管理等操作。clk 的种类说明： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/clk_type.png"></p>
 <p>如上图所示，时钟源大概可分为如下几种：</p>
 <ul>
 <li>提供基础时钟源的晶振（可分为有源晶振、无源晶振两种）</li>
@@ -652,7 +652,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="概述">概述</h1>
-<p>按键输入、键盘、鼠标、触摸屏等等这些都属于输入设备，按键和键盘就是代表按键信息，鼠标和触摸屏代表坐标信息，因此在应用层的处理就不同。为此 input 子系统分为 input 驱动层、 input 核心层、 input 事件处理层，最终给用户空间提供可访问的设备节点，input 子系统框架如图 所示： <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/input.png"></p>
+<p>按键输入、键盘、鼠标、触摸屏等等这些都属于输入设备，按键和键盘就是代表按键信息，鼠标和触摸屏代表坐标信息，因此在应用层的处理就不同。为此 input 子系统分为 input 驱动层、 input 核心层、 input 事件处理层，最终给用户空间提供可访问的设备节点，input 子系统框架如图 所示： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/input.png"></p>
 <ul>
 <li>驱动层：输入设备的具体驱动程序，比如按键驱动程序，向内核层报告输入内容。</li>
 <li>核心层：承上启下，为驱动层提供输入设备注册和操作接口。通知事件层对输入事件进行处理。</li>
@@ -777,7 +777,7 @@
 <li>第一是为 IIC/SPI/MMIO 等提供统一的访问接口，linux 中大量的 iic 和 spi 设备就可以通过统一的接口进行访问尤其对于那些同时支持 iic 和 spi 接口的设备。</li>
 <li>第二是提供缓存访问机制用于加速设备访问设备，对于支持缓存的设备这将大大加快设备的当问速度。</li>
 </ul>
-<p>下面看一下 Regmapz 子系统在驱动中的位置，如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE2YTVhMzg1NjUzYmI2NDkzMGMxYzAz">原图<i class="fa fa-external-link-alt"></i></span> <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/Regmap.png"></p>
+<p>下面看一下 Regmapz 子系统在驱动中的位置，如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS92aWV3L2xpbmsvNjE2YTVhMzg1NjUzYmI2NDkzMGMxYzAz">原图<i class="fa fa-external-link-alt"></i></span> <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/Regmap.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/LinuxDriver/LinuxDriverRegmap/#more" rel="contents">
@@ -1012,7 +1012,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="gpio-概述">GPIO 概述</h1>
-<p>以前学习 stm32 的时候看到手册里有关于 gpio 的电路图，如下： <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/gpio.png"></p>
+<p>以前学习 stm32 的时候看到手册里有关于 gpio 的电路图，如下： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/gpio.png"></p>
 <ul>
 <li><p>保护二极体：<br>
 IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的电压输入。当引脚电压高于 VDD 时，上方的二极体导通；当引脚电压低于 VSS 时，下方的二极体导通，防止不正常电压引入晶片导致晶片烧毁</p></li>
@@ -1251,7 +1251,7 @@ IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的�
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="pwm-概述">PWM 概述</h1>
-<p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/PWM.png"></p>
+<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/PWM.png"></p>
 <ul>
 <li>Ton：信号高电平持续时间</li>
 <li>Toff：信号底电平持续时间</li>
@@ -1382,7 +1382,7 @@ IO 引脚上下两边两个二极体用于防止引脚外部过高、过低的�
 <li>每传输一字节数据，接收方要有一个回应信号（确定数据是否接受完成），然后再传输下一个数据</li>
 <li>数据发送完之后，主芯片就会发送一个停止信号</li>
 </ul>
-<p>下图：白色背景表示"主→从"，灰色背景表示"从→主" <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/Driver/007_i2c_write.png"></p>
+<p>下图：白色背景表示"主→从"，灰色背景表示"从→主" <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/Driver/007_i2c_write.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/LinuxDriver/LinuxDriverIIC/#more" rel="contents">

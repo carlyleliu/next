@@ -533,7 +533,7 @@
     <div class="post-body" itemprop="articleBody">
           <p>USB 控制器可以呈现出两种不同的状态。USB 控制器作为 Host 时，称为 USB 主机控制器，使用 USB 主机控制器驱动。USB 控制器作为 Device 时，称为 USB 设备控制器，使用 UDC（usb device controller）驱动。</p>
 <p>USB 控制器作为 Device 时，最上层的是 Gadget Function 驱动，代表了具体设备的驱动，如 U 盘、USB 串口、USB 虚拟网卡、UAC 驱动。Composite 层是一个可选的中间层，可通过一种配置或多种配置高效的支持多种功能的设备，简化了 USB 复合设备驱动的开发。目前最流行的是使用基于 Composite 和 configfs 实现的 USB gadget configfs，可在用户空间灵活的配置 USB 设备。UDC 驱动直接访问硬件，控制 USB 设备与 USB 主机之间的通信。</p>
-<p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/USB/USB-Framework.png"></p>
+<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/USB/USB-Framework.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/LinuxDriver/LinuxUSBGadgetDriver/#more" rel="contents">
@@ -645,7 +645,7 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="标准设备请求">标准设备请求</h1>
 <h2 id="setup-事务的数据格式">SETUP 事务的数据格式</h2>
-<p>Host 使用控制传输来识别设备、设置设备地址、启动设备的某些特性，对于控制传输，它首先发出"setup 事务"，如下： <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/USB/USB-description3.png"></p>
+<p>Host 使用控制传输来识别设备、设置设备地址、启动设备的某些特性，对于控制传输，它首先发出"setup 事务"，如下： <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/USB/USB-description3.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/LinuxDriver/LinuxUSBDeviceDescriptor/#more" rel="contents">
@@ -756,7 +756,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="硬件拓扑结构">硬件拓扑结构</h1>
-<p><img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Linux/USB/USB-Protol1.png"></p>
+<p><img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Linux/USB/USB-Protol1.png"></p>
 <ul>
 <li>compound device ：多个设备组合起来，通过 HUB 跟 Host 相连</li>
 <li>composite device ：一个物理设备有多个逻辑设备 (multiple interfaces)</li>
@@ -1103,7 +1103,7 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="色调-hue">色调 Hue</h1>
 <h2 id="hue-的定义">hue 的定义</h2>
-<p>hue 可以理解为占主导地位的纯色颜色，或两种纯色颜色的组合。简单来说，hue 就是颜色的“名字”，人们最常用黄色、橙色等概念来描述一个颜色。 Hue is the color portion of the model, expressed as a number from 0 to 360 degrees. <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/ISP/hue1.png"></p>
+<p>hue 可以理解为占主导地位的纯色颜色，或两种纯色颜色的组合。简单来说，hue 就是颜色的“名字”，人们最常用黄色、橙色等概念来描述一个颜色。 Hue is the color portion of the model, expressed as a number from 0 to 360 degrees. <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/ISP/hue1.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/Camera/CameraISPYUVHueAndSaturation/#more" rel="contents">
@@ -1218,7 +1218,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="retinex-理论">Retinex 理论</h1>
-<p>Retinex 这个词由 Retina 和 Cortex 两个单词组成。在 Retinex 理论中，物体的颜色是由物体对长波、中波和短波光线的反射能力决定的，而不是由反射光强度的绝对值决定的，并且物体的色彩不受光照非均性的影响，具有一致性。 <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/ISP/ee1.png"></p>
+<p>Retinex 这个词由 Retina 和 Cortex 两个单词组成。在 Retinex 理论中，物体的颜色是由物体对长波、中波和短波光线的反射能力决定的，而不是由反射光强度的绝对值决定的，并且物体的色彩不受光照非均性的影响，具有一致性。 <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/ISP/ee1.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/Camera/CameraISPYUVEdgeEnhancement/#more" rel="contents">
@@ -1333,7 +1333,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="bayer-demosaic-概述">Bayer Demosaic 概述</h1>
-<p>RAW 域的最后一步处理是 Demosaic，将像素从 RAW 域变换到 RGB 域进行下一阶段的处理。Demosaic 算法的主要难点在于，RAW 域的任何一个像点（photosite）只包含一个真实的采样值，而构成像素（R,G,B）的其它两个值需要从周围像点中预测得到。既然是预测，就一定会发生预测不准的情况，这是不可避免的，而预测不准会带来多种负面影响，包括拉链效应（zipper artifacts），边缘模糊，颜色误差等。 <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/ISP/pipeline18.png"> <img src="https://lsky.carlyleliu.vip/ImageHosting/TechnologyBlog/Image/ISP/pipeline19.png"></p>
+<p>RAW 域的最后一步处理是 Demosaic，将像素从 RAW 域变换到 RGB 域进行下一阶段的处理。Demosaic 算法的主要难点在于，RAW 域的任何一个像点（photosite）只包含一个真实的采样值，而构成像素（R,G,B）的其它两个值需要从周围像点中预测得到。既然是预测，就一定会发生预测不准的情况，这是不可避免的，而预测不准会带来多种负面影响，包括拉链效应（zipper artifacts），边缘模糊，颜色误差等。 <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/ISP/pipeline18.png"> <img src="https://lsky.carlyleliu.vip/carlyleliu/ImageHosting/TechnologyBlog/Image/ISP/pipeline19.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/Camera/CameraISPRawBayerDemosaic/#more" rel="contents">
