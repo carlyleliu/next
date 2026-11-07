@@ -280,9 +280,9 @@
     <category term="USB" scheme="https://carlyleliu.github.io/next/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="https://carlyleliu.github.io/next/tags/USB/"/>
-    
     <category term="UAC" scheme="https://carlyleliu.github.io/next/tags/UAC/"/>
+    
+    <category term="USB" scheme="https://carlyleliu.github.io/next/tags/USB/"/>
     
   </entry>
   
@@ -322,11 +322,11 @@
     <category term="Debug" scheme="https://carlyleliu.github.io/next/categories/Technology-Blog/Programming/Debug/"/>
     
     
-    <category term="UAC" scheme="https://carlyleliu.github.io/next/tags/UAC/"/>
-    
     <category term="Debug" scheme="https://carlyleliu.github.io/next/tags/Debug/"/>
     
     <category term="Programming" scheme="https://carlyleliu.github.io/next/tags/Programming/"/>
+    
+    <category term="UAC" scheme="https://carlyleliu.github.io/next/tags/UAC/"/>
     
   </entry>
   
@@ -674,9 +674,9 @@ hexo-renderer-markdown-it-plus 支持 Katex 插件并默认启用，默认启用
     <category term="USB" scheme="https://carlyleliu.github.io/next/categories/Technology-Blog/USB/"/>
     
     
-    <category term="USB" scheme="https://carlyleliu.github.io/next/tags/USB/"/>
-    
     <category term="UAC" scheme="https://carlyleliu.github.io/next/tags/UAC/"/>
+    
+    <category term="USB" scheme="https://carlyleliu.github.io/next/tags/USB/"/>
     
   </entry>
   
