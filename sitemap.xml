@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://carlyleliu.github.io/next/tags/index.html</loc>
+    <loc>https://carlyleliu.github.io/next/categories/index.html</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/index.html</loc>
+    <loc>https://carlyleliu.github.io/next/tags/index.html</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -47,6 +47,15 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/Debug/ValgrindMemleak/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/Debug/oops/</loc>
     
     <lastmod>2026-11-06</lastmod>
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Debug/ValgrindMemleak/</loc>
+    <loc>https://carlyleliu.github.io/next/Debug/LinuxSystemCropping/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -92,52 +101,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Debug/LinuxSystemCropping/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/Debug/stackOverflow/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/Debug/CCMemLeakAsync/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/Debug/LinuxPerf/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/Debug/LinuxMemoryOptimization/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/Debug/Tips/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -155,7 +119,52 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/Debug/CCMemLeakAsync/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/Debug/LinuxMemoryOptimization/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/Debug/LinuxPerf/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/Debug/Tips/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/Embedded/EncryptionAlgorithm/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/Embedded/RPMB/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -174,15 +183,6 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/Embedded/TEESoftPipeLine/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/Embedded/RPMB/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxDriver/LinuxDriverDeviceModule/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxDriver/LinuxAudioALSAXRUN/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxDriver/LinuxAudioALSAXRUN/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxDriver/LinuxDriverDeviceModule/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -713,7 +713,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Program/LinksAndLibrariesPart2/</loc>
+    <loc>https://carlyleliu.github.io/next/Program/CPPobjectModel/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -722,7 +722,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Program/CPPobjectModel/</loc>
+    <loc>https://carlyleliu.github.io/next/Program/LinksAndLibrariesPart2/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -830,7 +830,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Algorithm/odriverSVM/</loc>
+    <loc>https://carlyleliu.github.io/next/Algorithm/focPrinciple/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -839,7 +839,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Algorithm/focPrinciple/</loc>
+    <loc>https://carlyleliu.github.io/next/Algorithm/odriverSVM/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -857,7 +857,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Science/CalculusPart1/</loc>
+    <loc>https://carlyleliu.github.io/next/Science/Calculus/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -875,7 +875,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Science/Calculus/</loc>
+    <loc>https://carlyleliu.github.io/next/Science/CalculusPart1/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -893,15 +893,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Science/QuadraticEquation/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/Science/ProbabilityTheoryandMathematicalStatistics/</loc>
     
     <lastmod>2026-11-06</lastmod>
@@ -911,7 +902,25 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/Science/QuadraticEquation/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/Science/GyroscopeBasedNonlinearFilterForVideoStabilization/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -938,15 +947,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Science/HybridMotionEstimationForVideoStabilizationBasedOnIMUSensor/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/Camera/CameraISPRawLSC/</loc>
     
     <lastmod>2026-11-06</lastmod>
@@ -965,7 +965,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/</loc>
+    <loc>https://carlyleliu.github.io/next/Science/CalculusPart2/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -974,7 +974,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Science/CalculusPart2/</loc>
+    <loc>https://carlyleliu.github.io/next/Science/DigitalVideoStabilizationAndRollingShutterCorrectionUsingGyroscope/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1154,7 +1154,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Literature/SongciOther/</loc>
+    <loc>https://carlyleliu.github.io/next/Literature/NorthIsland/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1163,7 +1163,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/Literature/NorthIsland/</loc>
+    <loc>https://carlyleliu.github.io/next/Literature/SongciOther/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1271,7 +1271,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxKernelDebugMem/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxFileSystemVFS/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1280,7 +1280,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxFileSystemVFS/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxKernelDebugMem/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1298,7 +1298,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxTaskDebug/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxTaskCreate/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1307,7 +1307,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxTaskCreate/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxTaskDebug/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1388,15 +1388,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxSyncRCU/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxSyncSem/</loc>
     
     <lastmod>2026-11-06</lastmod>
@@ -1406,7 +1397,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxMemoryDebug/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxSyncRCU/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1416,6 +1407,15 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxMemoryARM64linux/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxMemoryDebug/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1496,7 +1496,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxKernelInterruptFramework/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxKernelDebugVM/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1514,7 +1514,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxKernelDebugVM/</loc>
+    <loc>https://carlyleliu.github.io/next/LinuxKernel/LinuxKernelInterruptFramework/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1622,15 +1622,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/encryption/ColorConsistencyAcceptanceCriteria/</loc>
-    
-    <lastmod>2026-11-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/encryption/CameraFrameSorting/</loc>
     
     <lastmod>2026-11-06</lastmod>
@@ -1640,7 +1631,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/encryption/MP4Muxer/</loc>
+    <loc>https://carlyleliu.github.io/next/encryption/ColorConsistencyAcceptanceCriteria/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1650,6 +1641,15 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/encryption/ISPFrameworkMenu/</loc>
+    
+    <lastmod>2026-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/encryption/MP4Muxer/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1730,7 +1730,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/encryption/ImageCorrectionAndTestingMethodsForCameraModules/</loc>
+    <loc>https://carlyleliu.github.io/next/encryption/IQDebug/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1739,7 +1739,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/encryption/IQDebug/</loc>
+    <loc>https://carlyleliu.github.io/next/encryption/ImageCorrectionAndTestingMethodsForCameraModules/</loc>
     
     <lastmod>2026-11-06</lastmod>
     
@@ -1884,84 +1884,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/tags/Programming/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Debug/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Linux/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Performance/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/UAC/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/tags/TEE/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Kernel/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/FileSystem/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Interrupt/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Memory/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Sync/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/tags/Task/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1996,6 +1919,20 @@
   </url>
   
   <url>
+    <loc>https://carlyleliu.github.io/next/tags/Linux/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/FileSystem/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://carlyleliu.github.io/next/tags/USB/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -2003,7 +1940,63 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/tags/Tools/</loc>
+    <loc>https://carlyleliu.github.io/next/tags/UAC/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Kernel/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Debug/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Interrupt/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Memory/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Sync/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Task/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Programming/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/tags/Performance/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2045,13 +2038,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/tags/ucos/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/tags/RTOS/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -2059,7 +2045,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/tags/Encryption/</loc>
+    <loc>https://carlyleliu.github.io/next/tags/ucos/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2086,17 +2072,24 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/</loc>
+    <loc>https://carlyleliu.github.io/next/tags/Tools/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Image/</loc>
+    <loc>https://carlyleliu.github.io/next/tags/Encryption/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2110,7 +2103,14 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Image/Stabilization/</loc>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Image/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Robot/Actuator/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2124,7 +2124,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Robot/Actuator/</loc>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Image/Stabilization/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2145,28 +2145,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Programming/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/TEE/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Linux/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Programming/Debug/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2187,7 +2166,7 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Programming/Performance/</loc>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Linux/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2201,7 +2180,35 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Linux/Kernel/</loc>
+    <loc>https://carlyleliu.github.io/next/categories/Literature-Appreciation/Poetry/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Programming/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Linux/Driver/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/RTOS/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Science-Thought/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2209,6 +2216,34 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/categories/Share/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Image/Encryption/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Linux/Kernel/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Programming/Debug/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Programming/Performance/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2229,48 +2264,6 @@
   </url>
   
   <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/RTOS/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Image/Encryption/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/categories/Science-Thought/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/categories/Literature-Appreciation/Poetry/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/categories/Technology-Blog/Linux/Driver/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://carlyleliu.github.io/next/categories/Share/Tools/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://carlyleliu.github.io/next/categories/Science-Thought/Math/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -2279,6 +2272,13 @@
   
   <url>
     <loc>https://carlyleliu.github.io/next/categories/Science-Thought/Physics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://carlyleliu.github.io/next/categories/Share/Tools/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
